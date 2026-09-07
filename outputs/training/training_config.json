@@ -1,0 +1,17 @@
+{
+  "model_name": "efficientnet_b0",
+  "num_classes": 5,
+  "pretrained": true,
+  "image_size": [
+    224,
+    224
+  ],
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "epochs": 1,
+  "early_stopping_patience": 2,
+  "optimizer_name": "adamw",
+  "scheduler_name": "cosine",
+  "random_seed": 42
+}

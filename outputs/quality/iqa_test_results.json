@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETED",
+  "resolution_dependence_verified": true,
+  "laplacian_var_quadratic_scaling_confirmed": true,
+  "border_fov_effects_verified": true,
+  "edge_cases_safety_verified": true,
+  "datasets_has_clinical_quality_labels": false,
+  "clinical_label_disclaimer": "APTOS 2019 dataset contains DR severity grades but lacks explicit image quality / gradability ground-truth labels. Thresholds require calibration against a quality-annotated dataset or expert ophthalmologist review."
+}

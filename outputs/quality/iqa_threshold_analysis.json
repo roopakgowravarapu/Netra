@@ -1,0 +1,60 @@
+{
+  "min_blur_laplacian_var": 100.0,
+  "min_brightness_mean": 25.0,
+  "max_brightness_mean": 230.0,
+  "min_contrast_std": 20.0,
+  "min_fov_ratio": 0.25,
+  "justification": "MANUALLY_CHOSEN_DEFAULT - NOT EMPIRICALLY VALIDATED ON CLINICAL GROUND TRUTH",
+  "dataset_sample_size": 25,
+  "gradable_pass_count": 25,
+  "ungradable_rejection_count": 0,
+  "breakdown": {
+    "blur_failures": 0,
+    "dark_failures": 0,
+    "bright_failures": 0,
+    "fov_failures": 0
+  },
+  "resolution_dependence": [
+    {
+      "resolution": "100x100",
+      "width": 100,
+      "height": 100,
+      "laplacian_variance": 830.03,
+      "ratio_to_224": 1.0
+    },
+    {
+      "resolution": "224x224",
+      "width": 224,
+      "height": 224,
+      "laplacian_variance": 238.67,
+      "ratio_to_224": 1.0
+    },
+    {
+      "resolution": "500x500",
+      "width": 500,
+      "height": 500,
+      "laplacian_variance": 10.78,
+      "ratio_to_224": 0.05
+    },
+    {
+      "resolution": "800x800",
+      "width": 800,
+      "height": 800,
+      "laplacian_variance": 2.67,
+      "ratio_to_224": 0.01
+    },
+    {
+      "resolution": "1200x1200",
+      "width": 1200,
+      "height": 1200,
+      "laplacian_variance": 0.89,
+      "ratio_to_224": 0.0
+    }
+  ],
+  "roi_mask_dependence": {
+    "full_image_laplacian_var": 238.67,
+    "fov_roi_laplacian_var": 248.62,
+    "black_border_pixel_count": 12350,
+    "retinal_roi_pixel_count": 37826
+  }
+}

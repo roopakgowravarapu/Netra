@@ -1,0 +1,21 @@
+==================================================
+NETRA STEP 7: IMAGE QUALITY ASSESSMENT (IQA) REPORT
+==================================================
+Total Images Assessed: 100
+Gradable Images: 100 (100.0%)
+Ungradable Images: 0 (0.0%)
+
+--- Quality Features Evaluated ---
+1. Sharpness / Blur: Laplacian Variance threshold (min >= 100.0)
+2. Brightness: Mean Pixel Intensity (min >= 25.0, max <= 230.0)
+3. Contrast: Standard Deviation of Pixel Intensities (min >= 20.0)
+4. Retinal Visibility: Field of View (FOV) ratio (min coverage >= 0.25)
+5. Image Resolution: Minimum width/height (>= 200x200)
+
+--- Rejection Reasons & Issues Summary ---
+- No rejection issues detected in sample evaluation.
+
+--- Dataset Limitation Notice ---
+Dataset (APTOS 2019) does not explicitly provide dedicated gradability labels.
+Deterministic feature thresholds were applied without inventing false clinical labels.
+==================================================

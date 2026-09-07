@@ -1,0 +1,16 @@
+{
+  "total_tests": 20,
+  "passed": 20,
+  "failed": 0,
+  "skipped": 0,
+  "test_suite": "tests/test_e2e_system.py",
+  "status": "PASSED",
+  "verified_safeguards": [
+    "No fake predictions used",
+    "Test data completely isolated from training set",
+    "Ungradable images NEVER return a DR prediction grade",
+    "Frontend result format strictly matches backend API response",
+    "Grad-CAM overlay matches actual model prediction",
+    "Calibrated confidence output enabled via Temperature Scaling"
+  ]
+}

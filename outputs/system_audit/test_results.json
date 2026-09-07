@@ -1,0 +1,22 @@
+{
+  "total_tests_run": 58,
+  "passed": 58,
+  "failed": 0,
+  "skipped": 0,
+  "test_suites": [
+    { "name": "test_backend.py", "total": 6, "passed": 6 },
+    { "name": "test_calibration.py", "total": 3, "passed": 3 },
+    { "name": "test_e2e_system.py", "total": 20, "passed": 20 },
+    { "name": "test_external_robustness.py", "total": 3, "passed": 3 },
+    { "name": "test_gradcam.py", "total": 3, "passed": 3 },
+    { "name": "test_health.py", "total": 1, "passed": 1 },
+    { "name": "test_preprocessing.py", "total": 4, "passed": 4 },
+    { "name": "test_quality.py", "total": 6, "passed": 6 },
+    { "name": "test_reporting.py", "total": 3, "passed": 3 },
+    { "name": "test_simulation.py", "total": 2, "passed": 2 },
+    { "name": "test_telemedicine.py", "total": 3, "passed": 3 },
+    { "name": "test_training_sanity.py", "total": 4, "passed": 4 }
+  ],
+  "frontend_build_status": "PASSED",
+  "frontend_type_check": "PASSED"
+}

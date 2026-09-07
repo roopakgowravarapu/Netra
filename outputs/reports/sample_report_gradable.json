@@ -1,0 +1,38 @@
+{
+  "sample_id": "good_sample",
+  "image_quality": {
+    "score": 0.8108,
+    "status": "gradable",
+    "issues": [],
+    "metrics": {
+      "width": 300.0,
+      "height": 300.0,
+      "laplacian_var": 430.73422222222223,
+      "brightness_mean": 52.797777777777775,
+      "contrast_std": 52.9368932005685,
+      "fov_ratio": 0.5024777777777778
+    }
+  },
+  "dr_prediction": {
+    "grade": 4,
+    "label": "Proliferative DR",
+    "confidence": 0.8681,
+    "probabilities": {
+      "No DR": 0.06,
+      "Mild DR": 0.0189,
+      "Moderate DR": 0.0157,
+      "Severe DR": 0.0373,
+      "Proliferative DR": 0.8681
+    },
+    "uncertainty": {
+      "entropy": 0.5547,
+      "margin": 0.8081
+    }
+  },
+  "explanation": {
+    "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\reports\\gradcam_good_sample.png",
+    "target_class": 4
+  },
+  "recommendation": "Proliferative Diabetic Retinopathy detected. IMMEDIATE referral to Retina Specialist for urgent treatment.",
+  "disclaimer": "Netra is an AI-assisted screening tool. Output is not a definitive medical diagnosis."
+}

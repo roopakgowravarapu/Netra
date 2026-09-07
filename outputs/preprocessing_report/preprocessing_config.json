@@ -1,0 +1,33 @@
+{
+  "target_size": [
+    224,
+    224
+  ],
+  "crop_black_borders": true,
+  "border_threshold": 10,
+  "crop_safety_margin": 0.02,
+  "clahe_enabled": true,
+  "clahe_clip_limit": 2.0,
+  "clahe_tile_grid_size": [
+    8,
+    8
+  ],
+  "denoising_enabled": false,
+  "denoising_h": 10.0,
+  "denoising_template_window": 7,
+  "denoising_search_window": 21,
+  "normalization_method": "zero_to_one",
+  "augmentation": {
+    "rotation_range_deg": 20,
+    "horizontal_flip": true,
+    "vertical_flip": true,
+    "brightness_range": [
+      0.8,
+      1.2
+    ],
+    "zoom_range": [
+      0.9,
+      1.1
+    ]
+  }
+}

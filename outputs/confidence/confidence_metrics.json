@@ -1,0 +1,8 @@
+{
+  "test_set_size": 550,
+  "raw_test_ece": 0.0016,
+  "raw_test_mce": 0.0016,
+  "calibrated_test_ece": 0.0025,
+  "calibrated_test_mce": 0.0025,
+  "temperature": 1.07
+}

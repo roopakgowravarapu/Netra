@@ -1,0 +1,11 @@
+hash,train_path,test_path,overlap_type,val_path
+fd03d48ab79a6afb8a5e5ee7adda4d4e894a176ac0442459f637083cf0895b79,data\processed\train\aptos2019_4_0223.png,data\processed\test\aptos2019_4_0092.png,Train-Test Leakage,
+e8e799d6ca4b468da9aeed56a436503e5e7fbaa8dbf09b593bafba9e830c83c3,data\processed\train\aptos2019_1_0323.png,data\processed\test\aptos2019_1_0147.png,Train-Test Leakage,
+ebc6d226d035f2fb6bfb04453cb3606d74a190f28521a4b33a2933699c84a43c,data\processed\train\aptos2019_3_0050.png,data\processed\test\aptos2019_3_0175.png,Train-Test Leakage,
+7046a7ea104e389a1e1d51a13efbc80625ac0db0bf951215b9a8bef56862f09b,data\processed\train\aptos2019_0_0580.png,data\processed\test\aptos2019_0_0020.png,Train-Test Leakage,
+72fbe79ad152eccd54b32833fe33ba508ca75825a91d3cd9b4f880377612d323,data\processed\train\aptos2019_2_0521.png,data\processed\test\aptos2019_2_0180.png,Train-Test Leakage,
+fd03d48ab79a6afb8a5e5ee7adda4d4e894a176ac0442459f637083cf0895b79,,data\processed\test\aptos2019_4_0092.png,Val-Test Leakage,data\processed\validation\aptos2019_4_0279.png
+e8e799d6ca4b468da9aeed56a436503e5e7fbaa8dbf09b593bafba9e830c83c3,,data\processed\test\aptos2019_1_0147.png,Val-Test Leakage,data\processed\validation\aptos2019_1_0178.png
+ebc6d226d035f2fb6bfb04453cb3606d74a190f28521a4b33a2933699c84a43c,,data\processed\test\aptos2019_3_0175.png,Val-Test Leakage,data\processed\validation\aptos2019_3_0046.png
+7046a7ea104e389a1e1d51a13efbc80625ac0db0bf951215b9a8bef56862f09b,,data\processed\test\aptos2019_0_0020.png,Val-Test Leakage,data\processed\validation\aptos2019_0_1633.png
+72fbe79ad152eccd54b32833fe33ba508ca75825a91d3cd9b4f880377612d323,,data\processed\test\aptos2019_2_0180.png,Val-Test Leakage,data\processed\validation\aptos2019_2_0845.png

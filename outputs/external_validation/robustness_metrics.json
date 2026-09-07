@@ -1,0 +1,44 @@
+{
+  "brightness_high": {
+    "prediction_stability": 1.0,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.9993,
+    "confidence_delta": 0.0007
+  },
+  "brightness_low": {
+    "prediction_stability": 1.0,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.9888,
+    "confidence_delta": -0.0097
+  },
+  "contrast_high": {
+    "prediction_stability": 1.0,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.9994,
+    "confidence_delta": 0.0008
+  },
+  "contrast_low": {
+    "prediction_stability": 1.0,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.9954,
+    "confidence_delta": -0.0032
+  },
+  "gaussian_blur": {
+    "prediction_stability": 1.0,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.9991,
+    "confidence_delta": 0.0005
+  },
+  "gaussian_noise": {
+    "prediction_stability": 0.1,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.8289,
+    "confidence_delta": -0.1696
+  },
+  "resolution_downscale": {
+    "prediction_stability": 1.0,
+    "original_mean_confidence": 0.9986,
+    "perturbed_mean_confidence": 0.9987,
+    "confidence_delta": 0.0001
+  }
+}

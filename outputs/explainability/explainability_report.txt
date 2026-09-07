@@ -1,0 +1,24 @@
+==================================================
+NETRA STEP 8: GRAD-CAM EXPLAINABILITY REPORT
+==================================================
+Target Model Architecture: EfficientNet-B0 (Transfer Learning)
+Model Weights Source: models/best_model.pth
+Target Convolutional Layer: EfficientNet backbone features[-1] (Conv2dNormActivation)
+
+--- Visual Explanation Summary ---
+Grad-CAM heatmaps generated for all 5 Diabetic Retinopathy severity classes:
+  - Level 0: No DR
+  - Level 1: Mild DR
+  - Level 2: Moderate DR
+  - Level 3: Severe DR
+  - Level 4: Proliferative DR
+
+--- Retinal Feature Focus & Artifact Inspection ---
+- Heatmaps show concentrated activation within the central retinal optic disk & vascular arcades.
+- Background black padding and frame borders receive near-zero activation weight.
+
+--- Essential Clinical Disclaimer & Limitations ---
+1. Grad-CAM is a mathematical model interpretability technique showing feature importance in neural networks.
+2. High activation in a Grad-CAM heatmap DOES NOT constitute clinical proof of a specific pathology or retinal lesion.
+3. Heatmaps are intended solely to assist clinical decision-making and ensure model transparency.
+==================================================

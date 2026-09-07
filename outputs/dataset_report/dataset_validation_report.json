@@ -1,0 +1,29 @@
+{
+  "dataset_name": "APTOS 2019 Blindness Detection",
+  "dataset_location": "C:\\Users\\roopa\\Downloads\\Netra\\data\\raw\\aptos",
+  "dataset_source": "https://www.kaggle.com/c/aptos2019-blindness-detection/data",
+  "validation_passed": false,
+  "total_images_on_disk": 0,
+  "csv_total_rows": 0,
+  "class_counts": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+  },
+  "missing_images_count": 0,
+  "missing_images_list": [],
+  "corrupted_images_count": 0,
+  "corrupted_images_list": [],
+  "unsupported_format_count": 0,
+  "unsupported_format_list": [],
+  "invalid_labels_count": 0,
+  "invalid_labels_list": [],
+  "exact_duplicates_count": 0,
+  "perceptual_duplicates_count": 0,
+  "dimension_stats": {},
+  "problems_found": [
+    "Label CSV file (e.g. train.csv) not found in C:\\Users\\roopa\\Downloads\\Netra\\data\\raw\\aptos."
+  ]
+}

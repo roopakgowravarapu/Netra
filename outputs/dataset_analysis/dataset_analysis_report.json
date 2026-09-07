@@ -1,0 +1,75 @@
+{
+  "dataset_name": "APTOS 2019 Blindness Detection",
+  "random_seed": 42,
+  "split_ratio": "70% Train / 15% Validation / 15% Test",
+  "verification": {
+    "passed": true,
+    "total_images": 3662,
+    "train_count": 2563,
+    "train_percentage": "69.99%",
+    "val_count": 549,
+    "val_percentage": "14.99%",
+    "test_count": 550,
+    "test_percentage": "15.02%",
+    "overlap_count": 0,
+    "all_five_classes_present_in_all_splits": true,
+    "class_distributions": {
+      "overall": {
+        "0": 1805,
+        "2": 999,
+        "1": 370,
+        "4": 295,
+        "3": 193
+      },
+      "train": {
+        "0": 1263,
+        "2": 699,
+        "1": 259,
+        "4": 207,
+        "3": 135
+      },
+      "validation": {
+        "0": 271,
+        "2": 150,
+        "1": 55,
+        "4": 44,
+        "3": 29
+      },
+      "test": {
+        "0": 271,
+        "2": 150,
+        "1": 56,
+        "4": 44,
+        "3": 29
+      }
+    }
+  },
+  "image_quality_statistics": {
+    "min_dimensions": "1050x1050",
+    "max_dimensions": "3216x2136",
+    "mean_width": 2361.0,
+    "mean_height": 1766.2,
+    "mean_aspect_ratio": 1.28,
+    "common_dimensions": {
+      "2816x2112": 1221,
+      "3216x2136": 1221,
+      "1050x1050": 1220
+    },
+    "mean_brightness": 84.89,
+    "std_brightness": 19.95,
+    "mean_contrast": 44.92,
+    "std_contrast": 10.12,
+    "unusual_samples_count": 0,
+    "unusual_samples": []
+  },
+  "class_imbalance_analysis": {
+    "explanation": "Severe class imbalance observed: Class 0 (No DR) accounts for ~49.3% of data, whereas Class 3 (Severe DR) accounts for only ~5.3%. Stratified sampling preserves proportional representation across all 3 splits.",
+    "proportions": {
+      "Level 0 (No DR)": "49.29%",
+      "Level 1 (Mild)": "10.1%",
+      "Level 2 (Moderate)": "27.28%",
+      "Level 3 (Severe)": "5.27%",
+      "Level 4 (Proliferative DR)": "8.06%"
+    }
+  }
+}

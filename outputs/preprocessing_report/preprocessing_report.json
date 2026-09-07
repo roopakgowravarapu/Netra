@@ -1,0 +1,57 @@
+{
+  "configuration": {
+    "target_size": [
+      224,
+      224
+    ],
+    "crop_black_borders": true,
+    "border_threshold": 10,
+    "crop_safety_margin": 0.02,
+    "clahe_enabled": true,
+    "clahe_clip_limit": 2.0,
+    "clahe_tile_grid_size": [
+      8,
+      8
+    ],
+    "denoising_enabled": false,
+    "denoising_h": 10.0,
+    "denoising_template_window": 7,
+    "denoising_search_window": 21,
+    "normalization_method": "zero_to_one",
+    "augmentation": {
+      "rotation_range_deg": 20,
+      "horizontal_flip": true,
+      "vertical_flip": true,
+      "brightness_range": [
+        0.8,
+        1.2
+      ],
+      "zoom_range": [
+        0.9,
+        1.1
+      ]
+    }
+  },
+  "processing_metrics": {
+    "total_processed": 3662,
+    "failed_count": 0,
+    "failed_images": [],
+    "split_counts": {
+      "train": 2563,
+      "validation": 549,
+      "test": 550
+    },
+    "pixel_stats": {
+      "min_pixel_value": 3,
+      "max_pixel_value": 255,
+      "final_dimensions": "224x224x3"
+    }
+  },
+  "operations_applied": [
+    "1. Retinal boundary detection & safe border cropping (crop_fundus_circle)",
+    "2. Configurable resizing to target dimensions (224, 224)",
+    "3. LAB space L-channel CLAHE contrast enhancement (clip_limit=2.0, tiles=(8, 8))",
+    "4. Optional Non-Local Means Denoising (enabled=False)",
+    "5. Deep learning normalization scheme (zero_to_one)"
+  ]
+}

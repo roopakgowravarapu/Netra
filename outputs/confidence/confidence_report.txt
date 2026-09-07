@@ -1,0 +1,21 @@
+==================================================
+NETRA STEP 9: CONFIDENCE CALIBRATION & UNCERTAINTY REPORT
+==================================================
+Fitted Method: Post-hoc Temperature Scaling
+Validation Set Fitting Temperature T: 1.0700
+
+--- Validation Set Metrics ---
+Raw Validation ECE: 0.0016
+Calibrated Validation ECE: 0.0025
+
+--- Untouched Test Set Evaluation ---
+Raw Test Set ECE: 0.0016 | MCE: 0.0016
+Calibrated Test Set ECE: 0.0025 | MCE: 0.0025
+
+--- Uncertainty Metrics ---
+Per-sample uncertainty indicator is computed via normalized Shannon Entropy & Prediction Margin.
+
+--- Clinical Disclaimer ---
+1. Calibrated confidence reflects statistical probability matching empirical accuracy.
+2. Calibrated confidence MUST NOT be described as absolute medical certainty.
+==================================================

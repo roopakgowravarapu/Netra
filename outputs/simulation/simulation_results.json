@@ -1,0 +1,35 @@
+{
+  "low_workload": {
+    "arrival_rate_per_hr": 10.0,
+    "patients_arrived": 86,
+    "patients_processed": 86,
+    "images_processed": 86,
+    "throughput_pts_per_hr": 10.75,
+    "avg_waiting_time_min": 13.78,
+    "avg_specialist_queue_len": 2.38,
+    "ai_processing_utilization_pct": 14.12,
+    "specialist_utilization_pct": 77.2
+  },
+  "medium_workload": {
+    "arrival_rate_per_hr": 30.0,
+    "patients_arrived": 248,
+    "patients_processed": 248,
+    "images_processed": 248,
+    "throughput_pts_per_hr": 31.0,
+    "avg_waiting_time_min": 388.16,
+    "avg_specialist_queue_len": 84.69,
+    "ai_processing_utilization_pct": 34.08,
+    "specialist_utilization_pct": 100.0
+  },
+  "high_workload": {
+    "arrival_rate_per_hr": 60.0,
+    "patients_arrived": 482,
+    "patients_processed": 482,
+    "images_processed": 482,
+    "throughput_pts_per_hr": 60.25,
+    "avg_waiting_time_min": 1043.53,
+    "avg_specialist_queue_len": 168.39,
+    "ai_processing_utilization_pct": 65.93,
+    "specialist_utilization_pct": 100.0
+  }
+}

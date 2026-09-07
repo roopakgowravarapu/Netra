@@ -1,0 +1,7 @@
+{
+  "method": "Temperature Scaling",
+  "fitted_dataset": "Validation Split (data/processed/validation.csv)",
+  "optimal_temperature": 1.07,
+  "validation_raw_ece": 0.0016,
+  "validation_calibrated_ece": 0.0025
+}

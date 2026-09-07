@@ -1,0 +1,26 @@
+{
+  "sample_id": "ungradable_sample",
+  "image_quality": {
+    "score": 0.0,
+    "status": "ungradable",
+    "issues": [
+      "Image is severely blurred (sharpness score 0.0 < 100.0).",
+      "Image is too dark (brightness 0.0 < 25.0).",
+      "Image has insufficient contrast (0.0 < 20.0).",
+      "Retinal field of view limited/obscured (FOV coverage 0.00 < 0.25)."
+    ],
+    "rejection_reason": "Image is severely blurred (sharpness score 0.0 < 100.0).; Image is too dark (brightness 0.0 < 25.0).; Image has insufficient contrast (0.0 < 20.0).; Retinal field of view limited/obscured (FOV coverage 0.00 < 0.25).",
+    "metrics": {
+      "width": 300.0,
+      "height": 300.0,
+      "laplacian_var": 0.0,
+      "brightness_mean": 0.0,
+      "contrast_std": 0.0,
+      "fov_ratio": 0.0
+    }
+  },
+  "dr_prediction": null,
+  "explanation": null,
+  "recommendation": "Image quality insufficient for automated DR evaluation. Please clean lens, adjust lighting/focus, and RECAPTURE fundus image.",
+  "disclaimer": "Netra is an AI-assisted screening tool. Output is not a definitive medical diagnosis."
+}

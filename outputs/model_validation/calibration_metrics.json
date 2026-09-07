@@ -1,0 +1,19 @@
+{
+  "fitted_temperature_T": 1.07,
+  "expected_calibration_error_ECE": 0.0026,
+  "maximum_calibration_error_MCE": 0.0026,
+  "mean_brier_score": 0.0,
+  "mean_raw_confidence": 0.9984,
+  "mean_calibrated_confidence": 0.9975,
+  "bin_details": {
+    "bins": [
+      {
+        "bin_lower": 0.9,
+        "bin_upper": 1.0,
+        "accuracy": 1.0,
+        "confidence": 0.9974476363636363,
+        "count": 550
+      }
+    ]
+  }
+}
