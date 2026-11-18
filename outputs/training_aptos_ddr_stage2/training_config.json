@@ -1,0 +1,22 @@
+{
+  "stage": "stage2_full_unfreeze_accuracy_finetune",
+  "init_checkpoint": "models/best_model_aptos_ddr_stage1.pth",
+  "output_checkpoint": "models/best_model_aptos_ddr.pth",
+  "total_parameters": 4013953,
+  "trainable_parameters": 4013953,
+  "batch_size": 64,
+  "epochs_max": 4,
+  "optimizer": "AdamW(differential lr: features[:4]=1e-4, features[4:]=1.5e-4, classifier=3e-4)",
+  "scheduler": "CosineAnnealingLR(eta_min=1e-5)",
+  "loss": "CrossEntropyLoss(power_0.20_weights, ls=0.02) + 0.15 * OrdinalExpectedMSE",
+  "class_weights": [
+    0.7267,
+    1.1082,
+    0.7855,
+    1.3154,
+    1.0642
+  ],
+  "selection_metric": "val_accuracy (breaking ties by val_macro_f1)",
+  "stage1_val_accuracy": 0.788,
+  "stage1_val_macro_f1": 0.6567
+}

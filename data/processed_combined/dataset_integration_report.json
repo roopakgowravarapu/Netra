@@ -1,0 +1,164 @@
+{
+  "elapsed_seconds": 200.51,
+  "preprocessing_config": {
+    "target_size": [
+      224,
+      224
+    ],
+    "crop_black_borders": true,
+    "border_threshold": 10,
+    "crop_safety_margin": 0.02,
+    "clahe_enabled": true,
+    "clahe_clip_limit": 2.0,
+    "clahe_tile_grid_size": [
+      8,
+      8
+    ],
+    "denoising_enabled": false
+  },
+  "deduplication_stats": {
+    "total_raw_images": 16184,
+    "unique_sha256_hashes": 15958,
+    "cross_dataset_exact_sha256_groups": 0,
+    "conflicting_label_sha256_groups_dropped": 30,
+    "conflicting_label_images_dropped": 62,
+    "consistent_duplicate_groups_collapsed": 188,
+    "consistent_duplicate_images_removed": 194,
+    "images_after_exact_dedup": 15928
+  },
+  "clustering_stats": {
+    "dhash_bits": 256,
+    "dhash_hamming_threshold": 16,
+    "ddr_visit_window_seconds": 15.0,
+    "near_duplicate_pairs_linked": 143,
+    "cross_dataset_near_duplicate_pairs": 4,
+    "ddr_visit_pairs_linked": 1669,
+    "total_independent_groups": 14148,
+    "multi_image_groups": 1434,
+    "max_group_size": 17
+  },
+  "leakage_verification": {
+    "leakage_free": true,
+    "group_id_overlaps": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "sha256_overlaps": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "near_dhash256_overlaps": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    }
+  },
+  "splits": {
+    "train": {
+      "total": 11145,
+      "by_source": {
+        "DDR": 8695,
+        "APTOS_2019": 2450
+      },
+      "by_label": {
+        "0": 5575,
+        "1": 676,
+        "2": 3779,
+        "3": 287,
+        "4": 828
+      },
+      "by_source_and_label": {
+        "APTOS_2019": {
+          "0": 1257,
+          "1": 236,
+          "2": 645,
+          "3": 123,
+          "4": 189
+        },
+        "DDR": {
+          "0": 4318,
+          "1": 440,
+          "2": 3134,
+          "3": 164,
+          "4": 639
+        }
+      }
+    },
+    "validation": {
+      "total": 2391,
+      "by_source": {
+        "DDR": 1865,
+        "APTOS_2019": 526
+      },
+      "by_label": {
+        "0": 1194,
+        "1": 146,
+        "2": 810,
+        "3": 63,
+        "4": 178
+      },
+      "by_source_and_label": {
+        "APTOS_2019": {
+          "0": 269,
+          "1": 51,
+          "2": 138,
+          "3": 27,
+          "4": 41
+        },
+        "DDR": {
+          "0": 925,
+          "1": 95,
+          "2": 672,
+          "3": 36,
+          "4": 137
+        }
+      }
+    },
+    "test": {
+      "total": 2392,
+      "by_source": {
+        "DDR": 1864,
+        "APTOS_2019": 528
+      },
+      "by_label": {
+        "0": 1195,
+        "1": 146,
+        "2": 810,
+        "3": 63,
+        "4": 178
+      },
+      "by_source_and_label": {
+        "APTOS_2019": {
+          "0": 270,
+          "1": 51,
+          "2": 139,
+          "3": 27,
+          "4": 41
+        },
+        "DDR": {
+          "0": 925,
+          "1": 95,
+          "2": 671,
+          "3": 36,
+          "4": 137
+        }
+      }
+    }
+  },
+  "external_dataset_sustech_sysu": {
+    "manifest_path": "data/raw/sustech_external/external_manifest.csv",
+    "total_images": 1219,
+    "category5_reclassified_to_icdr": 68,
+    "by_label": {
+      "0": 631,
+      "1": 24,
+      "2": 401,
+      "3": 87,
+      "4": 76
+    },
+    "sha256_overlap_with_internal": 0,
+    "near_dhash256_overlap_with_internal": 0
+  }
+}

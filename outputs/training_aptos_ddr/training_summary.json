@@ -1,0 +1,7 @@
+{
+  "best_epoch": 6,
+  "best_val_macro_f1": 0.6567,
+  "epochs_completed": 6,
+  "total_duration_seconds": 4673.52,
+  "total_duration_minutes": 77.89
+}

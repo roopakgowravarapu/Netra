@@ -1,0 +1,1 @@
+export { FullReportModal } from "../FullReportModal";

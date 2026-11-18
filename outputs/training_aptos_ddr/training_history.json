@@ -1,0 +1,80 @@
+[
+  {
+    "epoch": 1,
+    "lr": 0.0005,
+    "duration_seconds": 1264.2,
+    "train_loss": 1.1796,
+    "train_accuracy": 0.6572,
+    "train_macro_f1": 0.4777,
+    "val_loss": 0.9684,
+    "val_accuracy": 0.7173,
+    "val_macro_f1": 0.5325,
+    "val_referable_sensitivity": 0.7735,
+    "val_referable_specificity": 0.9284
+  },
+  {
+    "epoch": 2,
+    "lr": 0.00046717622392718753,
+    "duration_seconds": 759.81,
+    "train_loss": 0.9983,
+    "train_accuracy": 0.7347,
+    "train_macro_f1": 0.5789,
+    "val_loss": 0.9221,
+    "val_accuracy": 0.7716,
+    "val_macro_f1": 0.6114,
+    "val_referable_sensitivity": 0.7992,
+    "val_referable_specificity": 0.9269
+  },
+  {
+    "epoch": 3,
+    "lr": 0.0003775,
+    "duration_seconds": 716.58,
+    "train_loss": 0.9159,
+    "train_accuracy": 0.7581,
+    "train_macro_f1": 0.6177,
+    "val_loss": 0.9169,
+    "val_accuracy": 0.7951,
+    "val_macro_f1": 0.6197,
+    "val_referable_sensitivity": 0.8382,
+    "val_referable_specificity": 0.9149
+  },
+  {
+    "epoch": 4,
+    "lr": 0.000255,
+    "duration_seconds": 694.46,
+    "train_loss": 0.8439,
+    "train_accuracy": 0.79,
+    "train_macro_f1": 0.6618,
+    "val_loss": 0.865,
+    "val_accuracy": 0.7825,
+    "val_macro_f1": 0.6497,
+    "val_referable_sensitivity": 0.7888,
+    "val_referable_specificity": 0.9478
+  },
+  {
+    "epoch": 5,
+    "lr": 0.00013250000000000005,
+    "duration_seconds": 625.67,
+    "train_loss": 0.7784,
+    "train_accuracy": 0.8124,
+    "train_macro_f1": 0.6978,
+    "val_loss": 0.8723,
+    "val_accuracy": 0.7821,
+    "val_macro_f1": 0.6498,
+    "val_referable_sensitivity": 0.7469,
+    "val_referable_specificity": 0.9612
+  },
+  {
+    "epoch": 6,
+    "lr": 4.282377607281251e-05,
+    "duration_seconds": 612.5,
+    "train_loss": 0.7266,
+    "train_accuracy": 0.8271,
+    "train_macro_f1": 0.7353,
+    "val_loss": 0.8487,
+    "val_accuracy": 0.788,
+    "val_macro_f1": 0.6567,
+    "val_referable_sensitivity": 0.7774,
+    "val_referable_specificity": 0.95
+  }
+]

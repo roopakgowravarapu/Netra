@@ -1,0 +1,14 @@
+{
+  "name": "netra-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NETRA - Explainable AI Retinal Screening & Telemedicine Platform",
+  "scripts": {
+    "start": "python run.py",
+    "dev": "python run.py",
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "backend\\venv\\Scripts\\python -m uvicorn backend.app.main:app --reload --port 8000",
+    "build": "npm --prefix frontend run build",
+    "test": "backend\\venv\\Scripts\\pytest tests/ -v"
+  }
+}

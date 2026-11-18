@@ -9,7 +9,7 @@
 
 | Feature | Status | Details |
 |---|---|---|
-| Landing Page (`/`) | PASS | SIH 2026 branding, pipeline architecture breakdown, responsive navigation buttons. |
+| Landing Page (`/`) | PASS | Netra clinical branding, pipeline architecture breakdown, responsive navigation buttons. |
 | Screening Portal (`/screening`) | PASS | Drag-and-drop file upload, file size & type validation, instant preview, analyze action button. |
 | Ungradable Image Warning UI | PASS | Prominent alert box, quality issue checklist, recapture instructions. **DR result hidden**. |
 | Gradable Screening Result | PASS | Quality score badge, DR severity level (0-4), color-coded severity tag, calibrated confidence meter. |

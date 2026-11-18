@@ -1,0 +1,152 @@
+{
+  "PAT-UOFTYY": {
+    "patient_id": "PAT-UOFTYY",
+    "name": "Nikhilesh Tirumareddi",
+    "age": 41,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 36.0,
+    "created_at": "2026-11-18T10:31:26.896202+00:00",
+    "updated_at": "2026-11-18T10:31:26.896202+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_c3021d5e",
+        "date": "2026-11-18T10:31:26.896202+00:00",
+        "sample_id": "img_48ff5493",
+        "case_id": "case_img_48ff5493",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_48ff5493",
+        "iqa_status": "ungradable",
+        "dr_grade": null,
+        "dr_stage": null,
+        "confidence": null,
+        "uncertain_prediction": false,
+        "macula_risk_level": null,
+        "specialist_status": "SCREENED",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
+  },
+  "PAT-9UA9XI": {
+    "patient_id": "PAT-9UA9XI",
+    "name": "Nikhilesh Tirumareddi",
+    "age": 45,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 64.0,
+    "created_at": "2026-11-18T10:32:19.857492+00:00",
+    "updated_at": "2026-11-18T10:32:52.183010+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_0a5dcbea",
+        "date": "2026-11-18T10:32:19.857492+00:00",
+        "sample_id": "img_d4f3ad36",
+        "case_id": "case_img_d4f3ad36",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_d4f3ad36",
+        "iqa_status": "ungradable",
+        "dr_grade": null,
+        "dr_stage": null,
+        "confidence": null,
+        "uncertain_prediction": false,
+        "macula_risk_level": null,
+        "specialist_status": "SCREENED",
+        "specialist_grade": null,
+        "specialist_notes": null
+      },
+      {
+        "visit_id": "vis_82461e08",
+        "date": "2026-11-18T10:32:52.183010+00:00",
+        "sample_id": "img_cda59b40",
+        "case_id": "case_img_cda59b40",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_cda59b40",
+        "iqa_status": "gradable",
+        "dr_grade": 3,
+        "dr_stage": "Severe DR",
+        "confidence": 0.6295,
+        "uncertain_prediction": false,
+        "macula_risk_level": "POTENTIAL_RISK",
+        "specialist_status": "PENDING_REVIEW",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
+  },
+  "PAT-M4B51W": {
+    "patient_id": "PAT-M4B51W",
+    "name": "Lohith",
+    "age": 15,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 63.5,
+    "created_at": "2026-11-18T10:44:00.114882+00:00",
+    "updated_at": "2026-11-18T10:44:10.906226+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_5c4212a3",
+        "date": "2026-11-18T10:44:00.114882+00:00",
+        "sample_id": "img_984b372b",
+        "case_id": "case_img_984b372b",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_984b372b",
+        "iqa_status": "ungradable",
+        "dr_grade": null,
+        "dr_stage": null,
+        "confidence": null,
+        "uncertain_prediction": false,
+        "macula_risk_level": null,
+        "specialist_status": "SCREENED",
+        "specialist_grade": null,
+        "specialist_notes": null
+      },
+      {
+        "visit_id": "vis_519a42b0",
+        "date": "2026-11-18T10:44:10.906226+00:00",
+        "sample_id": "img_f13bb4a8",
+        "case_id": "case_img_f13bb4a8",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_f13bb4a8",
+        "iqa_status": "gradable",
+        "dr_grade": 3,
+        "dr_stage": "Severe DR",
+        "confidence": 0.6295,
+        "uncertain_prediction": false,
+        "macula_risk_level": "POTENTIAL_RISK",
+        "specialist_status": "PENDING_REVIEW",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
+  },
+  "PAT-Y7CCJ4": {
+    "patient_id": "PAT-Y7CCJ4",
+    "name": "madam",
+    "age": 45,
+    "gender": "Other",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 45.0,
+    "created_at": "2026-11-18T10:44:52.612511+00:00",
+    "updated_at": "2026-11-18T10:44:52.612511+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_171741ab",
+        "date": "2026-11-18T10:44:52.612511+00:00",
+        "sample_id": "img_90ee2738",
+        "case_id": "case_img_90ee2738",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_90ee2738",
+        "iqa_status": "gradable",
+        "dr_grade": 2,
+        "dr_stage": "Moderate DR",
+        "confidence": 0.7045,
+        "uncertain_prediction": false,
+        "macula_risk_level": "POTENTIAL_RISK",
+        "specialist_status": "PENDING_REVIEW",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
+  }
+}

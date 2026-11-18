@@ -11,7 +11,7 @@ export default function HomePage() {
         <div className="header">
           <div className="badge">
             <span className="badge-dot" />
-            Smart India Hackathon 2026
+            AI-Assisted Retinal Screening
           </div>
           <h1 className="title">NETRA</h1>
           <p className="subtitle">
@@ -134,7 +134,7 @@ export default function HomePage() {
       </main>
 
       <footer>
-        <p>© 2026 Netra AI Platform • Smart India Hackathon • For AI-Assisted Clinical Screening Support</p>
+        <p>© 2026 Netra AI Platform • For AI-Assisted Clinical Screening Support</p>
       </footer>
     </>
   );

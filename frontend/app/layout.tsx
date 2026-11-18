@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Netra - Explainable AI for Diabetic Retinopathy Screening',
-  description: 'Explainable AI solution for Diabetic Retinopathy Screening in Rural India (Smart India Hackathon 2026)',
+  description: 'Explainable AI solution for Diabetic Retinopathy Screening in Rural India',
 };
 
 export default function RootLayout({

@@ -2,14 +2,37 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { Language, translations } from "../lib/translations";
 
 export function Header() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [lang, setLang] = useState<Language>("en");
+  const [isOnline, setIsOnline] = useState<boolean>(true);
 
   useEffect(() => {
+    // Theme initialization
     const savedTheme = (localStorage.getItem("netra_theme") as "light" | "dark") || "light";
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
+
+    // Language initialization
+    const savedLang = (localStorage.getItem("netra_lang") as Language) || "en";
+    setLang(savedLang);
+
+    // Online / Offline status
+    if (typeof window !== "undefined") {
+      setIsOnline(navigator.onLine);
+      const handleOnline = () => setIsOnline(true);
+      const handleOffline = () => setIsOnline(false);
+
+      window.addEventListener("online", handleOnline);
+      window.addEventListener("offline", handleOffline);
+
+      return () => {
+        window.removeEventListener("online", handleOnline);
+        window.removeEventListener("offline", handleOffline);
+      };
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -19,12 +42,20 @@ export function Header() {
     document.documentElement.setAttribute("data-theme", nextTheme);
   };
 
+  const handleLanguageChange = (newLang: Language) => {
+    setLang(newLang);
+    localStorage.setItem("netra_lang", newLang);
+    window.dispatchEvent(new CustomEvent("netra_language_changed", { detail: newLang }));
+  };
+
+  const t = translations[lang] || translations.en;
+
   return (
     <header style={{
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      padding: "1.1rem 2rem",
+      padding: "0.9rem 2rem",
       borderBottom: "1px solid var(--header-border)",
       background: "var(--header-bg)",
       backdropFilter: "blur(12px)",
@@ -49,23 +80,80 @@ export function Header() {
         }}>
           N
         </div>
-        <span style={{ fontSize: "1.35rem", fontWeight: "800", color: "var(--text-main)", letterSpacing: "-0.02em" }}>
-          NETRA <span style={{ fontSize: "0.75rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "700" }}>XAI</span>
-        </span>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <span style={{ fontSize: "1.25rem", fontWeight: "800", color: "var(--text-main)", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+            NETRA <span style={{ fontSize: "0.7rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: "700" }}>XAI</span>
+          </span>
+          <span style={{ fontSize: "0.7rem", color: "var(--text-muted)", fontWeight: "500" }}>
+            Clinical DR Screening
+          </span>
+        </div>
       </Link>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "1.25rem" }}>
         <nav style={{ display: "flex", alignItems: "center", gap: "1.25rem" }}>
-          <Link href="/" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.95rem", fontWeight: "500" }}>
-            Overview
+          <Link href="/" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.92rem", fontWeight: "500" }}>
+            {t.navHome}
           </Link>
-          <Link href="/screening" style={{ color: "var(--primary)", textDecoration: "none", fontSize: "0.95rem", fontWeight: "600" }}>
-            Screening Portal
+          <Link href="/screening" style={{ color: "var(--primary)", textDecoration: "none", fontSize: "0.92rem", fontWeight: "600" }}>
+            {t.navScreening}
           </Link>
-          <Link href="/dashboard" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.95rem", fontWeight: "500" }}>
-            Telemedicine
+          <Link href="/dashboard" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.92rem", fontWeight: "500" }}>
+            {t.navDashboard}
           </Link>
         </nav>
+
+        {/* Connectivity Status Badge */}
+        <div
+          title={isOnline ? "Backend & Cloud Sync Connected" : "Operating in offline mode. Recapture/retry available upon reconnect."}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            padding: "0.25rem 0.65rem",
+            borderRadius: "9999px",
+            fontSize: "0.75rem",
+            fontWeight: "600",
+            background: isOnline ? "rgba(16, 185, 129, 0.12)" : "rgba(239, 68, 68, 0.15)",
+            color: isOnline ? "#059669" : "#dc2626",
+            border: `1px solid ${isOnline ? "rgba(16, 185, 129, 0.3)" : "rgba(239, 68, 68, 0.3)"}`,
+          }}
+        >
+          <span
+            style={{
+              width: "7px",
+              height: "7px",
+              borderRadius: "50%",
+              backgroundColor: isOnline ? "#10b981" : "#ef4444",
+              display: "inline-block",
+            }}
+          />
+          <span>{isOnline ? t.online : t.offline}</span>
+        </div>
+
+        {/* Language Selector */}
+        <div style={{ position: "relative" }}>
+          <select
+            value={lang}
+            onChange={(e) => handleLanguageChange(e.target.value as Language)}
+            aria-label="Select Language"
+            style={{
+              background: "var(--bg-card-subtle)",
+              color: "var(--text-main)",
+              border: "1px solid var(--border-card)",
+              padding: "0.35rem 0.65rem",
+              borderRadius: "8px",
+              fontSize: "0.82rem",
+              fontWeight: "600",
+              cursor: "pointer",
+              outline: "none",
+            }}
+          >
+            <option value="en">English (EN)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+          </select>
+        </div>
 
         {/* Theme Toggle Button */}
         <button
@@ -76,19 +164,18 @@ export function Header() {
             background: "var(--bg-card-subtle)",
             color: "var(--text-main)",
             border: "1px solid var(--border-card)",
-            padding: "0.4rem 0.8rem",
+            padding: "0.35rem 0.7rem",
             borderRadius: "8px",
-            fontSize: "0.85rem",
+            fontSize: "0.82rem",
             fontWeight: "600",
             cursor: "pointer",
             display: "inline-flex",
             alignItems: "center",
-            gap: "0.4rem",
+            gap: "0.35rem",
             transition: "all 0.2s ease"
           }}
         >
           <span>{theme === "light" ? "☀️" : "🌙"}</span>
-          <span>{theme === "light" ? "Light" : "Dark"}</span>
         </button>
       </div>
     </header>

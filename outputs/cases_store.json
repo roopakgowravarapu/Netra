@@ -1,0 +1,2098 @@
+{
+  "case_img_48ff5493": {
+    "case_id": "case_img_48ff5493",
+    "patient_id": "PAT-UOFTYY",
+    "patient_name": "Nikhilesh Tirumareddi",
+    "age": 41,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 36.0,
+    "eye_examined": "OD",
+    "patient_consent": true,
+    "created_at": "2026-11-18T10:31:26.896202+00:00",
+    "status": "RECAPTURE_REQUIRED",
+    "screening_report": {
+      "sample_id": "img_48ff5493",
+      "case_id": null,
+      "patient_id": "PAT-UOFTYY",
+      "patient_name": "Nikhilesh Tirumareddi",
+      "age": 41,
+      "gender": "Male",
+      "diabetes_type": "Type 2",
+      "diabetes_duration_years": 36.0,
+      "eye_examined": "OD",
+      "patient_consent": true,
+      "screening_date": "18/11/2026",
+      "screening_time": "04:01 PM",
+      "created_at": "2026-11-18T16:01:26.896202+05:30",
+      "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_48ff5493.png",
+      "image_quality": {
+        "score": 0.5757,
+        "status": "ungradable",
+        "issues": [
+          "Image is severely blurred (sharpness 6.8 < 80)."
+        ],
+        "metrics": {
+          "width": 2880.0,
+          "height": 2136.0,
+          "fov_ratio": 0.9138573527881815,
+          "laplacian_var": 6.767484188675633,
+          "raw_laplacian_var": 0.49213857009469664,
+          "brightness_mean": 112.65176228282355,
+          "contrast_std": 39.55035670482064,
+          "green_mean": 103.38176741154635
+        }
+      },
+      "dr_prediction": null,
+      "explanation": null,
+      "recommendation": "Image quality insufficient for automated DR evaluation. Please clean camera objective lens, adjust illumination and focus, and RECAPTURE fundus image. Instructions: Hold camera steady, allow autofocus to lock on retinal plane, and instruct patient to fixate on the target.",
+      "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+      "retinal_analysis": {
+        "quality_status": "UNGRADABLE",
+        "quality_score": 0.5757,
+        "quality_feedback": [
+          "Image is severely blurred (sharpness 6.8 < 80)."
+        ],
+        "recapture_instructions": "Image quality insufficient for automated DR evaluation. Please clean camera objective lens, adjust illumination and focus, and RECAPTURE fundus image. Instructions: Hold camera steady, allow autofocus to lock on retinal plane, and instruct patient to fixate on the target.",
+        "enhancement_applied": false,
+        "enhanced_image": null,
+        "retinal_structures": null,
+        "lesion_evidence": null,
+        "spatial_analysis": null,
+        "dr_grade": null,
+        "severity": "Ungradable",
+        "referable_dr": false,
+        "raw_confidence": 0.0,
+        "calibrated_confidence": 0.0,
+        "calibration_status": "Calibration not applicable to ungradable scans",
+        "gradcam_image": null,
+        "gradcam_description": "Grad-CAM unavailable for ungradable scans.",
+        "lesion_evidence_image": null,
+        "lesion_evidence_description": "Lesion evidence unavailable for ungradable scans.",
+        "annotated_report": null,
+        "referral_recommendation": "Image quality insufficient for automated DR evaluation. Please clean camera objective lens, adjust illumination and focus, and RECAPTURE fundus image. Instructions: Hold camera steady, allow autofocus to lock on retinal plane, and instruct patient to fixate on the target.",
+        "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+      }
+    },
+    "specialist_decision": null,
+    "override_grade": null,
+    "specialist_notes": null,
+    "specialist_id": null,
+    "updated_at": null,
+    "attempt": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-11-18T10:31:26.896202+00:00",
+        "screening_report": {
+          "sample_id": "img_48ff5493",
+          "case_id": null,
+          "patient_id": "PAT-UOFTYY",
+          "patient_name": "Nikhilesh Tirumareddi",
+          "age": 41,
+          "gender": "Male",
+          "diabetes_type": "Type 2",
+          "diabetes_duration_years": 36.0,
+          "eye_examined": "OD",
+          "patient_consent": true,
+          "screening_date": "18/11/2026",
+          "screening_time": "04:01 PM",
+          "created_at": "2026-11-18T16:01:26.896202+05:30",
+          "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_48ff5493.png",
+          "image_quality": {
+            "score": 0.5757,
+            "status": "ungradable",
+            "issues": [
+              "Image is severely blurred (sharpness 6.8 < 80)."
+            ],
+            "metrics": {
+              "width": 2880.0,
+              "height": 2136.0,
+              "fov_ratio": 0.9138573527881815,
+              "laplacian_var": 6.767484188675633,
+              "raw_laplacian_var": 0.49213857009469664,
+              "brightness_mean": 112.65176228282355,
+              "contrast_std": 39.55035670482064,
+              "green_mean": 103.38176741154635
+            }
+          },
+          "dr_prediction": null,
+          "explanation": null,
+          "recommendation": "Image quality insufficient for automated DR evaluation. Please clean camera objective lens, adjust illumination and focus, and RECAPTURE fundus image. Instructions: Hold camera steady, allow autofocus to lock on retinal plane, and instruct patient to fixate on the target.",
+          "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+          "retinal_analysis": {
+            "quality_status": "UNGRADABLE",
+            "quality_score": 0.5757,
+            "quality_feedback": [
+              "Image is severely blurred (sharpness 6.8 < 80)."
+            ],
+            "recapture_instructions": "Image quality insufficient for automated DR evaluation. Please clean camera objective lens, adjust illumination and focus, and RECAPTURE fundus image. Instructions: Hold camera steady, allow autofocus to lock on retinal plane, and instruct patient to fixate on the target.",
+            "enhancement_applied": false,
+            "enhanced_image": null,
+            "retinal_structures": null,
+            "lesion_evidence": null,
+            "spatial_analysis": null,
+            "dr_grade": null,
+            "severity": "Ungradable",
+            "referable_dr": false,
+            "raw_confidence": 0.0,
+            "calibrated_confidence": 0.0,
+            "calibration_status": "Calibration not applicable to ungradable scans",
+            "gradcam_image": null,
+            "gradcam_description": "Grad-CAM unavailable for ungradable scans.",
+            "lesion_evidence_image": null,
+            "lesion_evidence_description": "Lesion evidence unavailable for ungradable scans.",
+            "annotated_report": null,
+            "referral_recommendation": "Image quality insufficient for automated DR evaluation. Please clean camera objective lens, adjust illumination and focus, and RECAPTURE fundus image. Instructions: Hold camera steady, allow autofocus to lock on retinal plane, and instruct patient to fixate on the target.",
+            "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+          }
+        },
+        "specialist_decision": null,
+        "override_grade": null,
+        "specialist_notes": null,
+        "specialist_id": null
+      }
+    ],
+    "audit_trail": [
+      {
+        "timestamp": "2026-11-18T10:31:26.896202+00:00",
+        "actor": "system",
+        "action": "CASE_CREATED",
+        "details": "Initial automated screening completed. Status: RECAPTURE_REQUIRED"
+      }
+    ]
+  },
+  "case_img_d4f3ad36": {
+    "case_id": "case_img_d4f3ad36",
+    "patient_id": "PAT-9UA9XI",
+    "patient_name": "Nikhilesh Tirumareddi",
+    "age": 45,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 64.0,
+    "eye_examined": "OD",
+    "patient_consent": true,
+    "created_at": "2026-11-18T10:32:19.857492+00:00",
+    "status": "RECAPTURE_REQUIRED",
+    "screening_report": {
+      "sample_id": "img_d4f3ad36",
+      "case_id": null,
+      "patient_id": "PAT-9UA9XI",
+      "patient_name": "Nikhilesh Tirumareddi",
+      "age": 45,
+      "gender": "Male",
+      "diabetes_type": "Type 2",
+      "diabetes_duration_years": 64.0,
+      "eye_examined": "OD",
+      "patient_consent": true,
+      "screening_date": "18/11/2026",
+      "screening_time": "04:02 PM",
+      "created_at": "2026-11-18T16:02:19.857492+05:30",
+      "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_d4f3ad36.png",
+      "image_quality": {
+        "score": 0.9,
+        "status": "ungradable",
+        "issues": [
+          "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+        ],
+        "metrics": {
+          "width": 2880.0,
+          "height": 2136.0,
+          "fov_ratio": 0.8961651126196422,
+          "laplacian_var": 316.7046985872484,
+          "raw_laplacian_var": 3.786659824833233,
+          "brightness_mean": 107.0517796764461,
+          "contrast_std": 38.17655301329939,
+          "green_mean": 99.68862786170888
+        }
+      },
+      "dr_prediction": null,
+      "explanation": null,
+      "recommendation": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+      "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+      "retinal_analysis": {
+        "quality_status": "UNGRADABLE",
+        "quality_score": 0.175,
+        "quality_feedback": [
+          "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+        ],
+        "recapture_instructions": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+        "enhancement_applied": false,
+        "enhanced_image": null,
+        "retinal_structures": {
+          "optic_disc": null,
+          "fovea": null,
+          "vessel_mask": null,
+          "vessel_density": 0.0
+        },
+        "lesion_evidence": {
+          "microaneurysms": {
+            "detected": false,
+            "count": 0
+          },
+          "exudates": {
+            "detected": false,
+            "count": 0,
+            "area_pixels": 0
+          },
+          "hemorrhages": {
+            "detected": false,
+            "count": 0,
+            "severity": "None"
+          },
+          "neovascularization": {
+            "detected": false,
+            "site": "None"
+          },
+          "lesion_overlay": null
+        },
+        "spatial_analysis": null,
+        "dr_grade": 2,
+        "severity": "Moderate DR",
+        "referable_dr": true,
+        "raw_confidence": 0.7066,
+        "calibrated_confidence": 0.6163,
+        "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+        "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_d4f3ad36.png",
+        "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+        "lesion_evidence_image": null,
+        "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+        "annotated_report": null,
+        "referral_recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+        "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+      }
+    },
+    "specialist_decision": null,
+    "override_grade": null,
+    "specialist_notes": null,
+    "specialist_id": null,
+    "updated_at": null,
+    "attempt": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-11-18T10:32:19.857492+00:00",
+        "screening_report": {
+          "sample_id": "img_d4f3ad36",
+          "case_id": null,
+          "patient_id": "PAT-9UA9XI",
+          "patient_name": "Nikhilesh Tirumareddi",
+          "age": 45,
+          "gender": "Male",
+          "diabetes_type": "Type 2",
+          "diabetes_duration_years": 64.0,
+          "eye_examined": "OD",
+          "patient_consent": true,
+          "screening_date": "18/11/2026",
+          "screening_time": "04:02 PM",
+          "created_at": "2026-11-18T16:02:19.857492+05:30",
+          "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_d4f3ad36.png",
+          "image_quality": {
+            "score": 0.9,
+            "status": "ungradable",
+            "issues": [
+              "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+            ],
+            "metrics": {
+              "width": 2880.0,
+              "height": 2136.0,
+              "fov_ratio": 0.8961651126196422,
+              "laplacian_var": 316.7046985872484,
+              "raw_laplacian_var": 3.786659824833233,
+              "brightness_mean": 107.0517796764461,
+              "contrast_std": 38.17655301329939,
+              "green_mean": 99.68862786170888
+            }
+          },
+          "dr_prediction": null,
+          "explanation": null,
+          "recommendation": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+          "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+          "retinal_analysis": {
+            "quality_status": "UNGRADABLE",
+            "quality_score": 0.175,
+            "quality_feedback": [
+              "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+            ],
+            "recapture_instructions": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+            "enhancement_applied": false,
+            "enhanced_image": null,
+            "retinal_structures": {
+              "optic_disc": null,
+              "fovea": null,
+              "vessel_mask": null,
+              "vessel_density": 0.0
+            },
+            "lesion_evidence": {
+              "microaneurysms": {
+                "detected": false,
+                "count": 0
+              },
+              "exudates": {
+                "detected": false,
+                "count": 0,
+                "area_pixels": 0
+              },
+              "hemorrhages": {
+                "detected": false,
+                "count": 0,
+                "severity": "None"
+              },
+              "neovascularization": {
+                "detected": false,
+                "site": "None"
+              },
+              "lesion_overlay": null
+            },
+            "spatial_analysis": null,
+            "dr_grade": 2,
+            "severity": "Moderate DR",
+            "referable_dr": true,
+            "raw_confidence": 0.7066,
+            "calibrated_confidence": 0.6163,
+            "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+            "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_d4f3ad36.png",
+            "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+            "lesion_evidence_image": null,
+            "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+            "annotated_report": null,
+            "referral_recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+            "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+          }
+        },
+        "specialist_decision": null,
+        "override_grade": null,
+        "specialist_notes": null,
+        "specialist_id": null
+      }
+    ],
+    "audit_trail": [
+      {
+        "timestamp": "2026-11-18T10:32:19.857492+00:00",
+        "actor": "system",
+        "action": "CASE_CREATED",
+        "details": "Initial automated screening completed. Status: RECAPTURE_REQUIRED"
+      }
+    ]
+  },
+  "case_img_cda59b40": {
+    "case_id": "case_img_cda59b40",
+    "patient_id": "PAT-9UA9XI",
+    "patient_name": "Nikhilesh Tirumareddi",
+    "age": 45,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 64.0,
+    "eye_examined": "OD",
+    "patient_consent": true,
+    "created_at": "2026-11-18T10:32:52.180009+00:00",
+    "status": "REQUIRES_SPECIALIST_REVIEW",
+    "screening_report": {
+      "sample_id": "img_cda59b40",
+      "case_id": null,
+      "patient_id": "PAT-9UA9XI",
+      "patient_name": "Nikhilesh Tirumareddi",
+      "age": 45,
+      "gender": "Male",
+      "diabetes_type": "Type 2",
+      "diabetes_duration_years": 64.0,
+      "eye_examined": "OD",
+      "patient_consent": true,
+      "screening_date": "18/11/2026",
+      "screening_time": "04:02 PM",
+      "created_at": "2026-11-18T16:02:52.179009+05:30",
+      "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_cda59b40.png",
+      "image_quality": {
+        "score": 0.877,
+        "status": "gradable",
+        "issues": [],
+        "metrics": {
+          "width": 224.0,
+          "height": 224.0,
+          "fov_ratio": 0.8344826211734694,
+          "laplacian_var": 400.65234750591185,
+          "raw_laplacian_var": 400.65234750591185,
+          "brightness_mean": 86.1025390625,
+          "contrast_std": 41.75725704061167,
+          "green_mean": 93.44930859067135
+        }
+      },
+      "dr_prediction": {
+        "grade": 3,
+        "label": "Severe DR",
+        "confidence": 0.6295,
+        "raw_confidence": 0.7244,
+        "temperature": 1.3353,
+        "probabilities": {
+          "No DR": 0.0079,
+          "Mild DR": 0.0415,
+          "Moderate DR": 0.2592,
+          "Severe DR": 0.6295,
+          "Proliferative DR": 0.0619
+        },
+        "uncertainty": {
+          "entropy": 0.9839,
+          "margin": 0.3702
+        },
+        "uncertain_prediction": false,
+        "uncertainty_warning": null
+      },
+      "explanation": {
+        "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_cda59b40.png",
+        "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_cda59b40.png",
+        "target_class": 3
+      },
+      "recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+      "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+      "retinal_analysis": {
+        "quality_status": "GOOD",
+        "quality_score": 0.942,
+        "quality_feedback": [],
+        "recapture_instructions": "Image quality satisfies clinical grading criteria.",
+        "enhancement_applied": false,
+        "enhanced_image": null,
+        "retinal_structures": {
+          "optic_disc": {
+            "x": 127,
+            "y": 110,
+            "radius": 17,
+            "detected": true
+          },
+          "fovea": {
+            "x": 50,
+            "y": 121,
+            "detected": true
+          },
+          "vessel_mask": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\vessel_mask_img_cda59b40.png",
+          "vessel_density": 0.1052
+        },
+        "lesion_evidence": {
+          "microaneurysms": {
+            "detected": true,
+            "count": 56
+          },
+          "exudates": {
+            "detected": true,
+            "count": 28,
+            "area_pixels": 1804
+          },
+          "hemorrhages": {
+            "detected": true,
+            "count": 4,
+            "dot_blot_count": 3,
+            "flame_count": 1,
+            "severity": "Mild"
+          },
+          "neovascularization": {
+            "detected": false,
+            "site": "None"
+          },
+          "lesion_overlay": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_cda59b40.png"
+        },
+        "spatial_analysis": {
+          "spatial_map_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\spatial_map_img_cda59b40.png",
+          "macula_threat_level": "BORDERLINE",
+          "quadrants_affected_count": 4,
+          "affected_quadrants": [
+            "Superior-Temporal Quadrant",
+            "Inferior-Temporal Quadrant",
+            "Superior-Nasal Quadrant",
+            "Inferior-Nasal Quadrant"
+          ],
+          "primary_attention_hotspot": "Superior-Nasal Quadrant",
+          "zones": [
+            {
+              "zone_id": "macula",
+              "zone_name": "Macular & Perifoveal Zone",
+              "short_code": "MAC",
+              "status": "EARLY_SIGNS",
+              "status_label": "Early Microvascular Signs",
+              "lesion_summary": "9 microaneurysms",
+              "microaneurysms_count": 9,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.235,
+              "attention_peak": 0.978,
+              "anatomical_role": "Central visual field and foveal avascular zone (FAZ); determines reading and fine detail acuity.",
+              "clinical_explanation": "Early microaneurysms detected in the perifoveal boundary. Central foveal avascular zone remains intact, but regular follow-up is warranted to prevent macular edema."
+            },
+            {
+              "zone_id": "superior_temporal",
+              "zone_name": "Superior-Temporal Quadrant",
+              "short_code": "ST",
+              "status": "EARLY_SIGNS",
+              "status_label": "Early Microvascular Signs",
+              "lesion_summary": "1 microaneurysm",
+              "microaneurysms_count": 1,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.139,
+              "attention_peak": 0.943,
+              "anatomical_role": "Upper temporal vascular arcade; primary predilection site for microvascular leakage and dot-blot hemorrhages.",
+              "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.14 (peak: 0.94), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "inferior_temporal",
+              "zone_name": "Inferior-Temporal Quadrant",
+              "short_code": "IT",
+              "status": "EARLY_SIGNS",
+              "status_label": "Early Microvascular Signs",
+              "lesion_summary": "1 microaneurysm",
+              "microaneurysms_count": 1,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.002,
+              "attention_peak": 0.023,
+              "anatomical_role": "Lower temporal vascular arcade; critical pathway for inferior retinal perfusion and exudate deposition.",
+              "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.00 (peak: 0.02), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "superior_nasal",
+              "zone_name": "Superior-Nasal Quadrant",
+              "short_code": "SN",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage",
+              "microaneurysms_count": 27,
+              "exudates_count": 23,
+              "exudates_area_px": 1658,
+              "hemorrhages_count": 1,
+              "neovascularization": false,
+              "attention_mean": 0.191,
+              "attention_peak": 1.0,
+              "anatomical_role": "Superonasal field; monitored for multi-quadrant microaneurysm and hemorrhage spread under ETDRS standards.",
+              "clinical_explanation": "Active pathology observed: 27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage. Deep learning model attention score is 0.19 (peak: 1.00), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "inferior_nasal",
+              "zone_name": "Inferior-Nasal Quadrant",
+              "short_code": "IN",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages",
+              "microaneurysms_count": 18,
+              "exudates_count": 5,
+              "exudates_area_px": 146,
+              "hemorrhages_count": 3,
+              "neovascularization": false,
+              "attention_mean": 0.069,
+              "attention_peak": 0.348,
+              "anatomical_role": "Inferonasal field; monitored for peripheral hemorrhages indicating progression to severe non-proliferative DR.",
+              "clinical_explanation": "Active pathology observed: 18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages. Deep learning model attention score is 0.07 (peak: 0.35), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "peripapillary",
+              "zone_name": "Optic Disc & Peripapillary Margin",
+              "short_code": "OD",
+              "status": "CLEAR",
+              "status_label": "Normal / Clear",
+              "lesion_summary": "No microvascular lesions detected.",
+              "microaneurysms_count": 0,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.149,
+              "attention_peak": 0.372,
+              "anatomical_role": "Convergence of nerve fiber layer and retinal vessels; critical site for high-risk Neovascularization of Disc (NVD).",
+              "clinical_explanation": "\u2705 Optic disc perimeter intact: Disc margins are sharp with normal physiological architecture and zero peripapillary neovascularization."
+            }
+          ]
+        },
+        "dr_grade": 3,
+        "severity": "Severe DR",
+        "referable_dr": true,
+        "raw_confidence": 0.7244,
+        "calibrated_confidence": 0.6295,
+        "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+        "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_cda59b40.png",
+        "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+        "lesion_evidence_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_cda59b40.png",
+        "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+        "annotated_report": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\annotated_report_img_cda59b40.png",
+        "referral_recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+        "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+      }
+    },
+    "specialist_decision": null,
+    "override_grade": null,
+    "specialist_notes": null,
+    "specialist_id": null,
+    "updated_at": null,
+    "attempt": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-11-18T10:32:52.180009+00:00",
+        "screening_report": {
+          "sample_id": "img_cda59b40",
+          "case_id": null,
+          "patient_id": "PAT-9UA9XI",
+          "patient_name": "Nikhilesh Tirumareddi",
+          "age": 45,
+          "gender": "Male",
+          "diabetes_type": "Type 2",
+          "diabetes_duration_years": 64.0,
+          "eye_examined": "OD",
+          "patient_consent": true,
+          "screening_date": "18/11/2026",
+          "screening_time": "04:02 PM",
+          "created_at": "2026-11-18T16:02:52.179009+05:30",
+          "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_cda59b40.png",
+          "image_quality": {
+            "score": 0.877,
+            "status": "gradable",
+            "issues": [],
+            "metrics": {
+              "width": 224.0,
+              "height": 224.0,
+              "fov_ratio": 0.8344826211734694,
+              "laplacian_var": 400.65234750591185,
+              "raw_laplacian_var": 400.65234750591185,
+              "brightness_mean": 86.1025390625,
+              "contrast_std": 41.75725704061167,
+              "green_mean": 93.44930859067135
+            }
+          },
+          "dr_prediction": {
+            "grade": 3,
+            "label": "Severe DR",
+            "confidence": 0.6295,
+            "raw_confidence": 0.7244,
+            "temperature": 1.3353,
+            "probabilities": {
+              "No DR": 0.0079,
+              "Mild DR": 0.0415,
+              "Moderate DR": 0.2592,
+              "Severe DR": 0.6295,
+              "Proliferative DR": 0.0619
+            },
+            "uncertainty": {
+              "entropy": 0.9839,
+              "margin": 0.3702
+            },
+            "uncertain_prediction": false,
+            "uncertainty_warning": null
+          },
+          "explanation": {
+            "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_cda59b40.png",
+            "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_cda59b40.png",
+            "target_class": 3
+          },
+          "recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+          "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+          "retinal_analysis": {
+            "quality_status": "GOOD",
+            "quality_score": 0.942,
+            "quality_feedback": [],
+            "recapture_instructions": "Image quality satisfies clinical grading criteria.",
+            "enhancement_applied": false,
+            "enhanced_image": null,
+            "retinal_structures": {
+              "optic_disc": {
+                "x": 127,
+                "y": 110,
+                "radius": 17,
+                "detected": true
+              },
+              "fovea": {
+                "x": 50,
+                "y": 121,
+                "detected": true
+              },
+              "vessel_mask": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\vessel_mask_img_cda59b40.png",
+              "vessel_density": 0.1052
+            },
+            "lesion_evidence": {
+              "microaneurysms": {
+                "detected": true,
+                "count": 56
+              },
+              "exudates": {
+                "detected": true,
+                "count": 28,
+                "area_pixels": 1804
+              },
+              "hemorrhages": {
+                "detected": true,
+                "count": 4,
+                "dot_blot_count": 3,
+                "flame_count": 1,
+                "severity": "Mild"
+              },
+              "neovascularization": {
+                "detected": false,
+                "site": "None"
+              },
+              "lesion_overlay": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_cda59b40.png"
+            },
+            "spatial_analysis": {
+              "spatial_map_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\spatial_map_img_cda59b40.png",
+              "macula_threat_level": "BORDERLINE",
+              "quadrants_affected_count": 4,
+              "affected_quadrants": [
+                "Superior-Temporal Quadrant",
+                "Inferior-Temporal Quadrant",
+                "Superior-Nasal Quadrant",
+                "Inferior-Nasal Quadrant"
+              ],
+              "primary_attention_hotspot": "Superior-Nasal Quadrant",
+              "zones": [
+                {
+                  "zone_id": "macula",
+                  "zone_name": "Macular & Perifoveal Zone",
+                  "short_code": "MAC",
+                  "status": "EARLY_SIGNS",
+                  "status_label": "Early Microvascular Signs",
+                  "lesion_summary": "9 microaneurysms",
+                  "microaneurysms_count": 9,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.235,
+                  "attention_peak": 0.978,
+                  "anatomical_role": "Central visual field and foveal avascular zone (FAZ); determines reading and fine detail acuity.",
+                  "clinical_explanation": "Early microaneurysms detected in the perifoveal boundary. Central foveal avascular zone remains intact, but regular follow-up is warranted to prevent macular edema."
+                },
+                {
+                  "zone_id": "superior_temporal",
+                  "zone_name": "Superior-Temporal Quadrant",
+                  "short_code": "ST",
+                  "status": "EARLY_SIGNS",
+                  "status_label": "Early Microvascular Signs",
+                  "lesion_summary": "1 microaneurysm",
+                  "microaneurysms_count": 1,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.139,
+                  "attention_peak": 0.943,
+                  "anatomical_role": "Upper temporal vascular arcade; primary predilection site for microvascular leakage and dot-blot hemorrhages.",
+                  "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.14 (peak: 0.94), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "inferior_temporal",
+                  "zone_name": "Inferior-Temporal Quadrant",
+                  "short_code": "IT",
+                  "status": "EARLY_SIGNS",
+                  "status_label": "Early Microvascular Signs",
+                  "lesion_summary": "1 microaneurysm",
+                  "microaneurysms_count": 1,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.002,
+                  "attention_peak": 0.023,
+                  "anatomical_role": "Lower temporal vascular arcade; critical pathway for inferior retinal perfusion and exudate deposition.",
+                  "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.00 (peak: 0.02), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "superior_nasal",
+                  "zone_name": "Superior-Nasal Quadrant",
+                  "short_code": "SN",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage",
+                  "microaneurysms_count": 27,
+                  "exudates_count": 23,
+                  "exudates_area_px": 1658,
+                  "hemorrhages_count": 1,
+                  "neovascularization": false,
+                  "attention_mean": 0.191,
+                  "attention_peak": 1.0,
+                  "anatomical_role": "Superonasal field; monitored for multi-quadrant microaneurysm and hemorrhage spread under ETDRS standards.",
+                  "clinical_explanation": "Active pathology observed: 27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage. Deep learning model attention score is 0.19 (peak: 1.00), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "inferior_nasal",
+                  "zone_name": "Inferior-Nasal Quadrant",
+                  "short_code": "IN",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages",
+                  "microaneurysms_count": 18,
+                  "exudates_count": 5,
+                  "exudates_area_px": 146,
+                  "hemorrhages_count": 3,
+                  "neovascularization": false,
+                  "attention_mean": 0.069,
+                  "attention_peak": 0.348,
+                  "anatomical_role": "Inferonasal field; monitored for peripheral hemorrhages indicating progression to severe non-proliferative DR.",
+                  "clinical_explanation": "Active pathology observed: 18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages. Deep learning model attention score is 0.07 (peak: 0.35), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "peripapillary",
+                  "zone_name": "Optic Disc & Peripapillary Margin",
+                  "short_code": "OD",
+                  "status": "CLEAR",
+                  "status_label": "Normal / Clear",
+                  "lesion_summary": "No microvascular lesions detected.",
+                  "microaneurysms_count": 0,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.149,
+                  "attention_peak": 0.372,
+                  "anatomical_role": "Convergence of nerve fiber layer and retinal vessels; critical site for high-risk Neovascularization of Disc (NVD).",
+                  "clinical_explanation": "\u2705 Optic disc perimeter intact: Disc margins are sharp with normal physiological architecture and zero peripapillary neovascularization."
+                }
+              ]
+            },
+            "dr_grade": 3,
+            "severity": "Severe DR",
+            "referable_dr": true,
+            "raw_confidence": 0.7244,
+            "calibrated_confidence": 0.6295,
+            "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+            "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_cda59b40.png",
+            "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+            "lesion_evidence_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_cda59b40.png",
+            "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+            "annotated_report": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\annotated_report_img_cda59b40.png",
+            "referral_recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+            "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+          }
+        },
+        "specialist_decision": null,
+        "override_grade": null,
+        "specialist_notes": null,
+        "specialist_id": null
+      }
+    ],
+    "audit_trail": [
+      {
+        "timestamp": "2026-11-18T10:32:52.180009+00:00",
+        "actor": "system",
+        "action": "CASE_CREATED",
+        "details": "Initial automated screening completed. Status: REQUIRES_SPECIALIST_REVIEW"
+      }
+    ]
+  },
+  "case_img_984b372b": {
+    "case_id": "case_img_984b372b",
+    "patient_id": "PAT-M4B51W",
+    "patient_name": "Lohith",
+    "age": 15,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 63.5,
+    "eye_examined": "OD",
+    "patient_consent": true,
+    "created_at": "2026-11-18T10:44:00.106859+00:00",
+    "status": "RECAPTURE_REQUIRED",
+    "screening_report": {
+      "sample_id": "img_984b372b",
+      "case_id": null,
+      "patient_id": "PAT-M4B51W",
+      "patient_name": "Lohith",
+      "age": 15,
+      "gender": "Male",
+      "diabetes_type": "Type 2",
+      "diabetes_duration_years": 63.5,
+      "eye_examined": "OD",
+      "patient_consent": true,
+      "screening_date": "18/11/2026",
+      "screening_time": "04:14 PM",
+      "created_at": "2026-11-18T16:14:00.104853+05:30",
+      "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_984b372b.png",
+      "image_quality": {
+        "score": 0.9,
+        "status": "ungradable",
+        "issues": [
+          "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+        ],
+        "metrics": {
+          "width": 2880.0,
+          "height": 2136.0,
+          "fov_ratio": 0.8961651126196422,
+          "laplacian_var": 316.7046985872484,
+          "raw_laplacian_var": 3.786659824833233,
+          "brightness_mean": 107.0517796764461,
+          "contrast_std": 38.17655301329939,
+          "green_mean": 99.68862786170888
+        }
+      },
+      "dr_prediction": null,
+      "explanation": null,
+      "recommendation": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+      "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+      "retinal_analysis": {
+        "quality_status": "UNGRADABLE",
+        "quality_score": 0.175,
+        "quality_feedback": [
+          "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+        ],
+        "recapture_instructions": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+        "enhancement_applied": false,
+        "enhanced_image": null,
+        "retinal_structures": {
+          "optic_disc": null,
+          "fovea": null,
+          "vessel_mask": null,
+          "vessel_density": 0.0
+        },
+        "lesion_evidence": {
+          "microaneurysms": {
+            "detected": false,
+            "count": 0
+          },
+          "exudates": {
+            "detected": false,
+            "count": 0,
+            "area_pixels": 0
+          },
+          "hemorrhages": {
+            "detected": false,
+            "count": 0,
+            "severity": "None"
+          },
+          "neovascularization": {
+            "detected": false,
+            "site": "None"
+          },
+          "lesion_overlay": null
+        },
+        "spatial_analysis": null,
+        "dr_grade": 2,
+        "severity": "Moderate DR",
+        "referable_dr": true,
+        "raw_confidence": 0.7066,
+        "calibrated_confidence": 0.6163,
+        "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+        "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_984b372b.png",
+        "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+        "lesion_evidence_image": null,
+        "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+        "annotated_report": null,
+        "referral_recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+        "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+      }
+    },
+    "specialist_decision": null,
+    "override_grade": null,
+    "specialist_notes": null,
+    "specialist_id": null,
+    "updated_at": null,
+    "attempt": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-11-18T10:44:00.106859+00:00",
+        "screening_report": {
+          "sample_id": "img_984b372b",
+          "case_id": null,
+          "patient_id": "PAT-M4B51W",
+          "patient_name": "Lohith",
+          "age": 15,
+          "gender": "Male",
+          "diabetes_type": "Type 2",
+          "diabetes_duration_years": 63.5,
+          "eye_examined": "OD",
+          "patient_consent": true,
+          "screening_date": "18/11/2026",
+          "screening_time": "04:14 PM",
+          "created_at": "2026-11-18T16:14:00.104853+05:30",
+          "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_984b372b.png",
+          "image_quality": {
+            "score": 0.9,
+            "status": "ungradable",
+            "issues": [
+              "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+            ],
+            "metrics": {
+              "width": 2880.0,
+              "height": 2136.0,
+              "fov_ratio": 0.8961651126196422,
+              "laplacian_var": 316.7046985872484,
+              "raw_laplacian_var": 3.786659824833233,
+              "brightness_mean": 107.0517796764461,
+              "contrast_std": 38.17655301329939,
+              "green_mean": 99.68862786170888
+            }
+          },
+          "dr_prediction": null,
+          "explanation": null,
+          "recommendation": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+          "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+          "retinal_analysis": {
+            "quality_status": "UNGRADABLE",
+            "quality_score": 0.175,
+            "quality_feedback": [
+              "Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5)"
+            ],
+            "recapture_instructions": "Retake Required: Severe Blur / Cataract: Clean lens and adjust focus. (Focus score: 8.7 < 8.5) Clean lens and re-focus.",
+            "enhancement_applied": false,
+            "enhanced_image": null,
+            "retinal_structures": {
+              "optic_disc": null,
+              "fovea": null,
+              "vessel_mask": null,
+              "vessel_density": 0.0
+            },
+            "lesion_evidence": {
+              "microaneurysms": {
+                "detected": false,
+                "count": 0
+              },
+              "exudates": {
+                "detected": false,
+                "count": 0,
+                "area_pixels": 0
+              },
+              "hemorrhages": {
+                "detected": false,
+                "count": 0,
+                "severity": "None"
+              },
+              "neovascularization": {
+                "detected": false,
+                "site": "None"
+              },
+              "lesion_overlay": null
+            },
+            "spatial_analysis": null,
+            "dr_grade": 2,
+            "severity": "Moderate DR",
+            "referable_dr": true,
+            "raw_confidence": 0.7066,
+            "calibrated_confidence": 0.6163,
+            "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+            "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_984b372b.png",
+            "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+            "lesion_evidence_image": null,
+            "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+            "annotated_report": null,
+            "referral_recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+            "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+          }
+        },
+        "specialist_decision": null,
+        "override_grade": null,
+        "specialist_notes": null,
+        "specialist_id": null
+      }
+    ],
+    "audit_trail": [
+      {
+        "timestamp": "2026-11-18T10:44:00.106859+00:00",
+        "actor": "system",
+        "action": "CASE_CREATED",
+        "details": "Initial automated screening completed. Status: RECAPTURE_REQUIRED"
+      }
+    ]
+  },
+  "case_img_f13bb4a8": {
+    "case_id": "case_img_f13bb4a8",
+    "patient_id": "PAT-M4B51W",
+    "patient_name": "Lohith",
+    "age": 15,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 63.5,
+    "eye_examined": "OD",
+    "patient_consent": true,
+    "created_at": "2026-11-18T10:44:10.906226+00:00",
+    "status": "REQUIRES_SPECIALIST_REVIEW",
+    "screening_report": {
+      "sample_id": "img_f13bb4a8",
+      "case_id": null,
+      "patient_id": "PAT-M4B51W",
+      "patient_name": "Lohith",
+      "age": 15,
+      "gender": "Male",
+      "diabetes_type": "Type 2",
+      "diabetes_duration_years": 63.5,
+      "eye_examined": "OD",
+      "patient_consent": true,
+      "screening_date": "18/11/2026",
+      "screening_time": "04:14 PM",
+      "created_at": "2026-11-18T16:14:10.906226+05:30",
+      "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_f13bb4a8.png",
+      "image_quality": {
+        "score": 0.877,
+        "status": "gradable",
+        "issues": [],
+        "metrics": {
+          "width": 224.0,
+          "height": 224.0,
+          "fov_ratio": 0.8344826211734694,
+          "laplacian_var": 400.65234750591185,
+          "raw_laplacian_var": 400.65234750591185,
+          "brightness_mean": 86.1025390625,
+          "contrast_std": 41.75725704061167,
+          "green_mean": 93.44930859067135
+        }
+      },
+      "dr_prediction": {
+        "grade": 3,
+        "label": "Severe DR",
+        "confidence": 0.6295,
+        "raw_confidence": 0.7244,
+        "temperature": 1.3353,
+        "probabilities": {
+          "No DR": 0.0079,
+          "Mild DR": 0.0415,
+          "Moderate DR": 0.2592,
+          "Severe DR": 0.6295,
+          "Proliferative DR": 0.0619
+        },
+        "uncertainty": {
+          "entropy": 0.9839,
+          "margin": 0.3702
+        },
+        "uncertain_prediction": false,
+        "uncertainty_warning": null
+      },
+      "explanation": {
+        "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_f13bb4a8.png",
+        "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_f13bb4a8.png",
+        "target_class": 3
+      },
+      "recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+      "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+      "retinal_analysis": {
+        "quality_status": "GOOD",
+        "quality_score": 0.942,
+        "quality_feedback": [],
+        "recapture_instructions": "Image quality satisfies clinical grading criteria.",
+        "enhancement_applied": false,
+        "enhanced_image": null,
+        "retinal_structures": {
+          "optic_disc": {
+            "x": 127,
+            "y": 110,
+            "radius": 17,
+            "detected": true
+          },
+          "fovea": {
+            "x": 50,
+            "y": 121,
+            "detected": true
+          },
+          "vessel_mask": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\vessel_mask_img_f13bb4a8.png",
+          "vessel_density": 0.1052
+        },
+        "lesion_evidence": {
+          "microaneurysms": {
+            "detected": true,
+            "count": 56
+          },
+          "exudates": {
+            "detected": true,
+            "count": 28,
+            "area_pixels": 1804
+          },
+          "hemorrhages": {
+            "detected": true,
+            "count": 4,
+            "dot_blot_count": 3,
+            "flame_count": 1,
+            "severity": "Mild"
+          },
+          "neovascularization": {
+            "detected": false,
+            "site": "None"
+          },
+          "lesion_overlay": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_f13bb4a8.png"
+        },
+        "spatial_analysis": {
+          "spatial_map_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\spatial_map_img_f13bb4a8.png",
+          "macula_threat_level": "BORDERLINE",
+          "quadrants_affected_count": 4,
+          "affected_quadrants": [
+            "Superior-Temporal Quadrant",
+            "Inferior-Temporal Quadrant",
+            "Superior-Nasal Quadrant",
+            "Inferior-Nasal Quadrant"
+          ],
+          "primary_attention_hotspot": "Superior-Nasal Quadrant",
+          "zones": [
+            {
+              "zone_id": "macula",
+              "zone_name": "Macular & Perifoveal Zone",
+              "short_code": "MAC",
+              "status": "EARLY_SIGNS",
+              "status_label": "Early Microvascular Signs",
+              "lesion_summary": "9 microaneurysms",
+              "microaneurysms_count": 9,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.235,
+              "attention_peak": 0.978,
+              "anatomical_role": "Central visual field and foveal avascular zone (FAZ); determines reading and fine detail acuity.",
+              "clinical_explanation": "Early microaneurysms detected in the perifoveal boundary. Central foveal avascular zone remains intact, but regular follow-up is warranted to prevent macular edema."
+            },
+            {
+              "zone_id": "superior_temporal",
+              "zone_name": "Superior-Temporal Quadrant",
+              "short_code": "ST",
+              "status": "EARLY_SIGNS",
+              "status_label": "Early Microvascular Signs",
+              "lesion_summary": "1 microaneurysm",
+              "microaneurysms_count": 1,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.139,
+              "attention_peak": 0.943,
+              "anatomical_role": "Upper temporal vascular arcade; primary predilection site for microvascular leakage and dot-blot hemorrhages.",
+              "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.14 (peak: 0.94), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "inferior_temporal",
+              "zone_name": "Inferior-Temporal Quadrant",
+              "short_code": "IT",
+              "status": "EARLY_SIGNS",
+              "status_label": "Early Microvascular Signs",
+              "lesion_summary": "1 microaneurysm",
+              "microaneurysms_count": 1,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.002,
+              "attention_peak": 0.023,
+              "anatomical_role": "Lower temporal vascular arcade; critical pathway for inferior retinal perfusion and exudate deposition.",
+              "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.00 (peak: 0.02), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "superior_nasal",
+              "zone_name": "Superior-Nasal Quadrant",
+              "short_code": "SN",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage",
+              "microaneurysms_count": 27,
+              "exudates_count": 23,
+              "exudates_area_px": 1658,
+              "hemorrhages_count": 1,
+              "neovascularization": false,
+              "attention_mean": 0.191,
+              "attention_peak": 1.0,
+              "anatomical_role": "Superonasal field; monitored for multi-quadrant microaneurysm and hemorrhage spread under ETDRS standards.",
+              "clinical_explanation": "Active pathology observed: 27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage. Deep learning model attention score is 0.19 (peak: 1.00), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "inferior_nasal",
+              "zone_name": "Inferior-Nasal Quadrant",
+              "short_code": "IN",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages",
+              "microaneurysms_count": 18,
+              "exudates_count": 5,
+              "exudates_area_px": 146,
+              "hemorrhages_count": 3,
+              "neovascularization": false,
+              "attention_mean": 0.069,
+              "attention_peak": 0.348,
+              "anatomical_role": "Inferonasal field; monitored for peripheral hemorrhages indicating progression to severe non-proliferative DR.",
+              "clinical_explanation": "Active pathology observed: 18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages. Deep learning model attention score is 0.07 (peak: 0.35), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "peripapillary",
+              "zone_name": "Optic Disc & Peripapillary Margin",
+              "short_code": "OD",
+              "status": "CLEAR",
+              "status_label": "Normal / Clear",
+              "lesion_summary": "No microvascular lesions detected.",
+              "microaneurysms_count": 0,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.149,
+              "attention_peak": 0.372,
+              "anatomical_role": "Convergence of nerve fiber layer and retinal vessels; critical site for high-risk Neovascularization of Disc (NVD).",
+              "clinical_explanation": "\u2705 Optic disc perimeter intact: Disc margins are sharp with normal physiological architecture and zero peripapillary neovascularization."
+            }
+          ]
+        },
+        "dr_grade": 3,
+        "severity": "Severe DR",
+        "referable_dr": true,
+        "raw_confidence": 0.7244,
+        "calibrated_confidence": 0.6295,
+        "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+        "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_f13bb4a8.png",
+        "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+        "lesion_evidence_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_f13bb4a8.png",
+        "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+        "annotated_report": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\annotated_report_img_f13bb4a8.png",
+        "referral_recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+        "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+      }
+    },
+    "specialist_decision": null,
+    "override_grade": null,
+    "specialist_notes": null,
+    "specialist_id": null,
+    "updated_at": null,
+    "attempt": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-11-18T10:44:10.906226+00:00",
+        "screening_report": {
+          "sample_id": "img_f13bb4a8",
+          "case_id": null,
+          "patient_id": "PAT-M4B51W",
+          "patient_name": "Lohith",
+          "age": 15,
+          "gender": "Male",
+          "diabetes_type": "Type 2",
+          "diabetes_duration_years": 63.5,
+          "eye_examined": "OD",
+          "patient_consent": true,
+          "screening_date": "18/11/2026",
+          "screening_time": "04:14 PM",
+          "created_at": "2026-11-18T16:14:10.906226+05:30",
+          "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_f13bb4a8.png",
+          "image_quality": {
+            "score": 0.877,
+            "status": "gradable",
+            "issues": [],
+            "metrics": {
+              "width": 224.0,
+              "height": 224.0,
+              "fov_ratio": 0.8344826211734694,
+              "laplacian_var": 400.65234750591185,
+              "raw_laplacian_var": 400.65234750591185,
+              "brightness_mean": 86.1025390625,
+              "contrast_std": 41.75725704061167,
+              "green_mean": 93.44930859067135
+            }
+          },
+          "dr_prediction": {
+            "grade": 3,
+            "label": "Severe DR",
+            "confidence": 0.6295,
+            "raw_confidence": 0.7244,
+            "temperature": 1.3353,
+            "probabilities": {
+              "No DR": 0.0079,
+              "Mild DR": 0.0415,
+              "Moderate DR": 0.2592,
+              "Severe DR": 0.6295,
+              "Proliferative DR": 0.0619
+            },
+            "uncertainty": {
+              "entropy": 0.9839,
+              "margin": 0.3702
+            },
+            "uncertain_prediction": false,
+            "uncertainty_warning": null
+          },
+          "explanation": {
+            "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_f13bb4a8.png",
+            "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_f13bb4a8.png",
+            "target_class": 3
+          },
+          "recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+          "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+          "retinal_analysis": {
+            "quality_status": "GOOD",
+            "quality_score": 0.942,
+            "quality_feedback": [],
+            "recapture_instructions": "Image quality satisfies clinical grading criteria.",
+            "enhancement_applied": false,
+            "enhanced_image": null,
+            "retinal_structures": {
+              "optic_disc": {
+                "x": 127,
+                "y": 110,
+                "radius": 17,
+                "detected": true
+              },
+              "fovea": {
+                "x": 50,
+                "y": 121,
+                "detected": true
+              },
+              "vessel_mask": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\vessel_mask_img_f13bb4a8.png",
+              "vessel_density": 0.1052
+            },
+            "lesion_evidence": {
+              "microaneurysms": {
+                "detected": true,
+                "count": 56
+              },
+              "exudates": {
+                "detected": true,
+                "count": 28,
+                "area_pixels": 1804
+              },
+              "hemorrhages": {
+                "detected": true,
+                "count": 4,
+                "dot_blot_count": 3,
+                "flame_count": 1,
+                "severity": "Mild"
+              },
+              "neovascularization": {
+                "detected": false,
+                "site": "None"
+              },
+              "lesion_overlay": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_f13bb4a8.png"
+            },
+            "spatial_analysis": {
+              "spatial_map_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\spatial_map_img_f13bb4a8.png",
+              "macula_threat_level": "BORDERLINE",
+              "quadrants_affected_count": 4,
+              "affected_quadrants": [
+                "Superior-Temporal Quadrant",
+                "Inferior-Temporal Quadrant",
+                "Superior-Nasal Quadrant",
+                "Inferior-Nasal Quadrant"
+              ],
+              "primary_attention_hotspot": "Superior-Nasal Quadrant",
+              "zones": [
+                {
+                  "zone_id": "macula",
+                  "zone_name": "Macular & Perifoveal Zone",
+                  "short_code": "MAC",
+                  "status": "EARLY_SIGNS",
+                  "status_label": "Early Microvascular Signs",
+                  "lesion_summary": "9 microaneurysms",
+                  "microaneurysms_count": 9,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.235,
+                  "attention_peak": 0.978,
+                  "anatomical_role": "Central visual field and foveal avascular zone (FAZ); determines reading and fine detail acuity.",
+                  "clinical_explanation": "Early microaneurysms detected in the perifoveal boundary. Central foveal avascular zone remains intact, but regular follow-up is warranted to prevent macular edema."
+                },
+                {
+                  "zone_id": "superior_temporal",
+                  "zone_name": "Superior-Temporal Quadrant",
+                  "short_code": "ST",
+                  "status": "EARLY_SIGNS",
+                  "status_label": "Early Microvascular Signs",
+                  "lesion_summary": "1 microaneurysm",
+                  "microaneurysms_count": 1,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.139,
+                  "attention_peak": 0.943,
+                  "anatomical_role": "Upper temporal vascular arcade; primary predilection site for microvascular leakage and dot-blot hemorrhages.",
+                  "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.14 (peak: 0.94), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "inferior_temporal",
+                  "zone_name": "Inferior-Temporal Quadrant",
+                  "short_code": "IT",
+                  "status": "EARLY_SIGNS",
+                  "status_label": "Early Microvascular Signs",
+                  "lesion_summary": "1 microaneurysm",
+                  "microaneurysms_count": 1,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.002,
+                  "attention_peak": 0.023,
+                  "anatomical_role": "Lower temporal vascular arcade; critical pathway for inferior retinal perfusion and exudate deposition.",
+                  "clinical_explanation": "Active pathology observed: 1 microaneurysm. Deep learning model attention score is 0.00 (peak: 0.02), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "superior_nasal",
+                  "zone_name": "Superior-Nasal Quadrant",
+                  "short_code": "SN",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage",
+                  "microaneurysms_count": 27,
+                  "exudates_count": 23,
+                  "exudates_area_px": 1658,
+                  "hemorrhages_count": 1,
+                  "neovascularization": false,
+                  "attention_mean": 0.191,
+                  "attention_peak": 1.0,
+                  "anatomical_role": "Superonasal field; monitored for multi-quadrant microaneurysm and hemorrhage spread under ETDRS standards.",
+                  "clinical_explanation": "Active pathology observed: 27 microaneurysms, 23 hard exudate clusters (1658 px), 1 retinal hemorrhage. Deep learning model attention score is 0.19 (peak: 1.00), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "inferior_nasal",
+                  "zone_name": "Inferior-Nasal Quadrant",
+                  "short_code": "IN",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages",
+                  "microaneurysms_count": 18,
+                  "exudates_count": 5,
+                  "exudates_area_px": 146,
+                  "hemorrhages_count": 3,
+                  "neovascularization": false,
+                  "attention_mean": 0.069,
+                  "attention_peak": 0.348,
+                  "anatomical_role": "Inferonasal field; monitored for peripheral hemorrhages indicating progression to severe non-proliferative DR.",
+                  "clinical_explanation": "Active pathology observed: 18 microaneurysms, 5 hard exudate clusters (146 px), 3 retinal hemorrhages. Deep learning model attention score is 0.07 (peak: 0.35), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "peripapillary",
+                  "zone_name": "Optic Disc & Peripapillary Margin",
+                  "short_code": "OD",
+                  "status": "CLEAR",
+                  "status_label": "Normal / Clear",
+                  "lesion_summary": "No microvascular lesions detected.",
+                  "microaneurysms_count": 0,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.149,
+                  "attention_peak": 0.372,
+                  "anatomical_role": "Convergence of nerve fiber layer and retinal vessels; critical site for high-risk Neovascularization of Disc (NVD).",
+                  "clinical_explanation": "\u2705 Optic disc perimeter intact: Disc margins are sharp with normal physiological architecture and zero peripapillary neovascularization."
+                }
+              ]
+            },
+            "dr_grade": 3,
+            "severity": "Severe DR",
+            "referable_dr": true,
+            "raw_confidence": 0.7244,
+            "calibrated_confidence": 0.6295,
+            "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+            "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_f13bb4a8.png",
+            "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+            "lesion_evidence_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_f13bb4a8.png",
+            "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+            "annotated_report": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\annotated_report_img_f13bb4a8.png",
+            "referral_recommendation": "Severe Diabetic Retinopathy detected. Urgent referral to Retina Specialist within 1-2 weeks.",
+            "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+          }
+        },
+        "specialist_decision": null,
+        "override_grade": null,
+        "specialist_notes": null,
+        "specialist_id": null
+      }
+    ],
+    "audit_trail": [
+      {
+        "timestamp": "2026-11-18T10:44:10.906226+00:00",
+        "actor": "system",
+        "action": "CASE_CREATED",
+        "details": "Initial automated screening completed. Status: REQUIRES_SPECIALIST_REVIEW"
+      }
+    ]
+  },
+  "case_img_90ee2738": {
+    "case_id": "case_img_90ee2738",
+    "patient_id": "PAT-Y7CCJ4",
+    "patient_name": "madam",
+    "age": 45,
+    "gender": "Other",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 45.0,
+    "eye_examined": "OD",
+    "patient_consent": true,
+    "created_at": "2026-11-18T10:44:52.601201+00:00",
+    "status": "REQUIRES_SPECIALIST_REVIEW",
+    "screening_report": {
+      "sample_id": "img_90ee2738",
+      "case_id": null,
+      "patient_id": "PAT-Y7CCJ4",
+      "patient_name": "madam",
+      "age": 45,
+      "gender": "Other",
+      "diabetes_type": "Type 2",
+      "diabetes_duration_years": 45.0,
+      "eye_examined": "OD",
+      "patient_consent": true,
+      "screening_date": "18/11/2026",
+      "screening_time": "04:14 PM",
+      "created_at": "2026-11-18T16:14:52.601201+05:30",
+      "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_90ee2738.png",
+      "image_quality": {
+        "score": 0.7566,
+        "status": "gradable",
+        "issues": [],
+        "metrics": {
+          "width": 224.0,
+          "height": 224.0,
+          "fov_ratio": 0.7456552933673469,
+          "laplacian_var": 303.7439452091489,
+          "raw_laplacian_var": 303.7439452091489,
+          "brightness_mean": 51.31700414540816,
+          "contrast_std": 31.271195532673715,
+          "green_mean": 57.43587961725557
+        }
+      },
+      "dr_prediction": {
+        "grade": 2,
+        "label": "Moderate DR",
+        "confidence": 0.7045,
+        "raw_confidence": 0.8234,
+        "temperature": 1.3353,
+        "probabilities": {
+          "No DR": 0.0069,
+          "Mild DR": 0.1255,
+          "Moderate DR": 0.7045,
+          "Severe DR": 0.0748,
+          "Proliferative DR": 0.0882
+        },
+        "uncertainty": {
+          "entropy": 0.9499,
+          "margin": 0.579
+        },
+        "uncertain_prediction": false,
+        "uncertainty_warning": null
+      },
+      "explanation": {
+        "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_90ee2738.png",
+        "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_90ee2738.png",
+        "target_class": 2
+      },
+      "recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+      "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+      "retinal_analysis": {
+        "quality_status": "GOOD",
+        "quality_score": 0.887,
+        "quality_feedback": [],
+        "recapture_instructions": "Image quality satisfies clinical grading criteria.",
+        "enhancement_applied": false,
+        "enhanced_image": null,
+        "retinal_structures": {
+          "optic_disc": {
+            "x": 63,
+            "y": 0,
+            "radius": 17,
+            "detected": true
+          },
+          "fovea": {
+            "x": 168,
+            "y": 51,
+            "detected": true
+          },
+          "vessel_mask": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\vessel_mask_img_90ee2738.png",
+          "vessel_density": 0.1082
+        },
+        "lesion_evidence": {
+          "microaneurysms": {
+            "detected": true,
+            "count": 6
+          },
+          "exudates": {
+            "detected": true,
+            "count": 22,
+            "area_pixels": 1202
+          },
+          "hemorrhages": {
+            "detected": false,
+            "count": 0,
+            "dot_blot_count": 0,
+            "flame_count": 0,
+            "severity": "None"
+          },
+          "neovascularization": {
+            "detected": false,
+            "site": "None"
+          },
+          "lesion_overlay": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_90ee2738.png"
+        },
+        "spatial_analysis": {
+          "spatial_map_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\spatial_map_img_90ee2738.png",
+          "macula_threat_level": "LOW_RISK",
+          "quadrants_affected_count": 3,
+          "affected_quadrants": [
+            "Inferior-Temporal Quadrant",
+            "Superior-Nasal Quadrant",
+            "Inferior-Nasal Quadrant"
+          ],
+          "primary_attention_hotspot": "Inferior-Nasal Quadrant",
+          "zones": [
+            {
+              "zone_id": "macula",
+              "zone_name": "Macular & Perifoveal Zone",
+              "short_code": "MAC",
+              "status": "CLEAR",
+              "status_label": "Normal / Clear",
+              "lesion_summary": "No microvascular lesions detected.",
+              "microaneurysms_count": 0,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.013,
+              "attention_peak": 0.106,
+              "anatomical_role": "Central visual field and foveal avascular zone (FAZ); determines reading and fine detail acuity.",
+              "clinical_explanation": "\u2705 Central vision zone preserved: Foveal avascular zone is completely clear. No hard exudates, hemorrhages, or edema detected within the 2-disc-diameter macular ring."
+            },
+            {
+              "zone_id": "superior_temporal",
+              "zone_name": "Superior-Temporal Quadrant",
+              "short_code": "ST",
+              "status": "CLEAR",
+              "status_label": "Normal / Clear",
+              "lesion_summary": "No microvascular lesions detected.",
+              "microaneurysms_count": 0,
+              "exudates_count": 0,
+              "exudates_area_px": 0,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.0,
+              "attention_peak": 0.0,
+              "anatomical_role": "Upper temporal vascular arcade; primary predilection site for microvascular leakage and dot-blot hemorrhages.",
+              "clinical_explanation": "Quadrant appears structurally healthy with continuous vascular caliber and zero detectable microaneurysms, hemorrhages, or exudates."
+            },
+            {
+              "zone_id": "inferior_temporal",
+              "zone_name": "Inferior-Temporal Quadrant",
+              "short_code": "IT",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "2 microaneurysms, 1 hard exudate cluster (264 px)",
+              "microaneurysms_count": 2,
+              "exudates_count": 1,
+              "exudates_area_px": 264,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.094,
+              "attention_peak": 0.466,
+              "anatomical_role": "Lower temporal vascular arcade; critical pathway for inferior retinal perfusion and exudate deposition.",
+              "clinical_explanation": "Active pathology observed: 2 microaneurysms, 1 hard exudate cluster (264 px). Deep learning model attention score is 0.09 (peak: 0.47), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "superior_nasal",
+              "zone_name": "Superior-Nasal Quadrant",
+              "short_code": "SN",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "1 hard exudate cluster (76 px)",
+              "microaneurysms_count": 0,
+              "exudates_count": 1,
+              "exudates_area_px": 76,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.037,
+              "attention_peak": 0.171,
+              "anatomical_role": "Superonasal field; monitored for multi-quadrant microaneurysm and hemorrhage spread under ETDRS standards.",
+              "clinical_explanation": "Active pathology observed: 1 hard exudate cluster (76 px). Deep learning model attention score is 0.04 (peak: 0.17), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "inferior_nasal",
+              "zone_name": "Inferior-Nasal Quadrant",
+              "short_code": "IN",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "4 microaneurysms, 19 hard exudate clusters (852 px)",
+              "microaneurysms_count": 4,
+              "exudates_count": 19,
+              "exudates_area_px": 852,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.128,
+              "attention_peak": 1.0,
+              "anatomical_role": "Inferonasal field; monitored for peripheral hemorrhages indicating progression to severe non-proliferative DR.",
+              "clinical_explanation": "Active pathology observed: 4 microaneurysms, 19 hard exudate clusters (852 px). Deep learning model attention score is 0.13 (peak: 1.00), confirming prominent diagnostic focus in this quadrant."
+            },
+            {
+              "zone_id": "peripapillary",
+              "zone_name": "Optic Disc & Peripapillary Margin",
+              "short_code": "OD",
+              "status": "ACTIVE_LESIONS",
+              "status_label": "Active Microvascular Lesions",
+              "lesion_summary": "1 hard exudate cluster (10 px)",
+              "microaneurysms_count": 0,
+              "exudates_count": 1,
+              "exudates_area_px": 10,
+              "hemorrhages_count": 0,
+              "neovascularization": false,
+              "attention_mean": 0.054,
+              "attention_peak": 0.136,
+              "anatomical_role": "Convergence of nerve fiber layer and retinal vessels; critical site for high-risk Neovascularization of Disc (NVD).",
+              "clinical_explanation": "\u2705 Optic disc perimeter intact: Disc margins are sharp with normal physiological architecture and zero peripapillary neovascularization."
+            }
+          ]
+        },
+        "dr_grade": 2,
+        "severity": "Moderate DR",
+        "referable_dr": true,
+        "raw_confidence": 0.8234,
+        "calibrated_confidence": 0.7045,
+        "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+        "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_90ee2738.png",
+        "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+        "lesion_evidence_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_90ee2738.png",
+        "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+        "annotated_report": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\annotated_report_img_90ee2738.png",
+        "referral_recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+        "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+      }
+    },
+    "specialist_decision": null,
+    "override_grade": null,
+    "specialist_notes": null,
+    "specialist_id": null,
+    "updated_at": null,
+    "attempt": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-11-18T10:44:52.601201+00:00",
+        "screening_report": {
+          "sample_id": "img_90ee2738",
+          "case_id": null,
+          "patient_id": "PAT-Y7CCJ4",
+          "patient_name": "madam",
+          "age": 45,
+          "gender": "Other",
+          "diabetes_type": "Type 2",
+          "diabetes_duration_years": 45.0,
+          "eye_examined": "OD",
+          "patient_consent": true,
+          "screening_date": "18/11/2026",
+          "screening_time": "04:14 PM",
+          "created_at": "2026-11-18T16:14:52.601201+05:30",
+          "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_90ee2738.png",
+          "image_quality": {
+            "score": 0.7566,
+            "status": "gradable",
+            "issues": [],
+            "metrics": {
+              "width": 224.0,
+              "height": 224.0,
+              "fov_ratio": 0.7456552933673469,
+              "laplacian_var": 303.7439452091489,
+              "raw_laplacian_var": 303.7439452091489,
+              "brightness_mean": 51.31700414540816,
+              "contrast_std": 31.271195532673715,
+              "green_mean": 57.43587961725557
+            }
+          },
+          "dr_prediction": {
+            "grade": 2,
+            "label": "Moderate DR",
+            "confidence": 0.7045,
+            "raw_confidence": 0.8234,
+            "temperature": 1.3353,
+            "probabilities": {
+              "No DR": 0.0069,
+              "Mild DR": 0.1255,
+              "Moderate DR": 0.7045,
+              "Severe DR": 0.0748,
+              "Proliferative DR": 0.0882
+            },
+            "uncertainty": {
+              "entropy": 0.9499,
+              "margin": 0.579
+            },
+            "uncertain_prediction": false,
+            "uncertainty_warning": null
+          },
+          "explanation": {
+            "gradcam_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_90ee2738.png",
+            "original_image_path": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\original_img_90ee2738.png",
+            "target_class": 2
+          },
+          "recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+          "disclaimer": "Netra is an AI-assisted retinal screening and clinical decision-support platform. It does not replace a qualified ophthalmologist or constitute an autonomous medical diagnosis.",
+          "retinal_analysis": {
+            "quality_status": "GOOD",
+            "quality_score": 0.887,
+            "quality_feedback": [],
+            "recapture_instructions": "Image quality satisfies clinical grading criteria.",
+            "enhancement_applied": false,
+            "enhanced_image": null,
+            "retinal_structures": {
+              "optic_disc": {
+                "x": 63,
+                "y": 0,
+                "radius": 17,
+                "detected": true
+              },
+              "fovea": {
+                "x": 168,
+                "y": 51,
+                "detected": true
+              },
+              "vessel_mask": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\vessel_mask_img_90ee2738.png",
+              "vessel_density": 0.1082
+            },
+            "lesion_evidence": {
+              "microaneurysms": {
+                "detected": true,
+                "count": 6
+              },
+              "exudates": {
+                "detected": true,
+                "count": 22,
+                "area_pixels": 1202
+              },
+              "hemorrhages": {
+                "detected": false,
+                "count": 0,
+                "dot_blot_count": 0,
+                "flame_count": 0,
+                "severity": "None"
+              },
+              "neovascularization": {
+                "detected": false,
+                "site": "None"
+              },
+              "lesion_overlay": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_90ee2738.png"
+            },
+            "spatial_analysis": {
+              "spatial_map_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\spatial_map_img_90ee2738.png",
+              "macula_threat_level": "LOW_RISK",
+              "quadrants_affected_count": 3,
+              "affected_quadrants": [
+                "Inferior-Temporal Quadrant",
+                "Superior-Nasal Quadrant",
+                "Inferior-Nasal Quadrant"
+              ],
+              "primary_attention_hotspot": "Inferior-Nasal Quadrant",
+              "zones": [
+                {
+                  "zone_id": "macula",
+                  "zone_name": "Macular & Perifoveal Zone",
+                  "short_code": "MAC",
+                  "status": "CLEAR",
+                  "status_label": "Normal / Clear",
+                  "lesion_summary": "No microvascular lesions detected.",
+                  "microaneurysms_count": 0,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.013,
+                  "attention_peak": 0.106,
+                  "anatomical_role": "Central visual field and foveal avascular zone (FAZ); determines reading and fine detail acuity.",
+                  "clinical_explanation": "\u2705 Central vision zone preserved: Foveal avascular zone is completely clear. No hard exudates, hemorrhages, or edema detected within the 2-disc-diameter macular ring."
+                },
+                {
+                  "zone_id": "superior_temporal",
+                  "zone_name": "Superior-Temporal Quadrant",
+                  "short_code": "ST",
+                  "status": "CLEAR",
+                  "status_label": "Normal / Clear",
+                  "lesion_summary": "No microvascular lesions detected.",
+                  "microaneurysms_count": 0,
+                  "exudates_count": 0,
+                  "exudates_area_px": 0,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.0,
+                  "attention_peak": 0.0,
+                  "anatomical_role": "Upper temporal vascular arcade; primary predilection site for microvascular leakage and dot-blot hemorrhages.",
+                  "clinical_explanation": "Quadrant appears structurally healthy with continuous vascular caliber and zero detectable microaneurysms, hemorrhages, or exudates."
+                },
+                {
+                  "zone_id": "inferior_temporal",
+                  "zone_name": "Inferior-Temporal Quadrant",
+                  "short_code": "IT",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "2 microaneurysms, 1 hard exudate cluster (264 px)",
+                  "microaneurysms_count": 2,
+                  "exudates_count": 1,
+                  "exudates_area_px": 264,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.094,
+                  "attention_peak": 0.466,
+                  "anatomical_role": "Lower temporal vascular arcade; critical pathway for inferior retinal perfusion and exudate deposition.",
+                  "clinical_explanation": "Active pathology observed: 2 microaneurysms, 1 hard exudate cluster (264 px). Deep learning model attention score is 0.09 (peak: 0.47), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "superior_nasal",
+                  "zone_name": "Superior-Nasal Quadrant",
+                  "short_code": "SN",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "1 hard exudate cluster (76 px)",
+                  "microaneurysms_count": 0,
+                  "exudates_count": 1,
+                  "exudates_area_px": 76,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.037,
+                  "attention_peak": 0.171,
+                  "anatomical_role": "Superonasal field; monitored for multi-quadrant microaneurysm and hemorrhage spread under ETDRS standards.",
+                  "clinical_explanation": "Active pathology observed: 1 hard exudate cluster (76 px). Deep learning model attention score is 0.04 (peak: 0.17), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "inferior_nasal",
+                  "zone_name": "Inferior-Nasal Quadrant",
+                  "short_code": "IN",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "4 microaneurysms, 19 hard exudate clusters (852 px)",
+                  "microaneurysms_count": 4,
+                  "exudates_count": 19,
+                  "exudates_area_px": 852,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.128,
+                  "attention_peak": 1.0,
+                  "anatomical_role": "Inferonasal field; monitored for peripheral hemorrhages indicating progression to severe non-proliferative DR.",
+                  "clinical_explanation": "Active pathology observed: 4 microaneurysms, 19 hard exudate clusters (852 px). Deep learning model attention score is 0.13 (peak: 1.00), confirming prominent diagnostic focus in this quadrant."
+                },
+                {
+                  "zone_id": "peripapillary",
+                  "zone_name": "Optic Disc & Peripapillary Margin",
+                  "short_code": "OD",
+                  "status": "ACTIVE_LESIONS",
+                  "status_label": "Active Microvascular Lesions",
+                  "lesion_summary": "1 hard exudate cluster (10 px)",
+                  "microaneurysms_count": 0,
+                  "exudates_count": 1,
+                  "exudates_area_px": 10,
+                  "hemorrhages_count": 0,
+                  "neovascularization": false,
+                  "attention_mean": 0.054,
+                  "attention_peak": 0.136,
+                  "anatomical_role": "Convergence of nerve fiber layer and retinal vessels; critical site for high-risk Neovascularization of Disc (NVD).",
+                  "clinical_explanation": "\u2705 Optic disc perimeter intact: Disc margins are sharp with normal physiological architecture and zero peripapillary neovascularization."
+                }
+              ]
+            },
+            "dr_grade": 2,
+            "severity": "Moderate DR",
+            "referable_dr": true,
+            "raw_confidence": 0.8234,
+            "calibrated_confidence": 0.7045,
+            "calibration_status": "Temperature Scaled (T=1.34) on APTOS+DDR Validation Cohort",
+            "gradcam_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\gradcam_img_90ee2738.png",
+            "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+            "lesion_evidence_image": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\lesion_overlay_img_90ee2738.png",
+            "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
+            "annotated_report": "C:\\Users\\roopa\\Downloads\\Netra\\outputs\\explainability\\annotated_report_img_90ee2738.png",
+            "referral_recommendation": "Moderate Diabetic Retinopathy detected. Referral to Ophthalmologist for evaluation within 4-6 weeks.",
+            "macula_risk_description": "Spatial proximity assessment of lesions to the 2-disc-diameter macular ring. Autonomous DME diagnosis requires OCT confirmation."
+          }
+        },
+        "specialist_decision": null,
+        "override_grade": null,
+        "specialist_notes": null,
+        "specialist_id": null
+      }
+    ],
+    "audit_trail": [
+      {
+        "timestamp": "2026-11-18T10:44:52.601201+00:00",
+        "actor": "system",
+        "action": "CASE_CREATED",
+        "details": "Initial automated screening completed. Status: REQUIRES_SPECIALIST_REVIEW"
+      }
+    ]
+  }
+}

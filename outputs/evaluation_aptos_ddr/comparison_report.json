@@ -1,0 +1,2080 @@
+{
+  "old_model_checkpoint": "models/best_model.pth",
+  "new_model_checkpoint": "models/best_model_aptos_ddr.pth",
+  "idrid_external_status": "Unavailable locally without authentication: IEEE DataPort requires user login (https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid). SUSTech-SYSU (1,219 real clinical fundus photos with ICDR 0-4 grading) used for external clinical validation.",
+  "internal_test_overall": {
+    "old_baseline": {
+      "n_samples": 2392,
+      "accuracy": 0.0748,
+      "macro_precision": 0.2149,
+      "macro_recall": 0.2032,
+      "macro_f1": 0.034,
+      "weighted_precision": 0.0319,
+      "weighted_recall": 0.0748,
+      "weighted_f1": 0.0111,
+      "quadratic_weighted_kappa": -0.0002,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1195
+        },
+        "1": {
+          "name": "Mild",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 146
+        },
+        "2": {
+          "name": "Moderate",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 810
+        },
+        "3": {
+          "name": "Severe",
+          "precision": 1.0,
+          "recall": 0.0159,
+          "f1": 0.0312,
+          "support": 63
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.0744,
+          "recall": 1.0,
+          "f1": 0.1386,
+          "support": 178
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1195
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          146
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          810
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          62
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          178
+        ]
+      ],
+      "referable_dr": {
+        "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "precision": 0.4394,
+        "f1": 0.6105,
+        "roc_auc": 0.3684,
+        "tp": 1051,
+        "tn": 0,
+        "fp": 1341,
+        "fn": 0
+      },
+      "calibration": {
+        "temperature": 1.07,
+        "raw_ece": 0.6366,
+        "raw_mce": 0.9203,
+        "calibrated_ece": 0.6192,
+        "calibrated_mce": 0.92,
+        "calibrated_bins": {
+          "bins": [
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "accuracy": 0.0989399293286219,
+              "confidence": 0.4888380467891693,
+              "count": 283
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6000000000000001,
+              "accuracy": 0.07015902712815715,
+              "confidence": 0.5274689197540283,
+              "count": 1069
+            },
+            {
+              "bin_lower": 0.6000000000000001,
+              "bin_upper": 0.7000000000000001,
+              "accuracy": 0.10185185185185185,
+              "confidence": 0.6401146650314331,
+              "count": 108
+            },
+            {
+              "bin_lower": 0.7000000000000001,
+              "bin_upper": 0.8,
+              "accuracy": 0.09090909090909091,
+              "confidence": 0.7513488531112671,
+              "count": 88
+            },
+            {
+              "bin_lower": 0.8,
+              "bin_upper": 0.9,
+              "accuracy": 0.0625,
+              "confidence": 0.8470848202705383,
+              "count": 80
+            },
+            {
+              "bin_lower": 0.9,
+              "bin_upper": 1.0,
+              "accuracy": 0.06806282722513089,
+              "confidence": 0.9880332946777344,
+              "count": 764
+            }
+          ]
+        }
+      }
+    },
+    "new_aptos_ddr_single": {
+      "n_samples": 2392,
+      "accuracy": 0.8161,
+      "macro_precision": 0.7499,
+      "macro_recall": 0.6497,
+      "macro_f1": 0.6878,
+      "weighted_precision": 0.8074,
+      "weighted_recall": 0.8161,
+      "weighted_f1": 0.8052,
+      "quadratic_weighted_kappa": 0.827,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.8286,
+          "recall": 0.9707,
+          "f1": 0.894,
+          "support": 1195
+        },
+        "1": {
+          "name": "Mild",
+          "precision": 0.5301,
+          "recall": 0.3014,
+          "f1": 0.3843,
+          "support": 146
+        },
+        "2": {
+          "name": "Moderate",
+          "precision": 0.8239,
+          "recall": 0.7222,
+          "f1": 0.7697,
+          "support": 810
+        },
+        "3": {
+          "name": "Severe",
+          "precision": 0.7174,
+          "recall": 0.5238,
+          "f1": 0.6055,
+          "support": 63
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.8497,
+          "recall": 0.7303,
+          "f1": 0.7855,
+          "support": 178
+        }
+      },
+      "confusion_matrix": [
+        [
+          1160,
+          6,
+          27,
+          0,
+          2
+        ],
+        [
+          68,
+          44,
+          32,
+          0,
+          2
+        ],
+        [
+          169,
+          30,
+          585,
+          11,
+          15
+        ],
+        [
+          0,
+          0,
+          26,
+          33,
+          4
+        ],
+        [
+          3,
+          3,
+          40,
+          2,
+          130
+        ]
+      ],
+      "referable_dr": {
+        "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+        "sensitivity": 0.8049,
+        "specificity": 0.953,
+        "precision": 0.9307,
+        "f1": 0.8633,
+        "roc_auc": 0.9572,
+        "tp": 846,
+        "tn": 1278,
+        "fp": 63,
+        "fn": 205
+      },
+      "calibration": {
+        "temperature": 1.3353,
+        "raw_ece": 0.0498,
+        "raw_mce": 0.2753,
+        "calibrated_ece": 0.0299,
+        "calibrated_mce": 0.2646,
+        "calibrated_bins": {
+          "bins": [
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.30000000000000004,
+              "accuracy": 0.0,
+              "confidence": 0.2645895779132843,
+              "count": 1
+            },
+            {
+              "bin_lower": 0.30000000000000004,
+              "bin_upper": 0.4,
+              "accuracy": 0.46,
+              "confidence": 0.3663124144077301,
+              "count": 50
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "accuracy": 0.4807692307692308,
+              "confidence": 0.45575112104415894,
+              "count": 156
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6000000000000001,
+              "accuracy": 0.6336633663366337,
+              "confidence": 0.5515637397766113,
+              "count": 202
+            },
+            {
+              "bin_lower": 0.6000000000000001,
+              "bin_upper": 0.7000000000000001,
+              "accuracy": 0.6581196581196581,
+              "confidence": 0.6537120342254639,
+              "count": 234
+            },
+            {
+              "bin_lower": 0.7000000000000001,
+              "bin_upper": 0.8,
+              "accuracy": 0.7833333333333333,
+              "confidence": 0.75306236743927,
+              "count": 360
+            },
+            {
+              "bin_lower": 0.8,
+              "bin_upper": 0.9,
+              "accuracy": 0.8721934369602763,
+              "confidence": 0.8568554520606995,
+              "count": 579
+            },
+            {
+              "bin_lower": 0.9,
+              "bin_upper": 1.0,
+              "accuracy": 0.9691358024691358,
+              "confidence": 0.9378402829170227,
+              "count": 810
+            }
+          ]
+        }
+      }
+    },
+    "new_aptos_ddr_tta4": {
+      "n_samples": 2392,
+      "accuracy": 0.8181,
+      "macro_precision": 0.7439,
+      "macro_recall": 0.6414,
+      "macro_f1": 0.6801,
+      "weighted_precision": 0.8097,
+      "weighted_recall": 0.8181,
+      "weighted_f1": 0.8072,
+      "quadratic_weighted_kappa": 0.8342,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.8306,
+          "recall": 0.9724,
+          "f1": 0.8959,
+          "support": 1195
+        },
+        "1": {
+          "name": "Mild",
+          "precision": 0.5556,
+          "recall": 0.3082,
+          "f1": 0.3965,
+          "support": 146
+        },
+        "2": {
+          "name": "Moderate",
+          "precision": 0.8245,
+          "recall": 0.7309,
+          "f1": 0.7749,
+          "support": 810
+        },
+        "3": {
+          "name": "Severe",
+          "precision": 0.6383,
+          "recall": 0.4762,
+          "f1": 0.5455,
+          "support": 63
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.8707,
+          "recall": 0.7191,
+          "f1": 0.7877,
+          "support": 178
+        }
+      },
+      "confusion_matrix": [
+        [
+          1162,
+          6,
+          26,
+          0,
+          1
+        ],
+        [
+          69,
+          45,
+          31,
+          0,
+          1
+        ],
+        [
+          166,
+          27,
+          592,
+          13,
+          12
+        ],
+        [
+          0,
+          0,
+          28,
+          30,
+          5
+        ],
+        [
+          2,
+          3,
+          41,
+          4,
+          128
+        ]
+      ],
+      "referable_dr": {
+        "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+        "sensitivity": 0.8116,
+        "specificity": 0.956,
+        "precision": 0.9353,
+        "f1": 0.8691,
+        "roc_auc": 0.9593,
+        "tp": 853,
+        "tn": 1282,
+        "fp": 59,
+        "fn": 198
+      },
+      "calibration": {
+        "temperature": 1.3353,
+        "raw_ece": 0.0419,
+        "raw_mce": 0.1159,
+        "calibrated_ece": 0.0327,
+        "calibrated_mce": 0.1038,
+        "calibrated_bins": {
+          "bins": [
+            {
+              "bin_lower": 0.30000000000000004,
+              "bin_upper": 0.4,
+              "accuracy": 0.4791666666666667,
+              "confidence": 0.37539076805114746,
+              "count": 48
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "accuracy": 0.4429530201342282,
+              "confidence": 0.45632871985435486,
+              "count": 149
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6000000000000001,
+              "accuracy": 0.6089108910891089,
+              "confidence": 0.5531191825866699,
+              "count": 202
+            },
+            {
+              "bin_lower": 0.6000000000000001,
+              "bin_upper": 0.7000000000000001,
+              "accuracy": 0.7049180327868853,
+              "confidence": 0.6559023261070251,
+              "count": 244
+            },
+            {
+              "bin_lower": 0.7000000000000001,
+              "bin_upper": 0.8,
+              "accuracy": 0.7741046831955923,
+              "confidence": 0.7525827884674072,
+              "count": 363
+            },
+            {
+              "bin_lower": 0.8,
+              "bin_upper": 0.9,
+              "accuracy": 0.8831385642737897,
+              "confidence": 0.8586806654930115,
+              "count": 599
+            },
+            {
+              "bin_lower": 0.9,
+              "bin_upper": 1.0,
+              "accuracy": 0.9695044472681067,
+              "confidence": 0.9369069933891296,
+              "count": 787
+            }
+          ]
+        }
+      }
+    }
+  },
+  "internal_test_by_source": {
+    "APTOS_2019": {
+      "old_baseline": {
+        "n_samples": 528,
+        "accuracy": 0.0777,
+        "macro_precision": 0.0155,
+        "macro_recall": 0.2,
+        "macro_f1": 0.0288,
+        "weighted_precision": 0.006,
+        "weighted_recall": 0.0777,
+        "weighted_f1": 0.0112,
+        "quadratic_weighted_kappa": 0.0,
+        "per_class": {
+          "0": {
+            "name": "No DR",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 270
+          },
+          "1": {
+            "name": "Mild",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 51
+          },
+          "2": {
+            "name": "Moderate",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 139
+          },
+          "3": {
+            "name": "Severe",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 27
+          },
+          "4": {
+            "name": "Proliferative DR",
+            "precision": 0.0777,
+            "recall": 1.0,
+            "f1": 0.1441,
+            "support": 41
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            270
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            51
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            139
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            27
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            41
+          ]
+        ],
+        "referable_dr": {
+          "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+          "sensitivity": 1.0,
+          "specificity": 0.0,
+          "precision": 0.392,
+          "f1": 0.5633,
+          "roc_auc": 0.3401,
+          "tp": 207,
+          "tn": 0,
+          "fp": 321,
+          "fn": 0
+        },
+        "calibration": {
+          "temperature": 1.07,
+          "raw_ece": 0.62,
+          "raw_mce": 0.9258,
+          "calibrated_ece": 0.6019,
+          "calibrated_mce": 0.9233,
+          "calibrated_bins": {
+            "bins": [
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "accuracy": 0.08571428571428572,
+                "confidence": 0.4885505735874176,
+                "count": 70
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6000000000000001,
+                "accuracy": 0.08713692946058091,
+                "confidence": 0.5296449065208435,
+                "count": 241
+              },
+              {
+                "bin_lower": 0.6000000000000001,
+                "bin_upper": 0.7000000000000001,
+                "accuracy": 0.1,
+                "confidence": 0.6392148733139038,
+                "count": 30
+              },
+              {
+                "bin_lower": 0.7000000000000001,
+                "bin_upper": 0.8,
+                "accuracy": 0.05,
+                "confidence": 0.7393260598182678,
+                "count": 20
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "accuracy": 0.0,
+                "confidence": 0.8428404331207275,
+                "count": 15
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "accuracy": 0.06578947368421052,
+                "confidence": 0.9891144633293152,
+                "count": 152
+              }
+            ]
+          }
+        }
+      },
+      "new_aptos_ddr_single": {
+        "n_samples": 528,
+        "accuracy": 0.8504,
+        "macro_precision": 0.7652,
+        "macro_recall": 0.7124,
+        "macro_f1": 0.7349,
+        "weighted_precision": 0.8457,
+        "weighted_recall": 0.8504,
+        "weighted_f1": 0.8467,
+        "quadratic_weighted_kappa": 0.8914,
+        "per_class": {
+          "0": {
+            "name": "No DR",
+            "precision": 0.9571,
+            "recall": 0.9926,
+            "f1": 0.9745,
+            "support": 270
+          },
+          "1": {
+            "name": "Mild",
+            "precision": 0.6122,
+            "recall": 0.5882,
+            "f1": 0.6,
+            "support": 51
+          },
+          "2": {
+            "name": "Moderate",
+            "precision": 0.7639,
+            "recall": 0.7914,
+            "f1": 0.7774,
+            "support": 139
+          },
+          "3": {
+            "name": "Severe",
+            "precision": 0.75,
+            "recall": 0.5556,
+            "f1": 0.6383,
+            "support": 27
+          },
+          "4": {
+            "name": "Proliferative DR",
+            "precision": 0.7429,
+            "recall": 0.6341,
+            "f1": 0.6842,
+            "support": 41
+          }
+        },
+        "confusion_matrix": [
+          [
+            268,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            30,
+            13,
+            0,
+            2
+          ],
+          [
+            6,
+            14,
+            110,
+            4,
+            5
+          ],
+          [
+            0,
+            0,
+            10,
+            15,
+            2
+          ],
+          [
+            0,
+            3,
+            11,
+            1,
+            26
+          ]
+        ],
+        "referable_dr": {
+          "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+          "sensitivity": 0.8889,
+          "specificity": 0.9533,
+          "precision": 0.9246,
+          "f1": 0.9064,
+          "roc_auc": 0.9771,
+          "tp": 184,
+          "tn": 306,
+          "fp": 15,
+          "fn": 23
+        },
+        "calibration": {
+          "temperature": 1.3353,
+          "raw_ece": 0.0316,
+          "raw_mce": 0.2753,
+          "calibrated_ece": 0.0591,
+          "calibrated_mce": 0.2646,
+          "calibrated_bins": {
+            "bins": [
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.30000000000000004,
+                "accuracy": 0.0,
+                "confidence": 0.2645895779132843,
+                "count": 1
+              },
+              {
+                "bin_lower": 0.30000000000000004,
+                "bin_upper": 0.4,
+                "accuracy": 0.3333333333333333,
+                "confidence": 0.3722498118877411,
+                "count": 12
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "accuracy": 0.5405405405405406,
+                "confidence": 0.45046910643577576,
+                "count": 37
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6000000000000001,
+                "accuracy": 0.6808510638297872,
+                "confidence": 0.5515393018722534,
+                "count": 47
+              },
+              {
+                "bin_lower": 0.6000000000000001,
+                "bin_upper": 0.7000000000000001,
+                "accuracy": 0.6909090909090909,
+                "confidence": 0.6534337401390076,
+                "count": 55
+              },
+              {
+                "bin_lower": 0.7000000000000001,
+                "bin_upper": 0.8,
+                "accuracy": 0.8169014084507042,
+                "confidence": 0.7486773729324341,
+                "count": 71
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "accuracy": 0.9375,
+                "confidence": 0.857683539390564,
+                "count": 64
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "accuracy": 0.983402489626556,
+                "confidence": 0.9458107948303223,
+                "count": 241
+              }
+            ]
+          }
+        }
+      },
+      "new_aptos_ddr_tta4": {
+        "n_samples": 528,
+        "accuracy": 0.8523,
+        "macro_precision": 0.765,
+        "macro_recall": 0.7044,
+        "macro_f1": 0.7296,
+        "weighted_precision": 0.8477,
+        "weighted_recall": 0.8523,
+        "weighted_f1": 0.848,
+        "quadratic_weighted_kappa": 0.8989,
+        "per_class": {
+          "0": {
+            "name": "No DR",
+            "precision": 0.9606,
+            "recall": 0.9926,
+            "f1": 0.9763,
+            "support": 270
+          },
+          "1": {
+            "name": "Mild",
+            "precision": 0.625,
+            "recall": 0.5882,
+            "f1": 0.6061,
+            "support": 51
+          },
+          "2": {
+            "name": "Moderate",
+            "precision": 0.7584,
+            "recall": 0.8129,
+            "f1": 0.7847,
+            "support": 139
+          },
+          "3": {
+            "name": "Severe",
+            "precision": 0.7,
+            "recall": 0.5185,
+            "f1": 0.5957,
+            "support": 27
+          },
+          "4": {
+            "name": "Proliferative DR",
+            "precision": 0.7812,
+            "recall": 0.6098,
+            "f1": 0.6849,
+            "support": 41
+          }
+        },
+        "confusion_matrix": [
+          [
+            268,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            30,
+            14,
+            0,
+            1
+          ],
+          [
+            5,
+            13,
+            113,
+            5,
+            3
+          ],
+          [
+            0,
+            0,
+            10,
+            14,
+            3
+          ],
+          [
+            0,
+            3,
+            12,
+            1,
+            25
+          ]
+        ],
+        "referable_dr": {
+          "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+          "sensitivity": 0.8986,
+          "specificity": 0.9533,
+          "precision": 0.9254,
+          "f1": 0.9118,
+          "roc_auc": 0.9775,
+          "tp": 186,
+          "tn": 306,
+          "fp": 15,
+          "fn": 21
+        },
+        "calibration": {
+          "temperature": 1.3353,
+          "raw_ece": 0.0246,
+          "raw_mce": 0.3869,
+          "calibrated_ece": 0.0604,
+          "calibrated_mce": 0.1226,
+          "calibrated_bins": {
+            "bins": [
+              {
+                "bin_lower": 0.30000000000000004,
+                "bin_upper": 0.4,
+                "accuracy": 0.25,
+                "confidence": 0.3725977838039398,
+                "count": 12
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "accuracy": 0.5483870967741935,
+                "confidence": 0.4589177072048187,
+                "count": 31
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6000000000000001,
+                "accuracy": 0.6428571428571429,
+                "confidence": 0.5534167289733887,
+                "count": 56
+              },
+              {
+                "bin_lower": 0.6000000000000001,
+                "bin_upper": 0.7000000000000001,
+                "accuracy": 0.7291666666666666,
+                "confidence": 0.6549644470214844,
+                "count": 48
+              },
+              {
+                "bin_lower": 0.7000000000000001,
+                "bin_upper": 0.8,
+                "accuracy": 0.8472222222222222,
+                "confidence": 0.74395751953125,
+                "count": 72
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "accuracy": 0.875,
+                "confidence": 0.8538596630096436,
+                "count": 64
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "accuracy": 0.9877551020408163,
+                "confidence": 0.9457041025161743,
+                "count": 245
+              }
+            ]
+          }
+        }
+      }
+    },
+    "DDR": {
+      "old_baseline": {
+        "n_samples": 1864,
+        "accuracy": 0.074,
+        "macro_precision": 0.2147,
+        "macro_recall": 0.2056,
+        "macro_f1": 0.0382,
+        "weighted_precision": 0.0247,
+        "weighted_recall": 0.074,
+        "weighted_f1": 0.0111,
+        "quadratic_weighted_kappa": -0.0002,
+        "per_class": {
+          "0": {
+            "name": "No DR",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 925
+          },
+          "1": {
+            "name": "Mild",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 95
+          },
+          "2": {
+            "name": "Moderate",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 671
+          },
+          "3": {
+            "name": "Severe",
+            "precision": 1.0,
+            "recall": 0.0278,
+            "f1": 0.0541,
+            "support": 36
+          },
+          "4": {
+            "name": "Proliferative DR",
+            "precision": 0.0735,
+            "recall": 1.0,
+            "f1": 0.137,
+            "support": 137
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            925
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            95
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            671
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            35
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            137
+          ]
+        ],
+        "referable_dr": {
+          "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+          "sensitivity": 1.0,
+          "specificity": 0.0,
+          "precision": 0.4528,
+          "f1": 0.6233,
+          "roc_auc": 0.3724,
+          "tp": 844,
+          "tn": 0,
+          "fp": 1020,
+          "fn": 0
+        },
+        "calibration": {
+          "temperature": 1.07,
+          "raw_ece": 0.6413,
+          "raw_mce": 0.9189,
+          "calibrated_ece": 0.6241,
+          "calibrated_mce": 0.9191,
+          "calibrated_bins": {
+            "bins": [
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "accuracy": 0.10328638497652583,
+                "confidence": 0.4889325499534607,
+                "count": 213
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6000000000000001,
+                "accuracy": 0.06521739130434782,
+                "confidence": 0.5268355011940002,
+                "count": 828
+              },
+              {
+                "bin_lower": 0.6000000000000001,
+                "bin_upper": 0.7000000000000001,
+                "accuracy": 0.10256410256410256,
+                "confidence": 0.6404610276222229,
+                "count": 78
+              },
+              {
+                "bin_lower": 0.7000000000000001,
+                "bin_upper": 0.8,
+                "accuracy": 0.10294117647058823,
+                "confidence": 0.7548850178718567,
+                "count": 68
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "accuracy": 0.07692307692307693,
+                "confidence": 0.8480642437934875,
+                "count": 65
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "accuracy": 0.06862745098039216,
+                "confidence": 0.9877646565437317,
+                "count": 612
+              }
+            ]
+          }
+        }
+      },
+      "new_aptos_ddr_single": {
+        "n_samples": 1864,
+        "accuracy": 0.8063,
+        "macro_precision": 0.7242,
+        "macro_recall": 0.6157,
+        "macro_f1": 0.6507,
+        "weighted_precision": 0.7965,
+        "weighted_recall": 0.8063,
+        "weighted_f1": 0.7916,
+        "quadratic_weighted_kappa": 0.8084,
+        "per_class": {
+          "0": {
+            "name": "No DR",
+            "precision": 0.7964,
+            "recall": 0.9643,
+            "f1": 0.8724,
+            "support": 925
+          },
+          "1": {
+            "name": "Mild",
+            "precision": 0.4118,
+            "recall": 0.1474,
+            "f1": 0.2171,
+            "support": 95
+          },
+          "2": {
+            "name": "Moderate",
+            "precision": 0.8392,
+            "recall": 0.7079,
+            "f1": 0.768,
+            "support": 671
+          },
+          "3": {
+            "name": "Severe",
+            "precision": 0.6923,
+            "recall": 0.5,
+            "f1": 0.5806,
+            "support": 36
+          },
+          "4": {
+            "name": "Proliferative DR",
+            "precision": 0.8814,
+            "recall": 0.7591,
+            "f1": 0.8157,
+            "support": 137
+          }
+        },
+        "confusion_matrix": [
+          [
+            892,
+            4,
+            27,
+            0,
+            2
+          ],
+          [
+            62,
+            14,
+            19,
+            0,
+            0
+          ],
+          [
+            163,
+            16,
+            475,
+            7,
+            10
+          ],
+          [
+            0,
+            0,
+            16,
+            18,
+            2
+          ],
+          [
+            3,
+            0,
+            29,
+            1,
+            104
+          ]
+        ],
+        "referable_dr": {
+          "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+          "sensitivity": 0.7844,
+          "specificity": 0.9529,
+          "precision": 0.9324,
+          "f1": 0.852,
+          "roc_auc": 0.9482,
+          "tp": 662,
+          "tn": 972,
+          "fp": 48,
+          "fn": 182
+        },
+        "calibration": {
+          "temperature": 1.3353,
+          "raw_ece": 0.0616,
+          "raw_mce": 0.1779,
+          "calibrated_ece": 0.0233,
+          "calibrated_mce": 0.1356,
+          "calibrated_bins": {
+            "bins": [
+              {
+                "bin_lower": 0.30000000000000004,
+                "bin_upper": 0.4,
+                "accuracy": 0.5,
+                "confidence": 0.36443743109703064,
+                "count": 38
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "accuracy": 0.46218487394957986,
+                "confidence": 0.4573934078216553,
+                "count": 119
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6000000000000001,
+                "accuracy": 0.6193548387096774,
+                "confidence": 0.551571249961853,
+                "count": 155
+              },
+              {
+                "bin_lower": 0.6000000000000001,
+                "bin_upper": 0.7000000000000001,
+                "accuracy": 0.6480446927374302,
+                "confidence": 0.6537975072860718,
+                "count": 179
+              },
+              {
+                "bin_lower": 0.7000000000000001,
+                "bin_upper": 0.8,
+                "accuracy": 0.7750865051903114,
+                "confidence": 0.7541396021842957,
+                "count": 289
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "accuracy": 0.8640776699029126,
+                "confidence": 0.8567525148391724,
+                "count": 515
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "accuracy": 0.9630931458699473,
+                "confidence": 0.9344645738601685,
+                "count": 569
+              }
+            ]
+          }
+        }
+      },
+      "new_aptos_ddr_tta4": {
+        "n_samples": 1864,
+        "accuracy": 0.8085,
+        "macro_precision": 0.7166,
+        "macro_recall": 0.6069,
+        "macro_f1": 0.6413,
+        "weighted_precision": 0.7996,
+        "weighted_recall": 0.8085,
+        "weighted_f1": 0.7938,
+        "quadratic_weighted_kappa": 0.8157,
+        "per_class": {
+          "0": {
+            "name": "No DR",
+            "precision": 0.7982,
+            "recall": 0.9665,
+            "f1": 0.8743,
+            "support": 925
+          },
+          "1": {
+            "name": "Mild",
+            "precision": 0.4545,
+            "recall": 0.1579,
+            "f1": 0.2344,
+            "support": 95
+          },
+          "2": {
+            "name": "Moderate",
+            "precision": 0.8418,
+            "recall": 0.7139,
+            "f1": 0.7726,
+            "support": 671
+          },
+          "3": {
+            "name": "Severe",
+            "precision": 0.5926,
+            "recall": 0.4444,
+            "f1": 0.5079,
+            "support": 36
+          },
+          "4": {
+            "name": "Proliferative DR",
+            "precision": 0.8957,
+            "recall": 0.7518,
+            "f1": 0.8175,
+            "support": 137
+          }
+        },
+        "confusion_matrix": [
+          [
+            894,
+            4,
+            26,
+            0,
+            1
+          ],
+          [
+            63,
+            15,
+            17,
+            0,
+            0
+          ],
+          [
+            161,
+            14,
+            479,
+            8,
+            9
+          ],
+          [
+            0,
+            0,
+            18,
+            16,
+            2
+          ],
+          [
+            2,
+            0,
+            29,
+            3,
+            103
+          ]
+        ],
+        "referable_dr": {
+          "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+          "sensitivity": 0.7903,
+          "specificity": 0.9569,
+          "precision": 0.9381,
+          "f1": 0.8579,
+          "roc_auc": 0.9512,
+          "tp": 667,
+          "tn": 976,
+          "fp": 44,
+          "fn": 177
+        },
+        "calibration": {
+          "temperature": 1.3353,
+          "raw_ece": 0.0532,
+          "raw_mce": 0.232,
+          "calibrated_ece": 0.0295,
+          "calibrated_mce": 0.1792,
+          "calibrated_bins": {
+            "bins": [
+              {
+                "bin_lower": 0.30000000000000004,
+                "bin_upper": 0.4,
+                "accuracy": 0.5555555555555556,
+                "confidence": 0.37632179260253906,
+                "count": 36
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "accuracy": 0.4152542372881356,
+                "confidence": 0.4556485414505005,
+                "count": 118
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6000000000000001,
+                "accuracy": 0.5958904109589042,
+                "confidence": 0.5530050992965698,
+                "count": 146
+              },
+              {
+                "bin_lower": 0.6000000000000001,
+                "bin_upper": 0.7000000000000001,
+                "accuracy": 0.6989795918367347,
+                "confidence": 0.6561319231987,
+                "count": 196
+              },
+              {
+                "bin_lower": 0.7000000000000001,
+                "bin_upper": 0.8,
+                "accuracy": 0.7560137457044673,
+                "confidence": 0.7547168731689453,
+                "count": 291
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "accuracy": 0.8841121495327103,
+                "confidence": 0.8592574596405029,
+                "count": 535
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "accuracy": 0.9612546125461254,
+                "confidence": 0.9329304695129395,
+                "count": 542
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "external_validation_sustech_sysu": {
+    "old_baseline": {
+      "n_samples": 1219,
+      "accuracy": 0.0623,
+      "macro_precision": 0.0125,
+      "macro_recall": 0.2,
+      "macro_f1": 0.0235,
+      "weighted_precision": 0.0039,
+      "weighted_recall": 0.0623,
+      "weighted_f1": 0.0073,
+      "quadratic_weighted_kappa": 0.0,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 631
+        },
+        "1": {
+          "name": "Mild",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 24
+        },
+        "2": {
+          "name": "Moderate",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 401
+        },
+        "3": {
+          "name": "Severe",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 87
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.0623,
+          "recall": 1.0,
+          "f1": 0.1174,
+          "support": 76
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          631
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          24
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          401
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          87
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          76
+        ]
+      ],
+      "referable_dr": {
+        "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "precision": 0.4627,
+        "f1": 0.6326,
+        "roc_auc": 0.2694,
+        "tp": 564,
+        "tn": 0,
+        "fp": 655,
+        "fn": 0
+      },
+      "calibration": {
+        "temperature": 1.07,
+        "raw_ece": 0.6023,
+        "raw_mce": 0.9585,
+        "calibrated_ece": 0.5843,
+        "calibrated_mce": 0.9564,
+        "calibrated_bins": {
+          "bins": [
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "accuracy": 0.07272727272727272,
+              "confidence": 0.48462358117103577,
+              "count": 275
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6000000000000001,
+              "accuracy": 0.07850467289719626,
+              "confidence": 0.5209372043609619,
+              "count": 535
+            },
+            {
+              "bin_lower": 0.6000000000000001,
+              "bin_upper": 0.7000000000000001,
+              "accuracy": 0.04,
+              "confidence": 0.6451023817062378,
+              "count": 50
+            },
+            {
+              "bin_lower": 0.7000000000000001,
+              "bin_upper": 0.8,
+              "accuracy": 0.03571428571428571,
+              "confidence": 0.7409139275550842,
+              "count": 28
+            },
+            {
+              "bin_lower": 0.8,
+              "bin_upper": 0.9,
+              "accuracy": 0.037037037037037035,
+              "confidence": 0.835991382598877,
+              "count": 27
+            },
+            {
+              "bin_lower": 0.9,
+              "bin_upper": 1.0,
+              "accuracy": 0.03289473684210526,
+              "confidence": 0.9892702698707581,
+              "count": 304
+            }
+          ]
+        }
+      }
+    },
+    "new_aptos_ddr_single": {
+      "n_samples": 1219,
+      "accuracy": 0.6062,
+      "macro_precision": 0.5779,
+      "macro_recall": 0.5623,
+      "macro_f1": 0.5057,
+      "weighted_precision": 0.8228,
+      "weighted_recall": 0.6062,
+      "weighted_f1": 0.6608,
+      "quadratic_weighted_kappa": 0.7646,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.9902,
+          "recall": 0.4802,
+          "f1": 0.6467,
+          "support": 631
+        },
+        "1": {
+          "name": "Mild",
+          "precision": 0.045,
+          "recall": 0.5417,
+          "f1": 0.0831,
+          "support": 24
+        },
+        "2": {
+          "name": "Moderate",
+          "precision": 0.7059,
+          "recall": 0.8678,
+          "f1": 0.7785,
+          "support": 401
+        },
+        "3": {
+          "name": "Severe",
+          "precision": 0.619,
+          "recall": 0.4483,
+          "f1": 0.52,
+          "support": 87
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.5294,
+          "recall": 0.4737,
+          "f1": 0.5,
+          "support": 76
+        }
+      },
+      "confusion_matrix": [
+        [
+          303,
+          259,
+          69,
+          0,
+          0
+        ],
+        [
+          2,
+          13,
+          9,
+          0,
+          0
+        ],
+        [
+          1,
+          17,
+          348,
+          15,
+          20
+        ],
+        [
+          0,
+          0,
+          36,
+          39,
+          12
+        ],
+        [
+          0,
+          0,
+          31,
+          9,
+          36
+        ]
+      ],
+      "referable_dr": {
+        "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+        "sensitivity": 0.9681,
+        "specificity": 0.8809,
+        "precision": 0.875,
+        "f1": 0.9192,
+        "roc_auc": 0.9907,
+        "tp": 546,
+        "tn": 577,
+        "fp": 78,
+        "fn": 18
+      },
+      "calibration": {
+        "temperature": 1.3353,
+        "raw_ece": 0.1402,
+        "raw_mce": 0.2259,
+        "calibrated_ece": 0.0767,
+        "calibrated_mce": 0.1366,
+        "calibrated_bins": {
+          "bins": [
+            {
+              "bin_lower": 0.30000000000000004,
+              "bin_upper": 0.4,
+              "accuracy": 0.38461538461538464,
+              "confidence": 0.3745545744895935,
+              "count": 26
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "accuracy": 0.3756345177664975,
+              "confidence": 0.4622334837913513,
+              "count": 197
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6000000000000001,
+              "accuracy": 0.41434262948207173,
+              "confidence": 0.5509349703788757,
+              "count": 251
+            },
+            {
+              "bin_lower": 0.6000000000000001,
+              "bin_upper": 0.7000000000000001,
+              "accuracy": 0.5217391304347826,
+              "confidence": 0.6519428491592407,
+              "count": 230
+            },
+            {
+              "bin_lower": 0.7000000000000001,
+              "bin_upper": 0.8,
+              "accuracy": 0.7166666666666667,
+              "confidence": 0.7466183304786682,
+              "count": 180
+            },
+            {
+              "bin_lower": 0.8,
+              "bin_upper": 0.9,
+              "accuracy": 0.8660287081339713,
+              "confidence": 0.8503081202507019,
+              "count": 209
+            },
+            {
+              "bin_lower": 0.9,
+              "bin_upper": 1.0,
+              "accuracy": 0.9603174603174603,
+              "confidence": 0.9340817332267761,
+              "count": 126
+            }
+          ]
+        }
+      }
+    },
+    "new_aptos_ddr_tta4": {
+      "n_samples": 1219,
+      "accuracy": 0.612,
+      "macro_precision": 0.5835,
+      "macro_recall": 0.5901,
+      "macro_f1": 0.5129,
+      "weighted_precision": 0.8277,
+      "weighted_recall": 0.612,
+      "weighted_f1": 0.6649,
+      "quadratic_weighted_kappa": 0.7654,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.9934,
+          "recall": 0.4802,
+          "f1": 0.6474,
+          "support": 631
+        },
+        "1": {
+          "name": "Mild",
+          "precision": 0.055,
+          "recall": 0.6667,
+          "f1": 0.1016,
+          "support": 24
+        },
+        "2": {
+          "name": "Moderate",
+          "precision": 0.7134,
+          "recall": 0.8753,
+          "f1": 0.7861,
+          "support": 401
+        },
+        "3": {
+          "name": "Severe",
+          "precision": 0.6232,
+          "recall": 0.4943,
+          "f1": 0.5513,
+          "support": 87
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.5323,
+          "recall": 0.4342,
+          "f1": 0.4783,
+          "support": 76
+        }
+      },
+      "confusion_matrix": [
+        [
+          303,
+          261,
+          67,
+          0,
+          0
+        ],
+        [
+          1,
+          16,
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          14,
+          351,
+          16,
+          19
+        ],
+        [
+          0,
+          0,
+          34,
+          43,
+          10
+        ],
+        [
+          0,
+          0,
+          33,
+          10,
+          33
+        ]
+      ],
+      "referable_dr": {
+        "definition": "Grade >= 2 (Moderate, Severe, Proliferative DR)",
+        "sensitivity": 0.9734,
+        "specificity": 0.887,
+        "precision": 0.8812,
+        "f1": 0.925,
+        "roc_auc": 0.9916,
+        "tp": 549,
+        "tn": 581,
+        "fp": 74,
+        "fn": 15
+      },
+      "calibration": {
+        "temperature": 1.3353,
+        "raw_ece": 0.1283,
+        "raw_mce": 0.212,
+        "calibrated_ece": 0.0709,
+        "calibrated_mce": 0.1202,
+        "calibrated_bins": {
+          "bins": [
+            {
+              "bin_lower": 0.30000000000000004,
+              "bin_upper": 0.4,
+              "accuracy": 0.46153846153846156,
+              "confidence": 0.3698503375053406,
+              "count": 26
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "accuracy": 0.3399014778325123,
+              "confidence": 0.4601157009601593,
+              "count": 203
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6000000000000001,
+              "accuracy": 0.4573643410852713,
+              "confidence": 0.5464076995849609,
+              "count": 258
+            },
+            {
+              "bin_lower": 0.6000000000000001,
+              "bin_upper": 0.7000000000000001,
+              "accuracy": 0.5324675324675324,
+              "confidence": 0.6514854431152344,
+              "count": 231
+            },
+            {
+              "bin_lower": 0.7000000000000001,
+              "bin_upper": 0.8,
+              "accuracy": 0.7374301675977654,
+              "confidence": 0.7453872561454773,
+              "count": 179
+            },
+            {
+              "bin_lower": 0.8,
+              "bin_upper": 0.9,
+              "accuracy": 0.8719211822660099,
+              "confidence": 0.8529618978500366,
+              "count": 203
+            },
+            {
+              "bin_lower": 0.9,
+              "bin_upper": 1.0,
+              "accuracy": 0.9663865546218487,
+              "confidence": 0.9334385991096497,
+              "count": 119
+            }
+          ]
+        }
+      }
+    }
+  },
+  "gradcam_compatibility": {
+    "target_layer": "model.features[-1]",
+    "all_checks_passed": true,
+    "num_samples_tested": 7,
+    "samples": [
+      {
+        "sample": "internal_grade_0",
+        "true_label": 0,
+        "pred_label": 0,
+        "pred_confidence": 0.9426,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0,
+        "heatmap_max": 0.9941,
+        "heatmap_std": 0.2218,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/internal_grade_0.png"
+      },
+      {
+        "sample": "internal_grade_1",
+        "true_label": 1,
+        "pred_label": 2,
+        "pred_confidence": 0.4548,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0,
+        "heatmap_max": 0.9952,
+        "heatmap_std": 0.2376,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/internal_grade_1.png"
+      },
+      {
+        "sample": "internal_grade_2",
+        "true_label": 2,
+        "pred_label": 2,
+        "pred_confidence": 0.849,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0,
+        "heatmap_max": 0.9953,
+        "heatmap_std": 0.2291,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/internal_grade_2.png"
+      },
+      {
+        "sample": "internal_grade_3",
+        "true_label": 3,
+        "pred_label": 2,
+        "pred_confidence": 0.2753,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0,
+        "heatmap_max": 0.9909,
+        "heatmap_std": 0.1848,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/internal_grade_3.png"
+      },
+      {
+        "sample": "internal_grade_4",
+        "true_label": 4,
+        "pred_label": 2,
+        "pred_confidence": 0.8461,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0,
+        "heatmap_max": 0.9939,
+        "heatmap_std": 0.2351,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/internal_grade_4.png"
+      },
+      {
+        "sample": "external_grade_0",
+        "true_label": 0,
+        "pred_label": 0,
+        "pred_confidence": 0.8352,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0,
+        "heatmap_max": 0.9971,
+        "heatmap_std": 0.2006,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/external_grade_0.png"
+      },
+      {
+        "sample": "external_grade_3",
+        "true_label": 3,
+        "pred_label": 3,
+        "pred_confidence": 0.3994,
+        "heatmap_shape": [
+          224,
+          224
+        ],
+        "heatmap_min": 0.0006,
+        "heatmap_max": 0.994,
+        "heatmap_std": 0.2237,
+        "valid": true,
+        "overlay_path": "outputs/evaluation_aptos_ddr/gradcam_samples/external_grade_3.png"
+      }
+    ]
+  },
+  "preserved_old_synthetic_test_record": {
+    "dataset_evaluated": "data/processed/test.csv",
+    "total_test_samples": 550,
+    "overall_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "mean_confidence": 0.9984,
+    "confusion_matrix": [
+      [
+        271,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        56,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        29,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        44
+      ]
+    ],
+    "per_class_metrics": {
+      "class_0": {
+        "name": "Level 0: No DR",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 271
+      },
+      "class_1": {
+        "name": "Level 1: Mild DR",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 56
+      },
+      "class_2": {
+        "name": "Level 2: Moderate DR",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 150
+      },
+      "class_3": {
+        "name": "Level 3: Severe DR",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 29
+      },
+      "class_4": {
+        "name": "Level 4: Proliferative DR",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 44
+      }
+    }
+  }
+}

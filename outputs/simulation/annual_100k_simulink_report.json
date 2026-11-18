@@ -1,0 +1,19 @@
+{
+  "annual_patients_simulated": 100000,
+  "operating_days": 250,
+  "screening_stations": 20,
+  "system_status": "STABLE",
+  "hourly_screening_rate": 50.0,
+  "station_screening_rate": 2.5,
+  "network_transfer_time_sec": 16.0,
+  "ai_throughput_capacity_per_hour": 4000.0,
+  "referable_cases_per_hour": 11.0,
+  "specialist_reviewers_count": 4,
+  "specialist_utilization_pct": 18.3,
+  "average_queue_length_cases": 0.0,
+  "average_patient_wait_time_min": 0.0,
+  "bottlenecks": {
+    "network_latency": "HIGH: Rural upload latency dominates turnaround time. Recommend edge image compression.",
+    "specialist_review": "Specialist capacity is balanced (18.3% utilization). Response times within clinical targets."
+  }
+}

@@ -6,9 +6,10 @@ interface UploadZoneProps {
   onFileSelect: (file: File) => void;
   selectedFile: File | null;
   onClear: () => void;
+  loading?: boolean;
 }
 
-export function UploadZone({ onFileSelect, selectedFile, onClear }: UploadZoneProps) {
+export function UploadZone({ onFileSelect, selectedFile, onClear, loading }: UploadZoneProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragOver, setIsDragOver] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -121,22 +122,47 @@ export function UploadZone({ onFileSelect, selectedFile, onClear }: UploadZonePr
               {(selectedFile.size / (1024 * 1024)).toFixed(2)} MB
             </div>
           </div>
-          <button
-            onClick={onClear}
-            type="button"
-            style={{
-              background: "rgba(239, 68, 68, 0.12)",
-              color: "#ef4444",
-              border: "1px solid rgba(239, 68, 68, 0.3)",
-              padding: "0.4rem 0.9rem",
-              borderRadius: "6px",
-              cursor: "pointer",
-              fontWeight: "600",
-              fontSize: "0.85rem"
-            }}
-          >
-            Remove / Replace
-          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/bmp,image/jpg,.jpg,.jpeg,.png,.bmp"
+            onChange={handleChange}
+            style={{ display: "none" }}
+          />
+          <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              type="button"
+              style={{
+                background: "var(--primary-subtle)",
+                color: "var(--primary)",
+                border: "1px solid var(--primary-glow)",
+                padding: "0.4rem 0.9rem",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "0.85rem"
+              }}
+            >
+              🔄 Replace Image
+            </button>
+            <button
+              onClick={onClear}
+              type="button"
+              style={{
+                background: "rgba(239, 68, 68, 0.12)",
+                color: "#ef4444",
+                border: "1px solid rgba(239, 68, 68, 0.3)",
+                padding: "0.4rem 0.9rem",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "0.85rem"
+              }}
+            >
+              🗑️ Remove Image
+            </button>
+          </div>
         </div>
       </div>
     );

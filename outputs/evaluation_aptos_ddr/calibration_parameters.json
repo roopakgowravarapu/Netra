@@ -1,0 +1,7 @@
+{
+  "optimal_temperature": 1.3353,
+  "validation_raw_ece": 0.0453,
+  "validation_raw_mce": 0.0882,
+  "validation_calibrated_ece": 0.0288,
+  "validation_calibrated_mce": 0.0624
+}

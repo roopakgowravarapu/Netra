@@ -78,10 +78,10 @@ def run_simulation_suite():
     # Generate simulation_report.txt
     report_lines = [
         "==================================================",
-        "NETRA STEP 17: SIMULINK / OPERATIONAL SIMULATION REPORT",
+        "NETRA CLINICAL WORKLOAD & POPULATION OPERATIONAL SIMULATION REPORT",
         "==================================================",
-        "Simulink / MATLAB Environment Check: Executable not present in system PATH.",
-        "Reproducible SimEvents Script Generated: src/simulation/simulink_model.m",
+        "Operational Simulation Engine: Pure Python Discrete-Event Simulation Engine",
+        "Discrete-Event Operational Simulation Engine: src/simulation/screening_sim.py",
         "Python Discrete-Event Simulation Model: src/simulation/screening_sim.py",
         "",
         "--- Measured Parameters vs Simulation Assumptions ---",

@@ -1,0 +1,36 @@
+{
+  "model_name": "efficientnet_b0",
+  "pretrained": true,
+  "device": "cpu",
+  "cpu_threads": 12,
+  "freeze_until_feature_block": 4,
+  "total_parameters": 4013953,
+  "trainable_parameters": 3948223,
+  "batch_size": 64,
+  "epochs_max": 6,
+  "early_stopping_patience": 3,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "scheduler": "CosineAnnealingLR(eta_min=1e-5)",
+  "loss": "CrossEntropyLoss(power_0.65_class_weights, label_smoothing=0.03)",
+  "class_weights": [
+    0.3019,
+    1.1899,
+    0.3887,
+    2.0765,
+    1.0429
+  ],
+  "train_samples": 11145,
+  "validation_samples": 2391,
+  "train_class_counts": {
+    "0": 5575,
+    "1": 676,
+    "2": 3779,
+    "3": 287,
+    "4": 828
+  },
+  "selection_metric": "val_macro_f1",
+  "random_seed": 42,
+  "checkpoint_path": "models/best_model_aptos_ddr.pth"
+}

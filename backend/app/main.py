@@ -7,18 +7,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from backend.app.config.settings import settings
-from backend.app.routes import cases, health, predict
+from backend.app.routes import cases, health, patients, predict
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
-    description="Explainable AI for Diabetic Retinopathy Screening in Rural India",
+    description="Explainable AI for Diabetic Retinopathy Screening and Clinical Decision Support",
     version=settings.VERSION,
 )
 
 # CORS middleware for frontend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust for specific origin in production if needed
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,3 +33,4 @@ app.mount("/static", StaticFiles(directory=str(static_path)), name="static")
 app.include_router(health.router)
 app.include_router(predict.router)
 app.include_router(cases.router)
+app.include_router(patients.router)
