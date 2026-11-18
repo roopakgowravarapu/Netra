@@ -148,5 +148,63 @@
         "specialist_notes": null
       }
     ]
+  },
+  "PAT-H94X53": {
+    "patient_id": "PAT-H94X53",
+    "name": "Nikhilesh Tirumareddi",
+    "age": 52,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 45.0,
+    "created_at": "2026-11-18T10:56:58.310267+00:00",
+    "updated_at": "2026-11-18T10:56:58.310267+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_5814e0dc",
+        "date": "2026-11-18T10:56:58.310267+00:00",
+        "sample_id": "img_1ce0b752",
+        "case_id": "case_img_1ce0b752",
+        "eye_examined": "OS",
+        "image_path": "/api/cases/image/img_1ce0b752",
+        "iqa_status": "gradable",
+        "dr_grade": 2,
+        "dr_stage": "Moderate DR",
+        "confidence": 0.7045,
+        "uncertain_prediction": false,
+        "macula_risk_level": "POTENTIAL_RISK",
+        "specialist_status": "PENDING_REVIEW",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
+  },
+  "PAT-PW3SU9": {
+    "patient_id": "PAT-PW3SU9",
+    "name": "Nikhilesh Tirumareddi",
+    "age": 45,
+    "gender": "Female",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 45.0,
+    "created_at": "2026-11-18T11:01:16.144033+00:00",
+    "updated_at": "2026-11-18T11:01:16.144033+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_b8fe26b6",
+        "date": "2026-11-18T11:01:16.144033+00:00",
+        "sample_id": "img_667be5d8",
+        "case_id": "case_img_667be5d8",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_667be5d8",
+        "iqa_status": "gradable",
+        "dr_grade": 2,
+        "dr_stage": "Moderate DR",
+        "confidence": 0.7045,
+        "uncertain_prediction": false,
+        "macula_risk_level": "POTENTIAL_RISK",
+        "specialist_status": "PENDING_REVIEW",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
   }
 }
