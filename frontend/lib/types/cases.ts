@@ -39,6 +39,14 @@ export interface CaseItem {
   specialist_id?: string | null;
   updated_at?: string | null;
   attempt?: number;
+  clinical_approval?: "APPROVED" | "REJECTED" | string | null;
+  clinical_approved_at?: string | null;
+  clinical_approved_by?: string | null;
+  clinical_approval_notes?: string | null;
+  referred_to_doctor?: boolean;
+  referred_at?: string | null;
+  referred_by?: string | null;
+  referral_notes?: string | null;
   history?: CaseHistoryItem[];
   audit_trail?: CaseAuditEntry[];
   screening_report: ScreeningReport;

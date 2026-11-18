@@ -129,13 +129,55 @@ export async function submitSpecialistReview(
     return await res.json();
 }
 
-export async function referCaseToDoctor(caseId: string, notes?: string): Promise<CaseItem> {
-    const res = await fetch(`${API_BASE_URL}/api/cases/${caseId}/refer`, {
+export async function fetchDoctorCases(): Promise<CaseItem[]> {
+    const res = await fetch(`${API_BASE_URL}/api/cases/doctor-queue`, { method: "GET" });
+    if (!res.ok) throw new Error("Failed to fetch doctor portal queue");
+    return await res.json();
+}
+
+export async function submitClinicalApproval(
+    caseId: string,
+    decision: "APPROVE" | "REJECT",
+    clinicianId?: string,
+    notes?: string
+): Promise<CaseItem> {
+    const res = await fetch(`${API_BASE_URL}/api/cases/${encodeURIComponent(caseId)}/clinical-approval`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ referral_notes: notes || "" }),
+        body: JSON.stringify({
+            decision,
+            clinician_id: clinicianId || "clinician_on_duty",
+            notes: notes || "",
+        }),
     });
-    if (!res.ok) throw new Error("Failed to refer case to specialist");
+    if (!res.ok) {
+        let err = "Failed to record clinical approval";
+        try {
+            const d = await res.json();
+            err = d.detail || err;
+        } catch { }
+        throw new Error(err);
+    }
+    return await res.json();
+}
+
+export async function referCaseToDoctor(caseId: string, clinicianId?: string, notes?: string): Promise<CaseItem> {
+    const res = await fetch(`${API_BASE_URL}/api/cases/${encodeURIComponent(caseId)}/refer-to-doctor`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            clinician_id: clinicianId || "clinician_on_duty",
+            referral_notes: notes || "",
+        }),
+    });
+    if (!res.ok) {
+        let err = "Failed to refer case to doctor";
+        try {
+            const d = await res.json();
+            err = d.detail || err;
+        } catch { }
+        throw new Error(err);
+    }
     return await res.json();
 }
 

@@ -98,8 +98,8 @@ export function Header() {
           <Link href="/screening" style={{ color: "var(--primary)", textDecoration: "none", fontSize: "0.92rem", fontWeight: "600" }}>
             {t.navScreening}
           </Link>
-          <Link href="/dashboard" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.92rem", fontWeight: "500" }}>
-            {t.navDashboard}
+          <Link href="/doctor" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.92rem", fontWeight: "500" }}>
+            {t.navDoctor}
           </Link>
         </nav>
 

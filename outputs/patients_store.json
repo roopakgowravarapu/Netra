@@ -1,1 +1,31 @@
-{}
+{
+  "PAT-3Z0TDN": {
+    "patient_id": "PAT-3Z0TDN",
+    "name": "Nikhilesh Tirumareddi",
+    "age": 45,
+    "gender": "Male",
+    "diabetes_type": "Type 2",
+    "diabetes_duration_years": 45.0,
+    "created_at": "2026-11-18T12:28:03.544517+00:00",
+    "updated_at": "2026-11-18T12:28:03.544517+00:00",
+    "visits": [
+      {
+        "visit_id": "vis_cd56aa6e",
+        "date": "2026-11-18T12:28:03.544517+00:00",
+        "sample_id": "img_94154b72",
+        "case_id": "case_img_94154b72",
+        "eye_examined": "OD",
+        "image_path": "/api/cases/image/img_94154b72",
+        "iqa_status": "gradable",
+        "dr_grade": 3,
+        "dr_stage": "Severe DR",
+        "confidence": 0.6295,
+        "uncertain_prediction": false,
+        "macula_risk_level": "POTENTIAL_RISK",
+        "specialist_status": "PENDING_REVIEW",
+        "specialist_grade": null,
+        "specialist_notes": null
+      }
+    ]
+  }
+}

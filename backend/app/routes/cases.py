@@ -2,7 +2,12 @@
 
 from typing import List, Optional
 from fastapi import APIRouter, HTTPException, File, Form, UploadFile
-from backend.app.schemas.cases import ScreeningCaseSchema, SpecialistReviewRequest
+from backend.app.schemas.cases import (
+    ScreeningCaseSchema,
+    SpecialistReviewRequest,
+    ClinicalApprovalRequest,
+    DoctorReferralRequest,
+)
 from backend.app.services.case_service import (
     create_screening_case,
     get_all_cases,
@@ -11,10 +16,19 @@ from backend.app.services.case_service import (
     delete_all_cases,
     submit_specialist_review,
     recapture_case,
+    record_clinical_approval,
+    refer_case_to_doctor,
+    get_doctor_cases,
 )
 from backend.app.services.screening_service import process_image_upload
 
 router = APIRouter(prefix="/api/cases", tags=["Telemedicine"])
+
+
+@router.get("/doctor-queue", response_model=List[ScreeningCaseSchema])
+def list_doctor_cases():
+    """Lists eligible approved cases referred to the Doctor Portal."""
+    return get_doctor_cases()
 
 
 @router.post("", response_model=ScreeningCaseSchema)
@@ -54,6 +68,18 @@ async def recapture_case_image(case_id: str, file: UploadFile = File(...)):
     """Uploads a replacement fundus scan for a case in RECAPTURE_REQUIRED and triggers re-analysis."""
     report_dict = await process_image_upload(file)
     return recapture_case(case_id, report_dict)
+
+
+@router.post("/{case_id}/clinical-approval", response_model=ScreeningCaseSchema)
+def approve_case_clinically(case_id: str, request: ClinicalApprovalRequest):
+    """Records clinician approval or rejection for referral with one-way locked decision."""
+    return record_clinical_approval(case_id, request)
+
+
+@router.post("/{case_id}/refer-to-doctor", response_model=ScreeningCaseSchema)
+def send_case_to_doctor(case_id: str, request: DoctorReferralRequest):
+    """Submits an approved case to the Doctor Portal queue."""
+    return refer_case_to_doctor(case_id, request)
 
 
 @router.delete("")

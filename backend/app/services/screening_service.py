@@ -131,6 +131,8 @@ async def process_image_upload(
                 else str(cv_res.get("calibrationStatus", ""))
             )
             final_gradcam = expl["gradcam_path"] if (expl and expl.get("gradcam_path")) else cv_res.get("gradCAMImage")
+            final_heatmap = expl.get("heatmap_image_path") if expl else None
+            final_xai = expl.get("xai_explanation") if expl else None
             final_recommendation = report.get("recommendation") if dr_pred else cv_res.get("referralRecommendation", report.get("recommendation", ""))
             final_triage = _triage_for_grade(int(final_grade)) if (dr_pred and final_grade is not None) else cv_res.get("triageAction", "ROUTINE_12MO_SCREENING")
             final_rule_match = (
@@ -170,6 +172,8 @@ async def process_image_upload(
                 "calibration_status": final_calib_status,
                 "gradcam_image": final_gradcam,
                 "gradcam_description": "EfficientNet-B0 Grad-CAM spatial attention highlighting retinal regions driving DR classification.",
+                "heatmap_image": final_heatmap,
+                "xai_explanation": final_xai,
                 "lesion_evidence_image": cv_res.get("lesionEvidenceImage"),
                 "lesion_evidence_description": "Regions identified by the retinal lesion analysis module.",
                 "annotated_report": cv_res.get("annotatedReport"),
@@ -248,6 +252,7 @@ async def process_screening_v1(file: UploadFile, patient_id: str) -> Dict[str, A
 
     enhanced_url = _to_url(retinal_ana.get("enhanced_image"))
     gradcam_url = _to_url(retinal_ana.get("gradcam_image") or (expl.get("gradcam_path") if expl else None))
+    heatmap_url = _to_url(retinal_ana.get("heatmap_image") or (expl.get("heatmap_image_path") if expl else None))
     lesion_url = _to_url(retinal_ana.get("lesion_evidence_image"))
 
     if status_enum == "UNGRADABLE":
@@ -302,6 +307,7 @@ async def process_screening_v1(file: UploadFile, patient_id: str) -> Dict[str, A
         "artifacts": {
             "enhanced_image_url": enhanced_url,
             "gradcam_heatmap_url": gradcam_url,
+            "heatmap_url": heatmap_url,
             "lesion_overlay_url": lesion_url,
         },
         "triage_action": triage_action,

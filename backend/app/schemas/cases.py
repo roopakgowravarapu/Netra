@@ -14,6 +14,17 @@ class SpecialistReviewRequest(BaseModel):
     specialist_id: str = Field("dr_ophthalmologist_01", description="Specialist ID")
 
 
+class ClinicalApprovalRequest(BaseModel):
+    decision: str = Field(..., description="'APPROVE' or 'REJECT'")
+    clinician_id: str = Field("consulting_clinician", description="Clinician identifier")
+    notes: Optional[str] = Field("", description="Clinical decision rationale")
+
+
+class DoctorReferralRequest(BaseModel):
+    clinician_id: str = Field("consulting_clinician", description="Referring clinician identifier")
+    referral_notes: Optional[str] = Field("", description="Notes for consulting ophthalmologist")
+
+
 class CaseAuditEntrySchema(BaseModel):
     timestamp: str
     actor: str = Field("system", description="'system', 'screener', or specialist id")
@@ -55,6 +66,14 @@ class ScreeningCaseSchema(BaseModel):
     override_grade: Optional[int] = None
     specialist_notes: Optional[str] = None
     specialist_id: Optional[str] = None
+    clinical_approval: Optional[str] = Field(None, description="'APPROVED' or 'REJECTED'")
+    clinical_approved_at: Optional[str] = None
+    clinical_approved_by: Optional[str] = None
+    clinical_approval_notes: Optional[str] = None
+    referred_to_doctor: bool = Field(False, description="Whether case has been referred to consulting doctor")
+    referred_at: Optional[str] = None
+    referred_by: Optional[str] = None
+    referral_notes: Optional[str] = None
     updated_at: Optional[str] = None
     attempt: int = 1
     history: List[CaseHistoryItemSchema] = Field(default_factory=list)

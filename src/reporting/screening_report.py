@@ -199,13 +199,83 @@ class ScreeningPipeline:
         overlay_bgr = overlay_heatmap_on_image(img_bgr_input, heatmap, alpha=0.45)
         overlay_bgr = cv2.resize(overlay_bgr, (448, 448), interpolation=cv2.INTER_CUBIC)
 
+        # Color-mapped Heatmap Image
+        heatmap_uint8 = np.uint8(255 * np.clip(heatmap, 0.0, 1.0))
+        heatmap_color = cv2.applyColorMap(heatmap_uint8, cv2.COLORMAP_JET)
+        heatmap_color = cv2.resize(heatmap_color, (448, 448), interpolation=cv2.INTER_CUBIC)
+
         gradcam_rel_path = None
+        heatmap_rel_path = None
         if save_explanation_dir is not None:
             save_explanation_dir.mkdir(parents=True, exist_ok=True)
             overlay_filename = f"gradcam_{sample_id}.png"
             overlay_path = save_explanation_dir / overlay_filename
             cv2.imwrite(str(overlay_path), overlay_bgr)
             gradcam_rel_path = str(overlay_path)
+
+            heatmap_filename = f"heatmap_{sample_id}.png"
+            heatmap_path = save_explanation_dir / heatmap_filename
+            cv2.imwrite(str(heatmap_path), heatmap_color)
+            heatmap_rel_path = str(heatmap_path)
+
+        # 5. Determine Highlighted Region & Human-Readable XAI Narrative
+        peak_val = float(np.max(heatmap))
+        if peak_val < 0.15:
+            highlighted_region = "Region could not be determined reliably"
+            horiz_pos = "Indeterminate"
+            vert_pos = "Indeterminate"
+        else:
+            thresh = max(0.5 * peak_val, 0.25)
+            y_indices, x_indices = np.where(heatmap >= thresh)
+            if len(y_indices) == 0:
+                y_indices, x_indices = np.where(heatmap >= 0.15)
+
+            if len(y_indices) > 0:
+                h, w = heatmap.shape[:2]
+                cy = float(np.mean(y_indices)) / h
+                cx = float(np.mean(x_indices)) / w
+
+                if cx < 0.40:
+                    horiz_pos = "Image Left"
+                elif cx > 0.60:
+                    horiz_pos = "Image Right"
+                else:
+                    horiz_pos = "Center"
+
+                if cy < 0.40:
+                    vert_pos = "Upper Region"
+                elif cy > 0.60:
+                    vert_pos = "Lower Region"
+                else:
+                    vert_pos = "Mid Region"
+
+                if horiz_pos == "Center" and vert_pos == "Mid Region":
+                    highlighted_region = "Center of the displayed image"
+                elif horiz_pos == "Center":
+                    highlighted_region = f"{vert_pos} (Center) of the displayed image"
+                elif vert_pos == "Mid Region":
+                    highlighted_region = f"{horiz_pos} of the displayed image"
+                else:
+                    highlighted_region = f"{vert_pos}, {horiz_pos} of the displayed image"
+            else:
+                highlighted_region = "Region could not be determined reliably"
+                horiz_pos = "Indeterminate"
+                vert_pos = "Indeterminate"
+
+        xai_explanation = {
+            "highlighted_region": highlighted_region,
+            "horizontal_position": horiz_pos,
+            "vertical_position": vert_pos,
+            "what_it_shows": "Warmer and more intense colors (red and orange) represent regions that contributed most strongly to the model's prediction.",
+            "why_it_matters": (
+                f"The neural network's activation was primarily focused on the {highlighted_region}. "
+                "Note: Grad-CAM visualizes deep learning feature attention and does not independently detect, prove, or confirm specific retinal lesions."
+            ),
+            "model_interpretation": (
+                f"For the predicted classification of {pred_label} (Grade {pred_grade}), the model's prediction was most heavily influenced by feature patterns located in the {highlighted_region}."
+            ),
+            "laterality_note": "Image Left and Image Right refer strictly to the orientation of the displayed fundus photograph and must not be confused with the patient's anatomical left or right eye."
+        }
 
         prob_dict = {CLASS_LABELS[i]: round(float(calibrated_probs[i]), 4) for i in range(5)}
 
@@ -245,7 +315,10 @@ class ScreeningPipeline:
             "explanation": {
                 "gradcam_path": gradcam_rel_path,
                 "original_image_path": original_rel_path,
+                "heatmap_image_path": heatmap_rel_path,
                 "target_class": pred_grade,
+                "highlighted_region": highlighted_region,
+                "xai_explanation": xai_explanation,
                 "saliency_description": (
                     "Grad-CAM visualizes deep neural network activation attention. "
                     "It highlights regions contributing most strongly to the classifier's output, "

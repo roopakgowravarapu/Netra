@@ -45,6 +45,15 @@ export interface DRPrediction {
 export interface Explanation {
   gradcam_path?: string;
   original_image_path?: string;
+  heatmap_image_path?: string;
+  highlighted_region?: string;
+  xai_explanation?: {
+    highlighted_region?: string;
+    what_heatmap_shows?: string;
+    why_this_matters?: string;
+    model_interpretation?: string;
+    disclaimer?: string;
+  } | null;
   target_class: number;
   saliency_description?: string;
 }
@@ -136,6 +145,14 @@ export interface RetinalAnalysis {
   calibration_status: string;
   gradcam_image?: string | null;
   gradcam_description: string;
+  heatmap_image?: string | null;
+  xai_explanation?: {
+    highlighted_region?: string;
+    what_heatmap_shows?: string;
+    why_this_matters?: string;
+    model_interpretation?: string;
+    disclaimer?: string;
+  } | null;
   lesion_evidence_image?: string | null;
   lesion_evidence_description: string;
   annotated_report?: string | null;

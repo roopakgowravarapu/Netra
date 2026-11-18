@@ -31,7 +31,10 @@ class DRPredictionSchema(BaseModel):
 class ExplanationSchema(BaseModel):
     gradcam_path: Optional[str] = Field(None, description="Path or URL to Grad-CAM heatmap overlay image")
     original_image_path: Optional[str] = Field(None, description="Path or URL to saved original fundus image")
+    heatmap_image_path: Optional[str] = Field(None, description="Path or URL to pure heatmap image")
     target_class: int = Field(..., description="Target DR class for Grad-CAM explanation")
+    highlighted_region: Optional[str] = Field(None, description="Approximate region of peak activation")
+    xai_explanation: Optional[Dict[str, Any]] = Field(None, description="Human-readable explainability narrative")
 
 
 class RetinalStructuresSchema(BaseModel):
@@ -94,6 +97,8 @@ class RetinalAnalysisSchema(BaseModel):
     calibration_status: str = ""
     gradcam_image: Optional[str] = None
     gradcam_description: str = "Regions receiving high attention from the DR classification model."
+    heatmap_image: Optional[str] = None
+    xai_explanation: Optional[Dict[str, Any]] = None
     lesion_evidence_image: Optional[str] = None
     lesion_evidence_description: str = "Regions identified by the retinal lesion analysis module."
     annotated_report: Optional[str] = None

@@ -6,6 +6,7 @@ export interface TranslationDictionary {
   navHome: string;
   navScreening: string;
   navDashboard: string;
+  navDoctor: string;
   navDocs: string;
   navLanguage: string;
   
@@ -106,6 +107,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     navHome: "Home",
     navScreening: "New Screening",
     navDashboard: "Specialist Dashboard",
+    navDoctor: "Doctor Portal",
     navDocs: "Documentation",
     navLanguage: "Language",
 
@@ -197,6 +199,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     navHome: "హోమ్",
     navScreening: "కొత్త స్క్రీనింగ్",
     navDashboard: "స్పెషలిస్ట్ డ్యాష్‌బోర్డ్",
+    navDoctor: "డాక్టర్ పోర్టల్",
     navDocs: "డాక్యుమెంటేషన్",
     navLanguage: "భాష",
 
@@ -288,6 +291,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     navHome: "होम",
     navScreening: "नई स्क्रीनिंग",
     navDashboard: "विशेषज्ञ डैशबोर्ड",
+    navDoctor: "डॉक्टर पोर्टल",
     navDocs: "दस्तावेज़",
     navLanguage: "भाषा",
 

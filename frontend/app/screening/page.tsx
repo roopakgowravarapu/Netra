@@ -262,7 +262,7 @@ function ScreeningContent() {
               </p>
             </div>
             <Link
-              href="/dashboard"
+              href="/doctor"
               style={{
                 background: "var(--primary-subtle)",
                 color: "var(--primary)",
@@ -274,7 +274,7 @@ function ScreeningContent() {
                 textDecoration: "none",
               }}
             >
-              ← {t.specialistQueue}
+              ← Doctor Portal
             </Link>
           </div>
         )}

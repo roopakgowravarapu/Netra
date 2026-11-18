@@ -11,6 +11,8 @@ from backend.app.schemas.cases import (
     CaseHistoryItemSchema,
     ScreeningCaseSchema,
     SpecialistReviewRequest,
+    ClinicalApprovalRequest,
+    DoctorReferralRequest,
 )
 from backend.app.schemas.screening import ScreeningReportResponse
 from backend.app.services.patient_service import update_visit_with_specialist_decision
@@ -157,7 +159,7 @@ def delete_all_cases() -> int:
     return case_repository.clear_all()
 
 
-def refer_case_to_doctor(case_id: str, referral_notes: Optional[str] = None) -> ScreeningCaseSchema:
+def refer_case_to_specialist(case_id: str, referral_notes: Optional[str] = None) -> ScreeningCaseSchema:
     """Marks a screening case as referred to specialist and records in audit trail."""
     case = get_case_by_id(case_id)
     now_str = datetime.now(timezone.utc).isoformat()
@@ -324,3 +326,88 @@ def recapture_case(case_id: str, report_dict: dict) -> ScreeningCaseSchema:
 
     case_repository.save(case)
     return case
+
+
+def record_clinical_approval(case_id: str, request: ClinicalApprovalRequest) -> ScreeningCaseSchema:
+    """
+    Records a one-way clinical approval or rejection decision.
+    Once locked as APPROVED or REJECTED, cannot be modified or reversed.
+    """
+    case = get_case_by_id(case_id)
+    if case.clinical_approval in ["APPROVED", "REJECTED"]:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Clinical decision is locked as '{case.clinical_approval}' and cannot be modified.",
+        )
+
+    decision_norm = request.decision.strip().upper()
+    if decision_norm not in ["APPROVE", "REJECT"]:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Decision must be 'APPROVE' or 'REJECT'.",
+        )
+
+    now_str = datetime.now(timezone.utc).isoformat()
+    case.clinical_approval = "APPROVED" if decision_norm == "APPROVE" else "REJECTED"
+    case.clinical_approved_at = now_str
+    case.clinical_approved_by = request.clinician_id
+    case.clinical_approval_notes = request.notes
+    case.updated_at = now_str
+
+    action = "CLINICAL_APPROVED" if case.clinical_approval == "APPROVED" else "CLINICAL_REJECTED"
+    case.audit_trail.append(
+        CaseAuditEntrySchema(
+            timestamp=now_str,
+            actor=request.clinician_id,
+            action=action,
+            details=f"Clinical decision recorded: {case.clinical_approval}. Notes: {request.notes}",
+        )
+    )
+
+    case_repository.save(case)
+    logger.info(f"Clinical decision recorded for {case_id}: {case.clinical_approval}")
+    return case
+
+
+def refer_case_to_doctor(case_id: str, request: DoctorReferralRequest) -> ScreeningCaseSchema:
+    """
+    Submits an approved case to the Doctor Portal.
+    Requires clinical_approval == 'APPROVED'; otherwise referral submission is disabled.
+    """
+    case = get_case_by_id(case_id)
+    if case.clinical_approval != "APPROVED":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Referral submission disabled: Case must be Clinically Approved before referring to doctor.",
+        )
+
+    now_str = datetime.now(timezone.utc).isoformat()
+    case.referred_to_doctor = True
+    case.referred_at = now_str
+    case.referred_by = request.clinician_id
+    case.referral_notes = request.referral_notes
+    case.status = "COMPLETED"
+    case.updated_at = now_str
+
+    case.audit_trail.append(
+        CaseAuditEntrySchema(
+            timestamp=now_str,
+            actor=request.clinician_id,
+            action="REFERRED_TO_DOCTOR",
+            details=f"Referred to doctor. Notes: {request.referral_notes}",
+        )
+    )
+
+    case_repository.save(case)
+    logger.info(f"Case {case_id} successfully referred to Doctor Portal by {request.clinician_id}")
+    return case
+
+
+def get_doctor_cases() -> List[ScreeningCaseSchema]:
+    """Retrieves eligible approved cases that have been referred to the Doctor Portal."""
+    cases = case_repository.get_all()
+    # Filter for cases that are clinically approved and referred to doctor
+    doctor_cases = [c for c in cases if c.referred_to_doctor and c.clinical_approval == "APPROVED"]
+    doctor_cases.sort(key=lambda c: c.referred_at or c.created_at, reverse=True)
+    return doctor_cases
+

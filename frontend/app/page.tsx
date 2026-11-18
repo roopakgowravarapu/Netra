@@ -36,7 +36,7 @@ export default function HomePage() {
               Launch Screening Portal →
             </Link>
             <Link
-              href="/dashboard"
+              href="/doctor"
               style={{
                 background: "var(--bg-card)",
                 color: "var(--text-main)",
@@ -50,7 +50,7 @@ export default function HomePage() {
                 transition: "all 0.3s ease"
               }}
             >
-              Telemedicine Dashboard
+              Doctor Portal →
             </Link>
           </div>
         </div>
