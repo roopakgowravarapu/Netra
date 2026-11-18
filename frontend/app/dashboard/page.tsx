@@ -11,14 +11,7 @@ import {
   getStaticImageUrl,
   CaseItem,
   CaseHistoryItem,
-  PatientRecord,
-  PatientProgressionComparison,
-  fetchPatients,
-  fetchPatientProgression,
   deleteAllCases,
-  deleteAllPatients,
-  deletePatient,
-  clearPatientHistory,
 } from "../../lib/api";
 import { Language, translations } from "../../lib/translations";
 
@@ -35,8 +28,6 @@ const DR_LABELS: Record<number, string> = {
 export default function TelemedicineDashboard() {
   const router = useRouter();
 
-  // Multi-tab state: "QUEUE" vs "PATIENTS"
-  const [activeTab, setActiveTab] = useState<"QUEUE" | "PATIENTS">("QUEUE");
 
   // Multi-lingual state
   const [lang, setLang] = useState<Language>("en");
@@ -57,14 +48,7 @@ export default function TelemedicineDashboard() {
   const [statusFilter, setStatusFilter] = useState<"ALL" | "PENDING" | "URGENT" | "RECAPTURE" | "COMPLETED">("ALL");
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
-  // Patient Management States
-  const [patients, setPatients] = useState<PatientRecord[]>([]);
-  const [patientsLoading, setPatientsLoading] = useState<boolean>(false);
-  const [patientSearch, setPatientSearch] = useState<string>("");
-  const [selectedPatient, setSelectedPatient] = useState<PatientRecord | null>(null);
-  const [progressionData, setProgressionData] = useState<PatientProgressionComparison | null>(null);
-  const [progressionLoading, setProgressionLoading] = useState<boolean>(false);
-  const [progressionEye, setProgressionEye] = useState<string>("OD");
+
 
   const addToast = (type: "success" | "info" | "warning" | "error", message: string) => {
     const id = `toast_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
@@ -78,11 +62,7 @@ export default function TelemedicineDashboard() {
   // Custom UI Modal States
   const [deleteTargetCaseId, setDeleteTargetCaseId] = useState<string | null>(null);
   const [confirmDeleteAllCasesModal, setConfirmDeleteAllCasesModal] = useState(false);
-  const [confirmDeleteAllPatientsModal, setConfirmDeleteAllPatientsModal] = useState(false);
-  const [deletePatientTargetId, setDeletePatientTargetId] = useState<string | null>(null);
-  const [clearHistoryTargetId, setClearHistoryTargetId] = useState<string | null>(null);
   const [refreshingCases, setRefreshingCases] = useState(false);
-  const [refreshingPatients, setRefreshingPatients] = useState(false);
   const [showReportModal, setShowReportModal] = useState(false);
   const [feedbackModal, setFeedbackModal] = useState<{
     isOpen: boolean;
@@ -130,35 +110,6 @@ export default function TelemedicineDashboard() {
       console.error("Failed to fetch cases:", err);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const loadPatients = async (query?: string) => {
-    setPatientsLoading(true);
-    try {
-      const data = await fetchPatients(query);
-      setPatients(data);
-      if (data.length > 0 && !selectedPatient) {
-        handleSelectPatient(data[0]);
-      }
-    } catch (err) {
-      console.error("Failed to fetch patients:", err);
-    } finally {
-      setPatientsLoading(false);
-    }
-  };
-
-  const handleSelectPatient = async (p: PatientRecord, eyeFilter: string = progressionEye) => {
-    setSelectedPatient(p);
-    setProgressionLoading(true);
-    try {
-      const prog = await fetchPatientProgression(p.patient_id, eyeFilter);
-      setProgressionData(prog);
-    } catch (err) {
-      console.error("Failed to fetch progression:", err);
-      setProgressionData(null);
-    } finally {
-      setProgressionLoading(false);
     }
   };
 
@@ -225,66 +176,8 @@ export default function TelemedicineDashboard() {
     }
   };
 
-  const confirmDeleteAllPatients = async () => {
-    setConfirmDeleteAllPatientsModal(false);
-    try {
-      const res = await deleteAllPatients();
-      setPatients([]);
-      setSelectedPatient(null);
-      setProgressionData(null);
-      addToast("success", `All ${res.count} patient records cleared.`);
-      setFeedbackModal({
-        isOpen: true,
-        type: "success",
-        title: "All Patient Records Cleared",
-        message: `Successfully deleted all ${res.count} registered patient profiles and their visit histories.`,
-      });
-    } catch (err: any) {
-      console.error("Failed to delete all patients:", err);
-      addToast("error", err.message || "Failed to clear patient records.");
-    }
-  };
-
-  const confirmDeleteSinglePatient = async (patientId: string) => {
-    setDeletePatientTargetId(null);
-    try {
-      await deletePatient(patientId);
-      const remaining = patients.filter((p) => p.patient_id !== patientId);
-      setPatients(remaining);
-      if (selectedPatient?.patient_id === patientId) {
-        if (remaining.length > 0) {
-          handleSelectPatient(remaining[0]);
-        } else {
-          setSelectedPatient(null);
-          setProgressionData(null);
-        }
-      }
-      addToast("success", `Patient ${patientId} deleted.`);
-    } catch (err: any) {
-      console.error("Failed to delete patient:", err);
-      addToast("error", err.message || "Failed to delete patient.");
-    }
-  };
-
-  const confirmClearPatientHistory = async (patientId: string) => {
-    setClearHistoryTargetId(null);
-    try {
-      const updated = await clearPatientHistory(patientId);
-      setPatients((prev) => prev.map((p) => (p.patient_id === patientId ? updated : p)));
-      if (selectedPatient?.patient_id === patientId) {
-        setSelectedPatient(updated);
-        handleSelectPatient(updated);
-      }
-      addToast("success", `Screening history cleared for ${patientId}.`);
-    } catch (err: any) {
-      console.error("Failed to clear patient history:", err);
-      addToast("error", err.message || "Failed to clear history.");
-    }
-  };
-
   useEffect(() => {
     fetchCases();
-    loadPatients();
   }, []);
 
   const handleReviewSubmit = async (decision: "confirm" | "override" | "request_recapture") => {
@@ -410,55 +303,26 @@ export default function TelemedicineDashboard() {
               </p>
             </div>
 
-            {/* Top Navigation Tab Switcher */}
+            {/* Specialist Queue Header Status */}
             <div style={{
               display: "inline-flex",
-              background: "var(--bg-card-subtle)",
-              padding: "0.3rem",
+              alignItems: "center",
+              gap: "0.6rem",
+              background: "var(--primary-subtle)",
+              border: "1px solid var(--primary-glow)",
+              padding: "0.5rem 1.1rem",
               borderRadius: "10px",
-              border: "1px solid var(--border-card)",
-              gap: "0.35rem",
+              color: "var(--primary)",
+              fontWeight: "700",
+              fontSize: "0.9rem",
             }}>
-              <button
-                type="button"
-                onClick={() => setActiveTab("QUEUE")}
-                style={{
-                  background: activeTab === "QUEUE" ? "var(--primary)" : "transparent",
-                  color: activeTab === "QUEUE" ? "#ffffff" : "var(--text-muted)",
-                  border: "none",
-                  padding: "0.5rem 1.1rem",
-                  borderRadius: "8px",
-                  fontSize: "0.88rem",
-                  fontWeight: "700",
-                  cursor: "pointer",
-                  transition: "all 0.2s ease",
-                }}
-              >
-                📋 {t.specialistQueue} ({cases.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab("PATIENTS")}
-                style={{
-                  background: activeTab === "PATIENTS" ? "var(--primary)" : "transparent",
-                  color: activeTab === "PATIENTS" ? "#ffffff" : "var(--text-muted)",
-                  border: "none",
-                  padding: "0.5rem 1.1rem",
-                  borderRadius: "8px",
-                  fontSize: "0.88rem",
-                  fontWeight: "700",
-                  cursor: "pointer",
-                  transition: "all 0.2s ease",
-                }}
-              >
-                👥 {t.patientHistory} & {t.longitudinalTracking}
-              </button>
+              <span>📋</span>
+              <span>{t.specialistQueue} ({cases.length} active cases)</span>
             </div>
           </div>
         </div>
 
-        {/* TAB 1: SPECIALIST REVIEW QUEUE */}
-        {activeTab === "QUEUE" && (
+        {/* SPECIALIST REVIEW QUEUE */}
           <div style={{ display: "grid", gridTemplateColumns: "340px 1fr", gap: "1.5rem" }}>
             {/* Cases Queue Sidebar */}
             <div className="card" style={{
@@ -1145,400 +1009,6 @@ export default function TelemedicineDashboard() {
               )}
             </div>
           </div>
-        )}
-
-        {/* TAB 2: PATIENT MANAGEMENT & LONGITUDINAL PROGRESSION */}
-        {activeTab === "PATIENTS" && (
-          <div style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: "1.5rem" }}>
-            {/* Patient Directory Sidebar */}
-            <div className="card" style={{
-              background: "var(--bg-card)",
-              border: "1px solid var(--border-card)",
-              borderRadius: "0.75rem",
-              padding: "1.25rem",
-              height: "fit-content",
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem", gap: "0.5rem" }}>
-                <h3 style={{ fontSize: "1.05rem", fontWeight: "700", color: "var(--text-main)", margin: 0 }}>
-                  {t.patientHistory} ({patients.length})
-                </h3>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setRefreshingPatients(true);
-                      loadPatients().finally(() => setTimeout(() => setRefreshingPatients(false), 600));
-                    }}
-                    disabled={refreshingPatients}
-                    title="Refresh Patient Directory"
-                    style={{
-                      background: "var(--primary-subtle)",
-                      color: "var(--primary)",
-                      border: "1px solid var(--primary-glow)",
-                      borderRadius: "6px",
-                      padding: "0.25rem 0.55rem",
-                      fontSize: "0.75rem",
-                      fontWeight: "600",
-                      cursor: "pointer",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.3rem",
-                      transition: "all 0.2s ease",
-                    }}
-                  >
-                    <span
-                      style={{
-                        display: "inline-block",
-                        animation: refreshingPatients ? "netra-spin 0.8s linear infinite" : "none",
-                        transition: "transform 0.3s ease",
-                      }}
-                    >
-                      🔄
-                    </span>
-                    <span>Refresh</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setConfirmDeleteAllPatientsModal(true)}
-                    disabled={patients.length === 0}
-                    title="Delete all patient records"
-                    style={{
-                      background: "rgba(220, 38, 38, 0.08)",
-                      color: patients.length === 0 ? "var(--text-muted)" : "#dc2626",
-                      border: "1px solid rgba(220, 38, 38, 0.25)",
-                      borderRadius: "6px",
-                      padding: "0.25rem 0.55rem",
-                      fontSize: "0.75rem",
-                      fontWeight: "600",
-                      cursor: patients.length === 0 ? "not-allowed" : "pointer",
-                      opacity: patients.length === 0 ? 0.6 : 1,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.25rem",
-                      transition: "all 0.2s ease",
-                    }}
-                  >
-                    <span>🗑️</span>
-                    <span>Clear All</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Patient Search */}
-              <div style={{ marginBottom: "1rem" }}>
-                <input
-                  type="text"
-                  placeholder="🔍 Search by ID or Name..."
-                  value={patientSearch}
-                  onChange={(e) => {
-                    setPatientSearch(e.target.value);
-                    loadPatients(e.target.value);
-                  }}
-                  style={{
-                    width: "100%",
-                    padding: "0.45rem 0.75rem",
-                    fontSize: "0.82rem",
-                    borderRadius: "6px",
-                    border: "1px solid var(--border-card)",
-                    background: "var(--bg-card-subtle)",
-                    color: "var(--text-main)",
-                    outline: "none",
-                  }}
-                />
-              </div>
-
-              {patientsLoading ? (
-                <div style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>Loading patient registry...</div>
-              ) : patients.length === 0 ? (
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem", padding: "1rem 0" }}>
-                  No registered patients found. Submit screenings in the portal to register patients.
-                </div>
-              ) : (
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", maxHeight: "650px", overflowY: "auto" }}>
-                  {patients.map((p) => {
-                    const isSelected = selectedPatient?.patient_id === p.patient_id;
-                    return (
-                      <div
-                        key={p.patient_id}
-                        onClick={() => handleSelectPatient(p)}
-                        style={{
-                          padding: "0.75rem",
-                          borderRadius: "0.5rem",
-                          background: isSelected ? "var(--primary-subtle)" : "var(--bg-card-subtle)",
-                          border: `1px solid ${isSelected ? "var(--primary)" : "var(--border-card)"}`,
-                          cursor: "pointer",
-                        }}
-                      >
-                        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "var(--text-muted)" }}>
-                          <span style={{ fontWeight: "700", color: "var(--primary)" }}>{p.patient_id}</span>
-                          <span>{p.visits.length} {p.visits.length === 1 ? "visit" : "visits"}</span>
-                        </div>
-                        <div style={{ fontWeight: "700", fontSize: "0.9rem", color: "var(--text-main)", marginTop: "0.2rem" }}>
-                          {p.name}
-                        </div>
-                        <div style={{ fontSize: "0.76rem", color: "var(--text-subtle)", marginTop: "0.15rem" }}>
-                          {p.age ? `${p.age} yrs` : "Age N/A"} • {p.gender} • {p.diabetes_type}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-
-            {/* Longitudinal Inspection Panel */}
-            <div className="card" style={{
-              background: "var(--bg-card)",
-              border: "1px solid var(--border-card)",
-              borderRadius: "0.75rem",
-              padding: "1.5rem",
-            }}>
-              {selectedPatient ? (
-                <div>
-                  {/* Patient Profile Header */}
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.25rem", borderBottom: "1px solid var(--border-card)", paddingBottom: "1rem", flexWrap: "wrap", gap: "1rem" }}>
-                    <div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                        <h2 style={{ fontSize: "1.35rem", fontWeight: "800", color: "var(--text-main)", margin: 0 }}>
-                          {selectedPatient.name}
-                        </h2>
-                        <span style={{
-                          background: "var(--primary-subtle)",
-                          color: "var(--primary)",
-                          padding: "0.2rem 0.6rem",
-                          borderRadius: "8px",
-                          fontWeight: "700",
-                          fontSize: "0.8rem",
-                        }}>
-                          {selectedPatient.patient_id}
-                        </span>
-                      </div>
-                      <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: "0.3rem" }}>
-                        Demographics: {selectedPatient.age ? `${selectedPatient.age} years old` : "Age Unspecified"} • Gender: {selectedPatient.gender} • Diabetes: {selectedPatient.diabetes_type} ({selectedPatient.diabetes_duration_years ? `${selectedPatient.diabetes_duration_years} yrs duration` : "duration unknown"})
-                      </div>
-                    </div>
-
-                    {/* Eye Filter Switcher & Patient Record Actions */}
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
-                      <div style={{ display: "inline-flex", gap: "0.3rem", background: "var(--bg-card-subtle)", padding: "0.25rem", borderRadius: "8px", border: "1px solid var(--border-card)" }}>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setProgressionEye("OD");
-                            handleSelectPatient(selectedPatient, "OD");
-                          }}
-                          style={{
-                            background: progressionEye === "OD" ? "var(--primary)" : "transparent",
-                            color: progressionEye === "OD" ? "#ffffff" : "var(--text-muted)",
-                            border: "none",
-                            padding: "0.35rem 0.8rem",
-                            borderRadius: "6px",
-                            fontSize: "0.8rem",
-                            fontWeight: "700",
-                            cursor: "pointer",
-                          }}
-                        >
-                          OD (Right Eye)
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setProgressionEye("OS");
-                            handleSelectPatient(selectedPatient, "OS");
-                          }}
-                          style={{
-                            background: progressionEye === "OS" ? "var(--primary)" : "transparent",
-                            color: progressionEye === "OS" ? "#ffffff" : "var(--text-muted)",
-                            border: "none",
-                            padding: "0.35rem 0.8rem",
-                            borderRadius: "6px",
-                            fontSize: "0.8rem",
-                            fontWeight: "700",
-                            cursor: "pointer",
-                          }}
-                        >
-                          OS (Left Eye)
-                        </button>
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={() => setClearHistoryTargetId(selectedPatient.patient_id)}
-                        disabled={selectedPatient.visits.length === 0}
-                        title="Clear all visit history for this patient"
-                        style={{
-                          background: "var(--bg-card-subtle)",
-                          color: selectedPatient.visits.length === 0 ? "var(--text-muted)" : "var(--text-main)",
-                          border: "1px solid var(--border-card)",
-                          padding: "0.4rem 0.75rem",
-                          borderRadius: "6px",
-                          fontSize: "0.78rem",
-                          fontWeight: "600",
-                          cursor: selectedPatient.visits.length === 0 ? "not-allowed" : "pointer",
-                          opacity: selectedPatient.visits.length === 0 ? 0.6 : 1,
-                        }}
-                      >
-                        Clear History
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setDeletePatientTargetId(selectedPatient.patient_id)}
-                        title="Delete patient record completely"
-                        style={{
-                          background: "rgba(220, 38, 38, 0.08)",
-                          color: "#dc2626",
-                          border: "1px solid rgba(220, 38, 38, 0.25)",
-                          padding: "0.4rem 0.75rem",
-                          borderRadius: "6px",
-                          fontSize: "0.78rem",
-                          fontWeight: "600",
-                          cursor: "pointer",
-                        }}
-                      >
-                        Delete Patient
-                      </button>
-                    </div>
-                  </div>
-
-                  {progressionLoading ? (
-                    <div style={{ padding: "2rem", textAlign: "center", color: "var(--text-muted)" }}>
-                      Loading longitudinal comparison...
-                    </div>
-                  ) : progressionData ? (
-                    <div>
-                      {/* Longitudinal Progression Summary Banner */}
-                      <div style={{
-                        padding: "1rem 1.25rem",
-                        background: progressionData.grade_change && progressionData.grade_change > 0
-                          ? "rgba(239, 68, 68, 0.1)"
-                          : "rgba(16, 185, 129, 0.1)",
-                        border: `1px solid ${progressionData.grade_change && progressionData.grade_change > 0 ? "rgba(239, 68, 68, 0.3)" : "rgba(16, 185, 129, 0.3)"}`,
-                        borderRadius: "8px",
-                        marginBottom: "1.5rem",
-                      }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.5rem" }}>
-                          <span style={{
-                            fontWeight: "800",
-                            color: progressionData.grade_change && progressionData.grade_change > 0 ? "#ef4444" : "var(--accent-teal)",
-                            fontSize: "0.95rem",
-                          }}>
-                            {progressionData.grade_change !== null && progressionData.grade_change !== undefined ? (
-                              progressionData.grade_change > 0
-                                ? `Observational Progression: +${progressionData.grade_change} Grade`
-                                : progressionData.grade_change < 0
-                                ? `Observational Regression: ${progressionData.grade_change} Grade`
-                                : t.stableFinding
-                            ) : "Single Recorded Visit"}
-                          </span>
-                          <span style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
-                            Eye: {progressionData.eye_examined}
-                          </span>
-                        </div>
-                        <p style={{ margin: "0.3rem 0 0", fontSize: "0.88rem", color: "var(--text-main)" }}>
-                          {progressionData.progression_summary}
-                        </p>
-                      </div>
-
-                      {/* Side-by-Side Visual Inspection: Baseline vs Current */}
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginBottom: "1.5rem" }}>
-                        {/* Baseline Examination */}
-                        <div style={{
-                          background: "var(--bg-card-subtle)",
-                          border: "1px solid var(--border-card)",
-                          borderRadius: "0.75rem",
-                          padding: "1.25rem",
-                        }}>
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
-                            <strong style={{ color: "var(--primary)", fontSize: "0.9rem" }}>{t.baselineVisit}</strong>
-                            <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>
-                              {progressionData.baseline_visit ? new Date(progressionData.baseline_visit.date).toLocaleDateString("en-IN") : "N/A"}
-                            </span>
-                          </div>
-                          {progressionData.baseline_visit ? (
-                            <div>
-                              <div style={{ textAlign: "center", margin: "0.5rem 0" }}>
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={getStaticImageUrl(progressionData.baseline_visit.image_path) || "/samples/normal_fundus.png"}
-                                  alt="Baseline Fundus"
-                                  style={{ maxHeight: "200px", maxWidth: "100%", borderRadius: "6px", background: "#000" }}
-                                />
-                              </div>
-                              <div style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>
-                                <div><strong>Grade:</strong> {progressionData.baseline_visit.dr_stage || `Grade ${progressionData.baseline_visit.dr_grade}`}</div>
-                                <div style={{ color: "var(--text-muted)", fontSize: "0.78rem" }}>Confidence: {progressionData.baseline_visit.confidence ? `${(progressionData.baseline_visit.confidence * 100).toFixed(1)}%` : "N/A"}</div>
-                              </div>
-                            </div>
-                          ) : (
-                            <div style={{ padding: "3rem 1rem", textAlign: "center", color: "var(--text-muted)", fontSize: "0.85rem" }}>
-                              Only one screening recorded so far. Subsequent visits will appear here for comparison.
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Current Examination */}
-                        <div style={{
-                          background: "var(--bg-card-subtle)",
-                          border: "1px solid var(--primary-glow)",
-                          borderRadius: "0.75rem",
-                          padding: "1.25rem",
-                        }}>
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
-                            <strong style={{ color: "var(--accent-teal)", fontSize: "0.9rem" }}>{t.currentVisit}</strong>
-                            <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>
-                              {progressionData.current_visit ? new Date(progressionData.current_visit.date).toLocaleDateString("en-IN") : "N/A"}
-                            </span>
-                          </div>
-                          {progressionData.current_visit ? (
-                            <div>
-                              <div style={{ textAlign: "center", margin: "0.5rem 0" }}>
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={getStaticImageUrl(progressionData.current_visit.image_path) || "/samples/dr_fundus.png"}
-                                  alt="Current Fundus"
-                                  style={{ maxHeight: "200px", maxWidth: "100%", borderRadius: "6px", background: "#000" }}
-                                />
-                              </div>
-                              <div style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>
-                                <div><strong>Grade:</strong> {progressionData.current_visit.dr_stage || `Grade ${progressionData.current_visit.dr_grade}`}</div>
-                                <div style={{ color: "var(--text-muted)", fontSize: "0.78rem" }}>Confidence: {progressionData.current_visit.confidence ? `${(progressionData.current_visit.confidence * 100).toFixed(1)}%` : "N/A"}</div>
-                              </div>
-                            </div>
-                          ) : (
-                            <div style={{ padding: "3rem 1rem", textAlign: "center", color: "var(--text-muted)" }}>
-                              No current visit on file.
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Clinical Safety Disclaimer */}
-                      <div style={{
-                        padding: "0.75rem 1rem",
-                        background: "var(--bg-card-subtle)",
-                        borderRadius: "6px",
-                        border: "1px solid var(--border-card)",
-                        fontSize: "0.8rem",
-                        color: "var(--text-muted)",
-                        lineHeight: "1.4",
-                      }}>
-                        ⚕️ <strong>{t.clinicalDisclaimer}</strong>
-                        <div style={{ marginTop: "0.2rem" }}>
-                          {progressionData.disclaimer}
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-                </div>
-              ) : (
-                <div style={{ textAlign: "center", padding: "4rem 2rem", color: "var(--text-muted)" }}>
-                  Select a patient from the directory to review their screening history and longitudinal progression.
-                </div>
-              )}
-            </div>
-          </div>
-        )}
 
         {/* Delete Single Case Confirmation Modal */}
         <UIModal
@@ -1566,49 +1036,6 @@ export default function TelemedicineDashboard() {
           cancelText="Cancel"
           onConfirm={confirmDeleteAllCases}
           onCancel={() => setConfirmDeleteAllCasesModal(false)}
-        />
-
-        {/* Delete All Patients Confirmation Modal */}
-        <UIModal
-          isOpen={confirmDeleteAllPatientsModal}
-          type="confirm"
-          confirmDanger={true}
-          title="Delete All Patient Records?"
-          message={`Are you sure you want to delete all ${patients.length} registered patient records and all longitudinal visit histories? This action cannot be undone.`}
-          confirmText="Delete All Patients"
-          cancelText="Cancel"
-          onConfirm={confirmDeleteAllPatients}
-          onCancel={() => setConfirmDeleteAllPatientsModal(false)}
-        />
-
-        {/* Delete Single Patient Confirmation Modal */}
-        <UIModal
-          isOpen={deletePatientTargetId !== null}
-          type="confirm"
-          confirmDanger={true}
-          title="Delete Patient Record?"
-          message={`Are you sure you want to delete patient '${deletePatientTargetId}' and all their screening history?`}
-          confirmText="Delete Patient"
-          cancelText="Cancel"
-          onConfirm={() => {
-            if (deletePatientTargetId) confirmDeleteSinglePatient(deletePatientTargetId);
-          }}
-          onCancel={() => setDeletePatientTargetId(null)}
-        />
-
-        {/* Clear Patient History Confirmation Modal */}
-        <UIModal
-          isOpen={clearHistoryTargetId !== null}
-          type="confirm"
-          confirmDanger={true}
-          title="Clear Visit History?"
-          message={`Are you sure you want to clear all screening visit records for patient '${clearHistoryTargetId}'? Demographics will be preserved.`}
-          confirmText="Clear History"
-          cancelText="Cancel"
-          onConfirm={() => {
-            if (clearHistoryTargetId) confirmClearPatientHistory(clearHistoryTargetId);
-          }}
-          onCancel={() => setClearHistoryTargetId(null)}
         />
 
         {/* Feedback Modal */}
